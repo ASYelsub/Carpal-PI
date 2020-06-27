@@ -19,7 +19,7 @@ public class HeartbeatManager : MonoBehaviour
     {
         lineRenderer = heartBeat.GetComponent<LineRenderer>();
         lengthOfLineRenderer = lineRenderer.positionCount;
-        print(lengthOfLineRenderer);
+       // print(lengthOfLineRenderer);
         
         
     }
