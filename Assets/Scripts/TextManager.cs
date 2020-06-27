@@ -27,6 +27,19 @@ public class TextManager : MonoBehaviour
         }
     }
 
+    public void StopPressed()
+    {
+        if (currentScene.dialogueBits[talkID].stopIsCorrect == false)
+        {
+            print("YOU FUCKED UP");
+        }
+
+        if (currentScene.dialogueBits[talkID].stopIsCorrect == true)
+        {
+            print("good deductive skills!");
+        }
+        
+    }
     void UpdateDialogue()
     {
         nameText.text = currentScene.dialogueBits[talkID].charName;

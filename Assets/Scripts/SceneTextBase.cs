@@ -13,6 +13,7 @@ public class SceneTextBase : ScriptableObject
       public Sprite charImage;
       public string dialouge;
       public float heartbeatFreq;
+      public bool stopIsCorrect;
    }
 
    public DialogueBit[] dialogueBits;
