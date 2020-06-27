@@ -5,23 +5,33 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TextManager : MonoBehaviour
-{
-    public Character[] characters;
-
+{ 
     public Text nameText;
     public Image activeChar;
+    private int talkID;
+    public SceneTextBase currentScene;
+    public Text activeDialogue;
+
+    public HeartbeatManager heartbeatManager;
+    private void Start()
+    {
+        UpdateDialogue();
+    }
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            nameText.text = characters[0].name;
-            activeChar.sprite = characters[0].portrait;
+            talkID++;
+            UpdateDialogue();
         }
-        if (Input.GetKey(KeyCode.Return))
-        {
-            nameText.text = characters[1].name;
-            activeChar.sprite = characters[1].portrait;
-        }
+    }
+
+    void UpdateDialogue()
+    {
+        nameText.text = currentScene.dialogueBits[talkID].charName;
+        activeChar.sprite = currentScene.dialogueBits[talkID].charImage;
+        activeDialogue.text = currentScene.dialogueBits[talkID].dialouge;
+        heartbeatManager.changeHeartbeat(currentScene.dialogueBits[talkID].heartbeatFreq);
     }
 }

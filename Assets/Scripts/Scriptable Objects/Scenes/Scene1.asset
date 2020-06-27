@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d80517b085cc346daa0a0626a8323d05, type: 3}
+  m_Name: Scene1
+  m_EditorClassIdentifier: 
+  dialogueBits:
+  - charName: Bianca
+    charImage: {fileID: 21300000, guid: a9943d2f720434d3990e4b6ca1a640a6, type: 3}
+    dialouge: Hi My name is Bianca Telluride
+    heartbeatFreq: 0.32
+  - charName: Klygore
+    charImage: {fileID: 21300000, guid: bb9a4d8ace0f3440a8501d4eadab3bda, type: 3}
+    dialouge: Why hello Bianca I am Klygore Victoria
+    heartbeatFreq: -1.5
+  - charName: Bianca
+    charImage: {fileID: 21300000, guid: a9943d2f720434d3990e4b6ca1a640a6, type: 3}
+    dialouge: Killgore Trout, Bea Tarlow
+    heartbeatFreq: 0.4

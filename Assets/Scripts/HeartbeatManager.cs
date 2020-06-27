@@ -34,4 +34,9 @@ public class HeartbeatManager : MonoBehaviour
             lineRenderer.SetPosition(i, new Vector3( k.x, Mathf.Sin((i + t) * freq)* amp + 3, 0.0f));
         }
     }
+
+    public void changeHeartbeat(float freqInput)
+    {
+        freq = freqInput;
+    }
 }
