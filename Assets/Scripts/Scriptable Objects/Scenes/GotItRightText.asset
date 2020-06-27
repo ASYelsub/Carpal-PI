@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d80517b085cc346daa0a0626a8323d05, type: 3}
-  m_Name: Scene1
+  m_Name: GotItRightText
   m_EditorClassIdentifier: 
   dialogueBits:
   - charName: Bianca
     charImage: {fileID: 21300000, guid: a9943d2f720434d3990e4b6ca1a640a6, type: 3}
-    dialouge: Hi My name is Bianca Telluride and this is the main scene.
-    heartbeatFreq: 0.32
+    dialouge: Wow what an apt observation!
+    heartbeatFreq: 0.5
     stopIsCorrect: 0
-  - charName: Klygore
-    charImage: {fileID: 21300000, guid: bb9a4d8ace0f3440a8501d4eadab3bda, type: 3}
-    dialouge: Why hello Bianca I am Klygore Victoria and we are in the main scene.
-    heartbeatFreq: -1.5
-    stopIsCorrect: 1
   - charName: Bianca
     charImage: {fileID: 21300000, guid: a9943d2f720434d3990e4b6ca1a640a6, type: 3}
-    dialouge: 'Our names are based on the names: Kilgore trout and Beatrice Tarlow.'
-    heartbeatFreq: 0.4
+    dialouge: You got it right!
+    heartbeatFreq: 0.5
+    stopIsCorrect: 0
+  - charName: Bianca
+    charImage: {fileID: 21300000, guid: a9943d2f720434d3990e4b6ca1a640a6, type: 3}
+    dialouge: Now we are going back to the main dialouge!
+    heartbeatFreq: 0.5
     stopIsCorrect: 0

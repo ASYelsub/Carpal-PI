@@ -9,8 +9,10 @@ public class TextManager : MonoBehaviour
     public Text nameText;
     public Image activeChar;
     private int talkID;
+    private int tempTalkID;
     public SceneTextBase currentScene;
     public Text activeDialogue;
+    public SceneTextBase[] sceneTextBases;
 
     public HeartbeatManager heartbeatManager;
     private void Start()
@@ -22,21 +24,44 @@ public class TextManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            talkID++;
-            UpdateDialogue();
+            if (talkID >= currentScene.dialogueBits.Length - 1)
+            {
+                if(currentScene == sceneTextBases[1] || currentScene == sceneTextBases[2])
+                {
+                    currentScene = sceneTextBases[0];
+                    talkID = tempTalkID;
+                    UpdateDialogue();
+                }
+                else
+                {
+                    talkID = 0;
+                    UpdateDialogue();
+                }
+            }
+            else
+            {
+                talkID++;
+                UpdateDialogue();
+            }
         }
     }
 
     public void StopPressed()
     {
-        if (currentScene.dialogueBits[talkID].stopIsCorrect == false)
+        if (!currentScene.dialogueBits[talkID].stopIsCorrect)
         {
-            print("YOU FUCKED UP");
+            currentScene = sceneTextBases[1];
+            tempTalkID = talkID; //saves the talkID of the original thing
+            talkID = 0;
+            UpdateDialogue();
         }
 
-        if (currentScene.dialogueBits[talkID].stopIsCorrect == true)
+        else if (currentScene.dialogueBits[talkID].stopIsCorrect)
         {
-            print("good deductive skills!");
+            currentScene = sceneTextBases[2];
+            tempTalkID = talkID; //saves the talkID of the original thing
+            talkID = 0;
+            UpdateDialogue();
         }
         
     }
@@ -45,6 +70,6 @@ public class TextManager : MonoBehaviour
         nameText.text = currentScene.dialogueBits[talkID].charName;
         activeChar.sprite = currentScene.dialogueBits[talkID].charImage;
         activeDialogue.text = currentScene.dialogueBits[talkID].dialouge;
-        heartbeatManager.changeHeartbeat(currentScene.dialogueBits[talkID].heartbeatFreq);
+        heartbeatManager.ChangeHeartbeat(currentScene.dialogueBits[talkID].heartbeatFreq);
     }
 }

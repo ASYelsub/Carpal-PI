@@ -2,21 +2,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HeartbeatManager : MonoBehaviour
 {
     public GameObject heartBeat;
     private LineRenderer lineRenderer;
     private int lengthOfLineRenderer;
-    
-    public float amp;
 
+    public Image health;
+    private RectTransform transformOfHealth;
+    public float amp;
     public float freq;
     //good freqs are:
     //2.59, 3.28, 0.77, -2.16, -1.8, -1.56, -0.24, -0.08
     //norm at 0.55
     void Start()
     {
+        transformOfHealth = health.GetComponent<RectTransform>();
+        
         lineRenderer = heartBeat.GetComponent<LineRenderer>();
         lengthOfLineRenderer = lineRenderer.positionCount;
        // print(lengthOfLineRenderer);
@@ -35,8 +39,13 @@ public class HeartbeatManager : MonoBehaviour
         }
     }
 
-    public void changeHeartbeat(float freqInput)
+    public void ChangeHeartbeat(float freqInput)
     {
         freq = freqInput;
+    }
+
+    public void DecreaseHealth()
+    {
+        
     }
 }
