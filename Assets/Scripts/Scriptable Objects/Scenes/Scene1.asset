@@ -13,18 +13,59 @@ MonoBehaviour:
   m_Name: Scene1
   m_EditorClassIdentifier: 
   dialogueBits:
-  - charName: Bianca
+  - charNameColor: {r: 0.3490566, g: 0.0115254605, b: 0.09965349, a: 1}
+    charName: 'Bianca:'
     charImage: {fileID: 21300000, guid: a9943d2f720434d3990e4b6ca1a640a6, type: 3}
     dialouge: Hi My name is Bianca Telluride and this is the main scene.
     heartbeatFreq: 0.32
     stopIsCorrect: 0
-  - charName: Klygore
+    interrogationTimeHappening: 0
+  - charNameColor: {r: 0.16606925, g: 0.24705882, b: 0, a: 1}
+    charName: 'Klygore:'
     charImage: {fileID: 21300000, guid: bb9a4d8ace0f3440a8501d4eadab3bda, type: 3}
     dialouge: Why hello Bianca I am Klygore Victoria and we are in the main scene.
     heartbeatFreq: -1.5
     stopIsCorrect: 1
-  - charName: Bianca
+    interrogationTimeHappening: 0
+  - charNameColor: {r: 0.3529412, g: 0.011764706, b: 0.101960786, a: 1}
+    charName: 'Bianca:'
     charImage: {fileID: 21300000, guid: a9943d2f720434d3990e4b6ca1a640a6, type: 3}
     dialouge: 'Our names are based on the names: Kilgore trout and Beatrice Tarlow.'
     heartbeatFreq: 0.4
     stopIsCorrect: 0
+    interrogationTimeHappening: 0
+  - charNameColor: {r: 0.06074226, g: 0.6132076, b: 0.5782819, a: 1}
+    charName: 'Witness:'
+    charImage: {fileID: 21300000, guid: eb7a7a37edf4b4c3b8df3689965f40f4, type: 3}
+    dialouge: Hi you're going to listen to me talk!
+    heartbeatFreq: 0.4
+    stopIsCorrect: 0
+    interrogationTimeHappening: 1
+  - charNameColor: {r: 0.0627451, g: 0.6156863, b: 0.5803922, a: 1}
+    charName: 'Witness:'
+    charImage: {fileID: 21300000, guid: eb7a7a37edf4b4c3b8df3689965f40f4, type: 3}
+    dialouge: Now is the time to press STOP.
+    heartbeatFreq: 1.372
+    stopIsCorrect: 1
+    interrogationTimeHappening: 1
+  - charNameColor: {r: 0.3529412, g: 0.011764706, b: 0.101960786, a: 1}
+    charName: 'Bianca:'
+    charImage: {fileID: 21300000, guid: a9943d2f720434d3990e4b6ca1a640a6, type: 3}
+    dialouge: Wow! He just said that! Goodbye David Sedaris!
+    heartbeatFreq: 0.4
+    stopIsCorrect: 0
+    interrogationTimeHappening: 1
+  - charNameColor: {r: 0.3529412, g: 0.011764706, b: 0.101960786, a: 1}
+    charName: 'Bianca:'
+    charImage: {fileID: 21300000, guid: a9943d2f720434d3990e4b6ca1a640a6, type: 3}
+    dialouge: We are still in the main dialogue!
+    heartbeatFreq: 0.4
+    stopIsCorrect: 0
+    interrogationTimeHappening: 0
+  - charNameColor: {r: 0.16470589, g: 0.24705882, b: 0, a: 1}
+    charName: 'Klygore:'
+    charImage: {fileID: 21300000, guid: bb9a4d8ace0f3440a8501d4eadab3bda, type: 3}
+    dialouge: Ack! Hi there Bianca! This dialogue will restart after this textbox!
+    heartbeatFreq: 6.9999
+    stopIsCorrect: 0
+    interrogationTimeHappening: 0

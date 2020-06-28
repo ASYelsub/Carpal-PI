@@ -16,6 +16,8 @@ public class TextManager : MonoBehaviour
 
     public LivesManager livesManager;
     public HeartbeatManager heartbeatManager;
+    public TextTyper textTyper;
+    
     private void Start()
     {
         UpdateDialogue();
@@ -49,30 +51,39 @@ public class TextManager : MonoBehaviour
 
     public void StopPressed()
     {
-        if (!currentScene.dialogueBits[talkID].stopIsCorrect)
+        if (currentScene.dialogueBits[talkID].interrogationTimeHappening)
         {
-            currentScene = sceneTextBases[1];
-            tempTalkID = talkID; //saves the talkID of the original thing
-            talkID = 0;
-            livesManager.LoseOneLife();
-            UpdateDialogue();
+            if (!currentScene.dialogueBits[talkID].stopIsCorrect)
+            {
+                currentScene = sceneTextBases[1];
+                tempTalkID = talkID; //saves the talkID of the original thing
+                talkID = 0;
+                livesManager.LoseOneLife();
+                UpdateDialogue();
+            }
+            else if (currentScene.dialogueBits[talkID].stopIsCorrect)
+            {
+                currentScene = sceneTextBases[2];
+                tempTalkID = talkID; //saves the talkID of the original thing
+                talkID = 0;
+                UpdateDialogue();
+            }
         }
-
-        else if (currentScene.dialogueBits[talkID].stopIsCorrect)
-        {
-            currentScene = sceneTextBases[2];
-            tempTalkID = talkID; //saves the talkID of the original thing
-            talkID = 0;
-            UpdateDialogue();
-            
-        }
-        
     }
     void UpdateDialogue()
     {
+        nameText.color = currentScene.dialogueBits[talkID].charNameColor;
         nameText.text = currentScene.dialogueBits[talkID].charName;
         activeChar.sprite = currentScene.dialogueBits[talkID].charImage;
         activeDialogue.text = currentScene.dialogueBits[talkID].dialouge;
         heartbeatManager.ChangeHeartbeat(currentScene.dialogueBits[talkID].heartbeatFreq);
+        textTyper.UpdateText(activeDialogue.text);
     }
+    
+    
+    
+    
+    
+    
+
 }
