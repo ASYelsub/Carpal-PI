@@ -12,8 +12,7 @@ public class TextTyper : MonoBehaviour
 
 	[Header("Components")]
 	[SerializeField] private AudioSource mainAudioSource;
-	[SerializeField] private TextManager textManager;
-	
+		
 	private bool typing;
 	private int counter;
 	private string textToType;

@@ -27,24 +27,32 @@ public class TextManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (talkID >= currentScene.dialogueBits.Length - 1)
+            if (textTyper.IsTyping())
             {
-                if(currentScene == sceneTextBases[1] || currentScene == sceneTextBases[2])
-                {
-                    currentScene = sceneTextBases[0];
-                    talkID = tempTalkID;
-                    UpdateDialogue();
-                }
-                else
-                {
-                    talkID = 0;
-                    UpdateDialogue();
-                }
+                textTyper.QuickSkip();
             }
             else
             {
-                talkID++;
-                UpdateDialogue();
+                if (talkID >= currentScene.dialogueBits.Length - 1)
+                {
+                    if(currentScene == sceneTextBases[1] || currentScene == sceneTextBases[2])
+                    {
+                        currentScene = sceneTextBases[0];
+                        talkID = tempTalkID;
+                        UpdateDialogue();
+                    }
+                    else
+                    {
+                        talkID = 0;
+                        UpdateDialogue();
+                    }
+                }
+                else
+                {
+                    talkID++;
+                    UpdateDialogue();
+                }
+
             }
         }
     }
