@@ -6,6 +6,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="HeartbeatManager.cs" t="Include" />
+          <e p="LivesManager.cs" t="Include" />
           <e p="SceneTextBase.cs" t="Include" />
           <e p="TextManager.cs" t="Include" />
         </e>

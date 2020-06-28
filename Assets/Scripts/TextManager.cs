@@ -14,6 +14,7 @@ public class TextManager : MonoBehaviour
     public Text activeDialogue;
     public SceneTextBase[] sceneTextBases;
 
+    public LivesManager livesManager;
     public HeartbeatManager heartbeatManager;
     private void Start()
     {
@@ -53,6 +54,7 @@ public class TextManager : MonoBehaviour
             currentScene = sceneTextBases[1];
             tempTalkID = talkID; //saves the talkID of the original thing
             talkID = 0;
+            livesManager.LoseOneLife();
             UpdateDialogue();
         }
 
@@ -62,6 +64,7 @@ public class TextManager : MonoBehaviour
             tempTalkID = talkID; //saves the talkID of the original thing
             talkID = 0;
             UpdateDialogue();
+            
         }
         
     }

@@ -20,7 +20,7 @@ public class HeartbeatManager : MonoBehaviour
     void Start()
     {
         transformOfHealth = health.GetComponent<RectTransform>();
-        
+
         lineRenderer = heartBeat.GetComponent<LineRenderer>();
         lengthOfLineRenderer = lineRenderer.positionCount;
        // print(lengthOfLineRenderer);
