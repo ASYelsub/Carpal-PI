@@ -18,10 +18,6 @@ public class TextManager : MonoBehaviour
     public HeartbeatManager heartbeatManager;
     public TextTyper textTyper;
     
-    private void Start()
-    {
-        UpdateDialogue();
-    }
 
     private void Update()
     {
@@ -78,7 +74,7 @@ public class TextManager : MonoBehaviour
             }
         }
     }
-    void UpdateDialogue()
+    public void UpdateDialogue()
     {
         nameText.color = currentScene.dialogueBits[talkID].charNameColor;
         nameText.text = currentScene.dialogueBits[talkID].charName;
