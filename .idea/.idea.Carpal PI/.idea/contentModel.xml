@@ -5,15 +5,20 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
-          <e p="LocationBase.cs" t="Include" />
           <e p="Managers" t="Include">
             <e p="CanvasManager.cs" t="Include" />
             <e p="HeartbeatManager.cs" t="Include" />
             <e p="LivesManager.cs" t="Include" />
             <e p="LocationManager.cs" t="Include" />
+            <e p="SequenceManager.cs" t="Include" />
             <e p="TextManager.cs" t="Include" />
           </e>
-          <e p="SceneTextBase.cs" t="Include" />
+          <e p="Object Bases" t="Include">
+            <e p="Character.cs" t="Include" />
+            <e p="LocationBase.cs" t="Include" />
+            <e p="SceneTextBase.cs" t="Include" />
+            <e p="SequenceBase.cs" t="Include" />
+          </e>
           <e p="TextTyper.cs" t="Include" />
         </e>
       </e>

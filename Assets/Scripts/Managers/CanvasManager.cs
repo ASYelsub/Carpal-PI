@@ -7,8 +7,9 @@ public class CanvasManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject[] canvas;
-
-    private int canvasInt;
+    
+    [HideInInspector]
+    public int canvasInt;
     // Update is called once per frame
     
     private TextManager textManager;
@@ -38,7 +39,7 @@ public class CanvasManager : MonoBehaviour
         }
     }
 
-    void ChangeCanvas(int theInteger)
+    public void ChangeCanvas(int theInteger)
     {
         
         for (int i = 0; i < canvas.Length; i++)

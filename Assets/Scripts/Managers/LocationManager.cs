@@ -6,8 +6,13 @@ using UnityEngine.UI;
 
 public class LocationManager : MonoBehaviour
 {
+    private CanvasManager canvasManager;
+    
+    [SerializeField]
     private Image activeBackground;
-
+    [SerializeField]
+    private MapIcon[] mapIcons;
+    
     [System.Serializable]
     public class MapIcon
     {
@@ -15,9 +20,11 @@ public class LocationManager : MonoBehaviour
         public Text buttonText;
         public LocationBase locationInfoOfIcon;
     }
-
-    [SerializeField]
-    private MapIcon[] mapIcons;
+    
+    private void Awake()
+    {
+        canvasManager = gameObject.GetComponent<CanvasManager>();
+    }
 
     private void Start()
     {
@@ -26,5 +33,11 @@ public class LocationManager : MonoBehaviour
             mapIcons[i].buttonText = mapIcons[i].buttonOnMap.GetComponentInChildren<Text>();
             mapIcons[i].buttonText.text = mapIcons[i].locationInfoOfIcon.name;
         }        
+    }
+
+    public void LoadLocation(int locationValue)
+    {
+        canvasManager.ChangeCanvas(0);
+        activeBackground.sprite = mapIcons[locationValue].locationInfoOfIcon.locationBackgroundSprite[0];
     }
 }

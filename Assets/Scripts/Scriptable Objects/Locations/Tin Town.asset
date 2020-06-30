@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: Tin Town
   m_EditorClassIdentifier: 
   locationName: Tin Town
-  iconOnMap:
-    buttonOnMap: {fileID: 0}
-    buttonText: {fileID: 0}
+  visitValue: 0
   evidenceAtLocation:
-  - evidenceAtLocation: []
+  - evidenceClickable: []
     sceneFromEvidence: []
-  locationBackgroundSprite: []
+  locationBackgroundSprite:
+  - {fileID: 21300000, guid: b50f47a375c4243dbae17d542a51f1b1, type: 3}
   scenesAtLocation:
   - {fileID: 0}

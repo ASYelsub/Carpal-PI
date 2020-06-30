@@ -18,4 +18,5 @@ public class LocationBase : ScriptableObject
     public Sprite[] locationBackgroundSprite; //usually 3 for each location
     public SceneTextBase[] scenesAtLocation; //scenes that happen at location that don't happen from
     //clicking on evidence.
+    
 }

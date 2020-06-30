@@ -14,14 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationName: Jailhouse
   visitValue: 0
-  iconOnMap:
-    buttonOnMap: {fileID: 0}
-    buttonText: {fileID: 0}
   evidenceAtLocation:
   - evidenceClickable:
     - {fileID: 0}
     sceneFromEvidence: []
   locationBackgroundSprite:
-  - {fileID: 0}
+  - {fileID: 21300000, guid: d24471cc5a66b4e0f8d1bf0eddc90b79, type: 3}
   scenesAtLocation:
   - {fileID: 0}

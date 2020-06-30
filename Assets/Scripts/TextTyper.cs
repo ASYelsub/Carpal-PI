@@ -12,6 +12,7 @@ public class TextTyper : MonoBehaviour
 
 	[Header("Components")]
 	[SerializeField] private AudioSource mainAudioSource;
+	[SerializeField] private AudioClip theAudioClip;
 		
 	private bool typing;
 	private int counter;
@@ -85,7 +86,7 @@ public class TextTyper : MonoBehaviour
 
 		if(mainAudioSource)
 		{	
-			mainAudioSource.Play();
+			mainAudioSource.PlayOneShot(theAudioClip);
 			RandomiseVolume();
 		}
 

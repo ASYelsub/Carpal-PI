@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b45999c8e2d548648bc0b055a127aba, type: 3}
+  m_Name: Witness
+  m_EditorClassIdentifier: 
+  charNameColor: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
+  charName: Witness
+  charImage: {fileID: 21300000, guid: eb7a7a37edf4b4c3b8df3689965f40f4, type: 3}
