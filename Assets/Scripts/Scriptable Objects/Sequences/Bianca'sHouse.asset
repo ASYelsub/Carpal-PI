@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneTextsInSequence:
   - {fileID: 11400000, guid: ee9cefe550dc441c1bf54268bdec9241, type: 2}
+  - {fileID: 11400000, guid: ee74e2306f6f44b079191461d1a6a084, type: 2}

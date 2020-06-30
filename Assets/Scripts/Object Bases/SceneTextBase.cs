@@ -19,18 +19,16 @@ public class SceneTextBase : ScriptableObject
    public string nameOfExchange;
    [System.Serializable]
    public class DialogueBit
-   {
-      public Character activeChar;
+   { 
+       public Character activeChar;
       public string dialouge;
       public float heartbeatFreq;
       public bool stopIsCorrect;                //you lose a life if you press stop and this is false
       public bool interrogationTimeHappening; //usually only true when witnesses are talking and you
    }                                          //are cross examining them
-   
    public DialogueBit[] dialogueBits;
-   [HideInInspector] public int talkID;
-   [HideInInspector] public int tempTalkID;
 }
+
 
 
 //I think there should probably be three or four different kinds of dialouge bits.

@@ -416,11 +416,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ed4772868f8e4392a50d38f3dec3739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 1482833860}
-  activeChar: {fileID: 1559476065}
-  activeDialogue: {fileID: 1631415543}
-  livesManager: {fileID: 370201627}
-  heartbeatManager: {fileID: 370201624}
+  nameTextDisplay: {fileID: 1482833860}
+  activeCharDisplay: {fileID: 1559476065}
+  dialogueTextDisplay: {fileID: 1631415543}
   textTyper: {fileID: 1631415545}
   case1Logic: {fileID: 1035282009}
 --- !u!114 &370201627
@@ -1221,13 +1219,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2431c7444fd90446bb5b2aced9a343ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScene: {fileID: 0}
+  activeSequence: {fileID: 11400000, guid: aa380dc1d3f5b4e2e92c8104da068dd3, type: 2}
+  activeSceneText: {fileID: 11400000, guid: ee9cefe550dc441c1bf54268bdec9241, type: 2}
   sequencesInCase:
   - {fileID: 11400000, guid: aa380dc1d3f5b4e2e92c8104da068dd3, type: 2}
   - {fileID: 11400000, guid: 663fbb52d5bcf4efea27a70a65dd3960, type: 2}
   - {fileID: 11400000, guid: d0394b4a8532c4ec6851bf2806a199fb, type: 2}
   activeSequenceNumber: 0
+  activeSceneTextNumber: 0
   textManager: {fileID: 370201626}
+  talkID: 0
+  tempTalkID: 0
 --- !u!1 &1115618639
 GameObject:
   m_ObjectHideFlags: 0

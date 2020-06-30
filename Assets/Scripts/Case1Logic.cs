@@ -6,38 +6,46 @@ using UnityEngine;
 public class Case1Logic : MonoBehaviour
 {
     [HideInInspector]
-    public static SequenceBase activeSequence;
-
-    public SceneTextBase currentScene;
+    public SequenceBase activeSequence;
+    [HideInInspector]
+    public SceneTextBase activeSceneText;
+    //public SceneTextBase currentScene;
     
     public SequenceBase[] sequencesInCase;
     public int activeSequenceNumber;
-
+    public int activeSceneTextNumber;
     public TextManager textManager;
-    private void Start()
+    [HideInInspector] public int talkID;
+    [HideInInspector] public int tempTalkID;
+    private void Awake()
     {
         activeSequenceNumber = 0; //starting in Bianca's house
-        currentScene = activeSequence.sceneTextsInSequence[0];
+        activeSceneTextNumber = 0; //starting on first dialouge
+        
+        activeSequence = sequencesInCase[0];
+        activeSceneText = activeSequence.sceneTextsInSequence[0];
+        talkID = 0;
     }
     
-    public void Sequence0Logic()
+    public void AdvanceDialogueBit()
     {
-        
-    }
-
-    public void Sequence1Logic()
-    {
-        
-    }
-
-    public void Sequence2Logic()
-    {
-        if(currentScene == Case1Logic.activeSequence.sceneTextsInSequence[1] || currentScene == Case1Logic.activeSequence.sceneTextsInSequence[2])
+        if (talkID >= activeSceneText.dialogueBits.Length - 1)
         {
-            currentScene = Case1Logic.activeSequence.sceneTextsInSequence[0];
-            currentScene.talkID = currentScene.tempTalkID;
+            talkID = 0;
+            AdvanceSceneText();
+        }
+        else
+        {
+            talkID++;
             textManager.UpdateDialogue();
         }
+    }
+
+    public void AdvanceSceneText()
+    {
+        activeSceneTextNumber++;
+        activeSceneText = activeSequence.sceneTextsInSequence[activeSceneTextNumber];
+        textManager.UpdateDialogue();
     }
     
 }
