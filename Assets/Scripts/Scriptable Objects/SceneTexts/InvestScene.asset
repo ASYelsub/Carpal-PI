@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d80517b085cc346daa0a0626a8323d05, type: 3}
-  m_Name: GotItRightText
+  m_Name: InvestScene
   m_EditorClassIdentifier: 
-  nameOfExchange: Correct General
+  nameOfExchange: Investigation Example
   dialogueBits:
-  - activeChar: {fileID: 11400000, guid: ab1b50ad4c7c9401e9c744f6f0bdf3fb, type: 2}
-    dialouge: Wow what an apt observation!
+  - activeChar: {fileID: 11400000, guid: ffbc8c4e97574415cab78e5db6115d27, type: 2}
+    dialouge: Hmm... It seems we are investigating this place.
     heartbeatFreq: 0.5
+    stopIsCorrect: 0
+    interrogationTimeHappening: 0
+  - activeChar: {fileID: 11400000, guid: ab1b50ad4c7c9401e9c744f6f0bdf3fb, type: 2}
+    dialouge: Yes in fact we are.
+    heartbeatFreq: 0
     stopIsCorrect: 0
     interrogationTimeHappening: 0
   - activeChar: {fileID: 11400000, guid: ffbc8c4e97574415cab78e5db6115d27, type: 2}
-    dialouge: You got it right!
-    heartbeatFreq: 0.5
-    stopIsCorrect: 0
-    interrogationTimeHappening: 0
-  - activeChar: {fileID: 11400000, guid: ab1b50ad4c7c9401e9c744f6f0bdf3fb, type: 2}
-    dialouge: Now we are going back to the main dialouge!
+    dialouge: Cool!
     heartbeatFreq: 0.5
     stopIsCorrect: 0
     interrogationTimeHappening: 0

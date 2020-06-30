@@ -6,9 +6,7 @@ using UnityEngine;
 //The scenetexts there or the order of the scenetexts changes as the player goes through the dialouge.
 //These scenetexts will be ticked with "player has read."
 [CreateAssetMenu(fileName ="Objects",menuName ="Objects/Sequence",order = 0)]
-public class SequenceBase : MonoBehaviour
+public class SequenceBase : ScriptableObject
 {
-   [SerializeField]
-   private SceneTextBase[] sceneTextsInSequence;
-   
+   public SceneTextBase[] sceneTextsInSequence;
 }

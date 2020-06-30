@@ -28,7 +28,8 @@ public class SceneTextBase : ScriptableObject
    }                                          //are cross examining them
    
    public DialogueBit[] dialogueBits;
-
+   [HideInInspector] public int talkID;
+   [HideInInspector] public int tempTalkID;
 }
 
 

@@ -10,7 +10,6 @@ public class CanvasManager : MonoBehaviour
     
     [HideInInspector]
     public int canvasInt;
-    // Update is called once per frame
     
     private TextManager textManager;
     private void Start()
@@ -19,14 +18,13 @@ public class CanvasManager : MonoBehaviour
         canvasInt = 0;
         canvas[0].SetActive(true);
         canvas[1].SetActive(false);
-        canvas[2].SetActive(false);
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if (canvasInt >= 2)
+            if (canvasInt >= 1)
             {
                 canvasInt = 0;
             }
@@ -35,13 +33,11 @@ public class CanvasManager : MonoBehaviour
                 canvasInt++;   
             }
             ChangeCanvas(canvasInt);
-            //print(canvasInt);
         }
     }
 
     public void ChangeCanvas(int theInteger)
     {
-        
         for (int i = 0; i < canvas.Length; i++)
         {
             if (i == theInteger)
@@ -53,7 +49,7 @@ public class CanvasManager : MonoBehaviour
                 canvas[i].SetActive(false);
             }
         }
-        if (theInteger == 2)
+        if (theInteger == canvas.Length -1)
         {
             textManager.UpdateDialogue();
         }

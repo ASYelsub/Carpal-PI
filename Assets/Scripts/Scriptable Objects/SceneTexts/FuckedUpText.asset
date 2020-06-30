@@ -12,17 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d80517b085cc346daa0a0626a8323d05, type: 3}
   m_Name: FuckedUpText
   m_EditorClassIdentifier: 
+  nameOfExchange: Mess Up General
   dialogueBits:
-  - charNameColor: {r: 0.34901962, g: 0.011764706, b: 0.09803922, a: 1}
-    charName: 'Bianca:'
-    charImage: {fileID: 21300000, guid: a9943d2f720434d3990e4b6ca1a640a6, type: 3}
+  - activeChar: {fileID: 11400000, guid: ab1b50ad4c7c9401e9c744f6f0bdf3fb, type: 2}
     dialouge: YOU FUCKE DUP
     heartbeatFreq: 0.7
     stopIsCorrect: 0
     interrogationTimeHappening: 0
-  - charNameColor: {r: 0.34901962, g: 0.011764706, b: 0.09803922, a: 1}
-    charName: 'Bianca:'
-    charImage: {fileID: 21300000, guid: a9943d2f720434d3990e4b6ca1a640a6, type: 3}
+  - activeChar: {fileID: 11400000, guid: ab1b50ad4c7c9401e9c744f6f0bdf3fb, type: 2}
     dialouge: TIME TO GET BACK TO MISERY
     heartbeatFreq: 0.7
     stopIsCorrect: 0
