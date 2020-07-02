@@ -43,6 +43,7 @@ public class TextManager : MonoBehaviour
             else
             {
                 activeCaseLogic.AdvanceDialogueBit();
+                print(activeCaseLogic.activeSequenceNumber);
             }
         }
     }
@@ -53,19 +54,15 @@ public class TextManager : MonoBehaviour
     }
     public void UpdateDialogue()
     {
-        dialogueTextDisplay.text = activeCaseLogic.activeSceneText.dialogueBits[activeCaseLogic.talkID].dialouge;
-        nameTextDisplay.text = activeCaseLogic.activeSceneText.dialogueBits[activeCaseLogic.talkID].activeChar.charName;
-        nameTextDisplay.color = activeCaseLogic.activeSceneText.dialogueBits[activeCaseLogic.talkID].activeChar.charNameColor;
-        activeCharDisplay.sprite = activeCaseLogic.activeSceneText.dialogueBits[activeCaseLogic.talkID].activeChar.charImage;
-        heartbeatManager.ChangeHeartbeat(activeCaseLogic.activeSceneText.dialogueBits[activeCaseLogic.talkID].heartbeatFreq);
-        textTyper.UpdateText(activeCaseLogic.activeSceneText.dialogueBits[activeCaseLogic.talkID].dialouge);
+        dialogueTextDisplay.text = activeCaseLogic.activeSequence.dialogueBitsInSequence[activeCaseLogic.talkID].dialouge;
+        nameTextDisplay.text = activeCaseLogic.activeSequence.dialogueBitsInSequence[activeCaseLogic.talkID].activeChar.charName;
+        nameTextDisplay.color = activeCaseLogic.activeSequence.dialogueBitsInSequence[activeCaseLogic.talkID].activeChar.charNameColor;
+        activeCharDisplay.sprite = activeCaseLogic.activeSequence.dialogueBitsInSequence[activeCaseLogic.talkID].activeChar.charImage;
+        heartbeatManager.ChangeHeartbeat(activeCaseLogic.activeSequence.dialogueBitsInSequence[activeCaseLogic.talkID].heartbeatFreq);
+        textTyper.UpdateText(activeCaseLogic.activeSequence.dialogueBitsInSequence[activeCaseLogic.talkID].dialouge);
     }
 
-    
-    
-    
-    
-    
+
     /*public void StopPressed() //THIS LOGIC NEEDS TO BE MELDED W SEQUENCES
     {
         if (currentScene.dialogueBits[currentScene.talkID].interrogationTimeHappening)

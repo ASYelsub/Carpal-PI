@@ -12,6 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f479bb4278c784cf186b05f0a6e57970, type: 3}
   m_Name: Bianca'sHouse
   m_EditorClassIdentifier: 
-  sceneTextsInSequence:
-  - {fileID: 11400000, guid: ee9cefe550dc441c1bf54268bdec9241, type: 2}
-  - {fileID: 11400000, guid: ee74e2306f6f44b079191461d1a6a084, type: 2}
+  sequenceDescription: Arrive In Biancas House
+  mySequenceType: 0
+  evidenceInSequence: []
+  dialogueBitsInSequence:
+  - activeChar: {fileID: 11400000, guid: ab1b50ad4c7c9401e9c744f6f0bdf3fb, type: 2}
+    dialouge: We are in my house don't look at how messy it is.
+    heartbeatFreq: 1.69
+    stopIsCorrect: 0
+    interrogationTimeHappening: 0
+  - activeChar: {fileID: 11400000, guid: ffbc8c4e97574415cab78e5db6115d27, type: 2}
+    dialouge: I see nothing, dearest Bianca!
+    heartbeatFreq: 0.55
+    stopIsCorrect: 0
+    interrogationTimeHappening: 0
+  - activeChar: {fileID: 11400000, guid: ab1b50ad4c7c9401e9c744f6f0bdf3fb, type: 2}
+    dialouge: You see nothing.
+    heartbeatFreq: 0.55
+    stopIsCorrect: 0
+    interrogationTimeHappening: 0

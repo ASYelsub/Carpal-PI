@@ -171,7 +171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &264309062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,12 +185,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeSequence: {fileID: 0}
-  activeSceneText: {fileID: 0}
-  textTyper: {fileID: 1631415545}
   sequencesInCase:
   - {fileID: 11400000, guid: 663fbb52d5bcf4efea27a70a65dd3960, type: 2}
   activeSequenceNumber: 0
-  activeSceneTextNumber: 0
   textManager: {fileID: 370201626}
   talkID: 0
   tempTalkID: 0
@@ -310,7 +307,7 @@ MonoBehaviour:
   activeImages:
   - {fileID: 1130423567}
   - {fileID: 947664018}
-  textTyper: {fileID: 1631415545}
+  textTyper: {fileID: 0}
   textManager: {fileID: 370201626}
   activeCase: {fileID: 0}
   cases:
@@ -341,14 +338,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeSequence: {fileID: 0}
-  activeSceneText: {fileID: 0}
-  textTyper: {fileID: 1631415545}
-  sequencesInCase:
-  - {fileID: 11400000, guid: aa380dc1d3f5b4e2e92c8104da068dd3, type: 2}
-  - {fileID: 11400000, guid: 663fbb52d5bcf4efea27a70a65dd3960, type: 2}
-  - {fileID: 11400000, guid: d0394b4a8532c4ec6851bf2806a199fb, type: 2}
+  sequencesInCase: []
   activeSequenceNumber: 0
-  activeSceneTextNumber: 0
   textManager: {fileID: 370201626}
   talkID: 0
   tempTalkID: 0
@@ -1261,14 +1252,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeSequence: {fileID: 0}
-  activeSceneText: {fileID: 0}
-  textTyper: {fileID: 1631415545}
   sequencesInCase:
   - {fileID: 11400000, guid: aa380dc1d3f5b4e2e92c8104da068dd3, type: 2}
   - {fileID: 11400000, guid: 663fbb52d5bcf4efea27a70a65dd3960, type: 2}
   - {fileID: 11400000, guid: d0394b4a8532c4ec6851bf2806a199fb, type: 2}
   activeSequenceNumber: 0
-  activeSceneTextNumber: 0
   textManager: {fileID: 370201626}
   talkID: 0
   tempTalkID: 0

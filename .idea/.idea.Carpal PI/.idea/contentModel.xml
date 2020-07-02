@@ -19,7 +19,6 @@
             <e p="Character.cs" t="Include" />
             <e p="Evidence.cs" t="Include" />
             <e p="LocationBase.cs" t="Include" />
-            <e p="SceneTextBase.cs" t="Include" />
             <e p="SequenceBase.cs" t="Include" />
           </e>
           <e p="TextTyper.cs" t="Include" />

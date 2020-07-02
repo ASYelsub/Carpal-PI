@@ -5,7 +5,6 @@ using UnityEngine;
 //This script is used to load whatever case the player is on and reset all values to 0.
 public class GameManager : MonoBehaviour
 {
-    
     [SerializeField]
     private GameObject[] activeImages; //0 is beginning screen, 1 is the case
 
@@ -23,7 +22,8 @@ public class GameManager : MonoBehaviour
         activeImages[0].SetActive(true);
         activeImages[1].SetActive(false);
     }
-
+    
+    ////////////////////////////////////////////////////////////
     public void LoadCase(int caseNumber)
     {
         activeImages[0].SetActive(false);
@@ -46,5 +46,57 @@ public class GameManager : MonoBehaviour
         }
         
     }
-    
+    ////////////////////////////////////////////////////////////
+    /* The functions to initiate different kinds of Sequences */
+    public void InitiateBanter()
+    {
+        
+    }
+    public void InitiateCrossExamine()
+    {
+        
+    }
+    public void InitiateShowSomethingOnEvidence()
+    {
+        
+    }
+    public void InitiateInvestigateItem()
+    {
+        
+    }
+    public void InitiateInterrogateWitness()
+    {
+        
+    }
+    public void InitiateReturn()
+    {
+        
+    }
+    ////////////////////////////////////////////////////////////
+    /* The functions to advance different kinds of Sequences */
+    public void AdvanceBanter()
+    {
+        
+    }
+    public void AdvanceCrossExamine()
+    {
+        
+    }
+    public void AdvanceShowSomethingOnEvidence()
+    {
+        
+    }
+    public void AdvanceInvestigateItem()
+    {
+        
+    }
+    public void AdvanceInterrogateWitness()
+    {
+        
+    }
+    public void AdvanceReturn()
+    {
+        
+    }
+    ////////////////////////////////////////////////////////////
 }
