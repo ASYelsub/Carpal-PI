@@ -13,26 +13,28 @@ public class TextManager : MonoBehaviour
     
     [Header ("Other Scripts")]
     public TextTyper textTyper;
-    public Case1Logic case1Logic;
+    public BaseCaseLogic activeCaseLogic;
     
     //Other Managers
     private LivesManager livesManager;
     private HeartbeatManager heartbeatManager;
-    private CanvasManager canvasManager;
-
+    private GameManager gameManager;
     //dependent on where you are, if you've been there, if you have all the evidence
-    private void Start()
+    private void Awake()
     {
-        canvasManager = GetComponent<CanvasManager>();
+        gameManager = GetComponent<GameManager>();
         livesManager = GetComponent<LivesManager>();
         heartbeatManager = GetComponent<HeartbeatManager>();
+    }
+
+    public void LoadText()
+    {
         UpdateDialogue();
-        
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && canvasManager.canvasInt == 1)
+        if (Input.GetKeyDown(KeyCode.F))
         {
             if (textTyper.IsTyping())
             {
@@ -40,20 +42,26 @@ public class TextManager : MonoBehaviour
             }
             else
             {
-                case1Logic.AdvanceDialogueBit();
+                activeCaseLogic.AdvanceDialogueBit();
             }
         }
     }
 
+    public void UpdateCase()
+    {
+        activeCaseLogic = gameManager.activeCase;
+    }
     public void UpdateDialogue()
     {
-        dialogueTextDisplay.text = case1Logic.activeSceneText.dialogueBits[case1Logic.talkID].dialouge;
-        nameTextDisplay.text = case1Logic.activeSceneText.dialogueBits[case1Logic.talkID].activeChar.charName;
-        nameTextDisplay.color = case1Logic.activeSceneText.dialogueBits[case1Logic.talkID].activeChar.charNameColor;
-        activeCharDisplay.sprite = case1Logic.activeSceneText.dialogueBits[case1Logic.talkID].activeChar.charImage;
-        heartbeatManager.ChangeHeartbeat(case1Logic.activeSceneText.dialogueBits[case1Logic.talkID].heartbeatFreq);
-        textTyper.UpdateText(case1Logic.activeSceneText.dialogueBits[case1Logic.talkID].dialouge);
+        dialogueTextDisplay.text = activeCaseLogic.activeSceneText.dialogueBits[activeCaseLogic.talkID].dialouge;
+        nameTextDisplay.text = activeCaseLogic.activeSceneText.dialogueBits[activeCaseLogic.talkID].activeChar.charName;
+        nameTextDisplay.color = activeCaseLogic.activeSceneText.dialogueBits[activeCaseLogic.talkID].activeChar.charNameColor;
+        activeCharDisplay.sprite = activeCaseLogic.activeSceneText.dialogueBits[activeCaseLogic.talkID].activeChar.charImage;
+        heartbeatManager.ChangeHeartbeat(activeCaseLogic.activeSceneText.dialogueBits[activeCaseLogic.talkID].heartbeatFreq);
+        textTyper.UpdateText(activeCaseLogic.activeSceneText.dialogueBits[activeCaseLogic.talkID].dialouge);
     }
+
+    
     
     
     

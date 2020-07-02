@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Case1Logic : BaseCaseLogic
+public class Case2Logic : BaseCaseLogic
 {
     public void ActivateCase()
     {

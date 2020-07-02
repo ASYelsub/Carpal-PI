@@ -27,17 +27,9 @@ public class SceneTextBase : ScriptableObject
       public bool interrogationTimeHappening; //usually only true when witnesses are talking and you
    }                                          //are cross examining them
    public DialogueBit[] dialogueBits;
+
+   
 }
 
 
 
-//I think there should probably be three or four different kinds of dialouge bits.
-//1: Cross-examination time, has a stop button. Can change what scenetexts are in the sequence.
-//2: Bianca's hint after the cross examination. ???Maybe pretty much the same as cross-examination?
-//3: General Banter/Transition, has a specific before and after scene
-//4: Interrogating people in the open world, unlocking questions after you ask them things to have new
-      // interrogation scenetexts.
-
-
-//This is sort of abstract but taking scenetext to another level:
-//having analysis of objects or maps be a scenetext in the sequence

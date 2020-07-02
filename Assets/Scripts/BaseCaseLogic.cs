@@ -1,9 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Case1Logic : BaseCaseLogic
+//handles maneuvering scenes and sequences in case 1
+public class BaseCaseLogic : MonoBehaviour
 {
+    [HideInInspector]
+    public SequenceBase activeSequence;
+    [HideInInspector]
+    public SceneTextBase activeSceneText;
+    //public SceneTextBase currentScene;
+    [SerializeField]
+    private TextTyper textTyper;
+    public SequenceBase[] sequencesInCase;
+    public int activeSequenceNumber;
+    public int activeSceneTextNumber;
+    public TextManager textManager;
+    [HideInInspector] public int talkID;
+    [HideInInspector] public int tempTalkID;
     public void ActivateCase()
     {
         activeSequenceNumber = 0; //starting in Bianca's house
@@ -36,4 +50,5 @@ public class Case1Logic : BaseCaseLogic
         activeSceneText = activeSequence.sceneTextsInSequence[activeSceneTextNumber];
         textManager.UpdateDialogue();
     }
+    
 }

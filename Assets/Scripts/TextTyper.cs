@@ -17,12 +17,13 @@ public class TextTyper : MonoBehaviour
 	private bool typing;
 	private int counter;
 	private string textToType;
-	private Text textComponent;
+	[SerializeField]
+	private Text textComponent; //this was the weirdest... you can't do "setactive" with a private variable you're assigning on awake or something.
 
 	
-	private void Awake()
+	public void Awake()
 	{
-		textComponent = GetComponent<Text>();
+		//textComponent = gameObject.GetComponent<Text>();
 
 		if(!mainAudioSource)
 		{
@@ -32,6 +33,7 @@ public class TextTyper : MonoBehaviour
 		counter = 0;
 		textToType = textComponent.text;
 		textComponent.text = "";
+		Start();
 	}
 
 	private void Start()
