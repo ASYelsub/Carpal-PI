@@ -7,10 +7,10 @@ public class Case2Logic : BaseCaseLogic
     public void ActivateCase()
     {
         activeSequenceNumber = 0; //starting in Bianca's house
-
         activeSequence = sequencesInCase[0];
         talkID = 0;
-        textManager.LoadText();
+        uiDisplay.LoadText();
+        //textTyper.Activate();
     }
     
     public void AdvanceDialogueBit()
@@ -18,17 +18,21 @@ public class Case2Logic : BaseCaseLogic
         if (talkID >= activeSequence.dialogueBitsInSequence.Length - 1)
         {
             talkID = 0;
-            AdvanceSceneText();
+            AdvanceSequence();
         }
         else
         {
             talkID++;
-            textManager.UpdateDialogue();
+            uiDisplay.UpdateDialogue();
         }
     }
 
-    public void AdvanceSceneText()
+    
+
+    public void AdvanceSequence()
     {
-        textManager.UpdateDialogue();
+        activeSequenceNumber++;
+        activeSequence = sequencesInCase[activeSequenceNumber];
+        uiDisplay.UpdateDialogue();
     }
 }

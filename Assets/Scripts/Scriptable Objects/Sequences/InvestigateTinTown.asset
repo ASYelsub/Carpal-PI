@@ -12,5 +12,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f479bb4278c784cf186b05f0a6e57970, type: 3}
   m_Name: InvestigateTinTown
   m_EditorClassIdentifier: 
-  sceneTextsInSequence:
-  - {fileID: 11400000, guid: e7de3d58b529945a8842b12bfd17b9c4, type: 2}
+  sequenceDescription: Looking at Tin Town for evidence
+  mySequenceType: 3
+  dialogueBitsInSequence:
+  - interrogationTimeHappening: 0
+    lastBitInSequence: 0
+    sequenceBackground: {fileID: 0}
+    heartbeatFreq: 0.5
+    activeChar: {fileID: 11400000, guid: ab1b50ad4c7c9401e9c744f6f0bdf3fb, type: 2}
+    dialouge: We are going to look at Tin Town for evidence.
+    stopIsCorrect: 0
+    investigateItemPic: {fileID: 0}
+    evidenceFromBit: {fileID: 0}
+  - interrogationTimeHappening: 0
+    lastBitInSequence: 0
+    sequenceBackground: {fileID: 0}
+    heartbeatFreq: 0
+    activeChar: {fileID: 0}
+    dialouge: 
+    stopIsCorrect: 0
+    investigateItemPic: {fileID: 0}
+    evidenceFromBit: {fileID: 0}
+  - interrogationTimeHappening: 0
+    lastBitInSequence: 0
+    sequenceBackground: {fileID: 0}
+    heartbeatFreq: 0
+    activeChar: {fileID: 0}
+    dialouge: 
+    stopIsCorrect: 0
+    investigateItemPic: {fileID: 0}
+    evidenceFromBit: {fileID: 0}
+  evidenceInSequence: []

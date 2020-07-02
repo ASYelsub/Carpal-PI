@@ -27,28 +27,25 @@ public class TextManager : MonoBehaviour
         heartbeatManager = GetComponent<HeartbeatManager>();
     }
 
-    public void LoadText()
-    {
-        UpdateDialogue();
-    }
+    
 
-    private void Update()
+    /*private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
-        {
-            if (textTyper.IsTyping())
-            {
-                textTyper.QuickSkip();
-            }
-            else
-            {
-                activeCaseLogic.AdvanceDialogueBit();
-                print(activeCaseLogic.activeSequenceNumber);
-            }
-        }
-    }
+                 {
+                     if (textTyper.IsTyping())
+                     {
+                         textTyper.QuickSkip();
+                     }
+                     else
+                     {
+                         activeCaseLogic.AdvanceDialogueBit();
+                         print(activeCaseLogic.activeSequenceNumber);
+                     }
+                 }
+    }*/
 
-    public void UpdateCase()
+   /* public void UpdateCase()
     {
         activeCaseLogic = gameManager.activeCase;
     }
@@ -60,7 +57,7 @@ public class TextManager : MonoBehaviour
         activeCharDisplay.sprite = activeCaseLogic.activeSequence.dialogueBitsInSequence[activeCaseLogic.talkID].activeChar.charImage;
         heartbeatManager.ChangeHeartbeat(activeCaseLogic.activeSequence.dialogueBitsInSequence[activeCaseLogic.talkID].heartbeatFreq);
         textTyper.UpdateText(activeCaseLogic.activeSequence.dialogueBitsInSequence[activeCaseLogic.talkID].dialouge);
-    }
+    }*/
 
 
     /*public void StopPressed() //THIS LOGIC NEEDS TO BE MELDED W SEQUENCES

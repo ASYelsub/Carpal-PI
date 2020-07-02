@@ -11,16 +11,15 @@ public class BaseCaseLogic : MonoBehaviour
     //public SceneTextBase currentScene;
     public SequenceBase[] sequencesInCase;
     public int activeSequenceNumber;
-    public TextManager textManager;
+    public UIDisplay uiDisplay;
     [HideInInspector] public int talkID;
     [HideInInspector] public int tempTalkID;
     public void ActivateCase()
     {
         activeSequenceNumber = 0; //starting in Bianca's house
-
         activeSequence = sequencesInCase[0];
         talkID = 0;
-        textManager.LoadText();
+        uiDisplay.LoadText();
         //textTyper.Activate();
     }
     
@@ -34,7 +33,7 @@ public class BaseCaseLogic : MonoBehaviour
         else
         {
             talkID++;
-            textManager.UpdateDialogue();
+            uiDisplay.UpdateDialogue();
         }
     }
 
@@ -44,7 +43,7 @@ public class BaseCaseLogic : MonoBehaviour
     {
         activeSequenceNumber++;
         activeSequence = sequencesInCase[activeSequenceNumber];
-        textManager.UpdateDialogue();
+        uiDisplay.UpdateDialogue();
     }
     
 }

@@ -32,7 +32,8 @@ public class SequenceBase : ScriptableObject
       [Header("General Properties")]
       public bool interrogationTimeHappening; //usually only true when witnesses are talking and you are cross examining them
       public bool lastBitInSequence; //once you fulfill the requirement of ending the dialougeBit it goes onto the next sequence
-      
+      public Image sequenceBackground; //sometimes there is evidence in the background
+                                       //sometimes there is not and it is just behind the stuff
       [Header("Everything But SSOE")]
       public float heartbeatFreq;
       public Character activeChar;
@@ -48,6 +49,8 @@ public class SequenceBase : ScriptableObject
       public Evidence evidenceFromBit; //evidence that gets added to the courtRecord when this bit is cycled through
    }                                         
    public DialogueBit[] dialogueBitsInSequence;
-   
+   public Evidence[] evidenceInSequence; //this number changes from sequence to sequence,
+                                    //the player must collect all the evidence
+                                    //in this sequence to proceed, it's like finite
 
 }
