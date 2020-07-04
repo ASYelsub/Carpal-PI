@@ -28,16 +28,19 @@ public class View : MonoBehaviour
         dialogueTextDisplay.gameObject.SetActive(false);
         backgroundImage.gameObject.SetActive(false);
         courtRecordDisplay.SetActive(false);
+        backgroundImage.gameObject.SetActive(false);
         stopButton.SetActive(false);
     }
 
-    public void DisplayBanter(bool isSettingComponents)
-    { if (!isSettingComponents) {
+    public void DisplayBanter(bool componentsAreSet)
+    { if (!componentsAreSet) {
             nameTextDisplay.gameObject.SetActive(true);
             activeCharDisplay.gameObject.SetActive(true);
             dialogueTextDisplay.gameObject.SetActive(true);
             backgroundImage.gameObject.SetActive(true);
             courtRecordDisplay.SetActive(false);
+            backgroundImage.gameObject.SetActive(true);
+            backgroundImage.sprite = model.activeCase.activeSequence.sequenceLocation.locationBackgroundSprite[0];
             stopButton.SetActive(false);
             print("components set");
         }
@@ -65,14 +68,16 @@ public class View : MonoBehaviour
     {
         
     }
-    public void DisplayInterrogateWitness(bool isSettingComponents)
+    public void DisplayInterrogateWitness(bool componentsAreSet)
     {
-        if (!isSettingComponents) {
+        if (!componentsAreSet) {
             nameTextDisplay.gameObject.SetActive(true);
             activeCharDisplay.gameObject.SetActive(true);
             dialogueTextDisplay.gameObject.SetActive(true);
             backgroundImage.gameObject.SetActive(true);
             courtRecordDisplay.SetActive(false);
+            backgroundImage.gameObject.SetActive(true);
+            backgroundImage.sprite = model.activeCase.activeSequence.sequenceLocation.locationBackgroundSprite[0];
             stopButton.SetActive(true);
             print("components set");
         }

@@ -58,6 +58,19 @@ public class Model : MonoBehaviour
         print(activeCase.activeSequence.mySequenceType);
     }
 
+    //LOGIC TO BE PROGRAMMED IN
+    //called when pressing f, unable to do this with investigateitem. different logic is called for the other kinds.
+    //for banter, the text goes through until the end of the sequence and then does AdvanceToNextSequence.
+    //for crossexamine, the text filters through and loops until the information integer has been appeased,
+    //and then AdvanceToNextSequence is called
+    //for showsomethingonevidence, the player clicks a correct spot on an image and then AdvanceToNextSequence is
+    //called
+    //for investigateItem, the player clicks somewhere on the background to trigger an item to be investigated,
+    //this triggers the banter sequence associated with that evidence to be shown... (this one needs to be
+    //thought out a bit more, it may be the death of linearly progressing sequences or AdvanceToNextSequence()
+    //not being on BaseCaseLogic and be like AdvanceToNextSequence(SequenceInt) where SequenceInt has important
+    //shit it does on BaseCaseObject.
+    //For Return... I forget the difference between this and Banter. OOPS
     public void TextProgress()
     {
         if (TextTyper.IsTyping())
