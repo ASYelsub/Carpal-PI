@@ -17,6 +17,10 @@ public class SequenceBase : ScriptableObject
       InterrogateWitness,
       Return
    };
+
+   public LocationBase sequenceLocation; //sometimes there is evidence in the background
+   //sometimes there is not and it is just behind the stuff
+
    //Banter : Talking in or outside court, does not loop, cannot lose health/health not shown
    //CrossExamine : Loops, have the ability to press "STOP,"
    //                  is done looping when everything is learned from testimony, can lose health
@@ -32,8 +36,7 @@ public class SequenceBase : ScriptableObject
       [Header("General Properties")]
       public bool interrogationTimeHappening; //usually only true when witnesses are talking and you are cross examining them
       public bool lastBitInSequence; //once you fulfill the requirement of ending the dialougeBit it goes onto the next sequence
-      public Image sequenceBackground; //sometimes there is evidence in the background
-                                       //sometimes there is not and it is just behind the stuff
+      
       [Header("Everything But SSOE")]
       public float heartbeatFreq;
       public Character activeChar;

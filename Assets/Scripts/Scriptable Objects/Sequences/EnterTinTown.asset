@@ -10,21 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f479bb4278c784cf186b05f0a6e57970, type: 3}
-  m_Name: InvestigateTinTown
+  m_Name: EnterTinTown
   m_EditorClassIdentifier: 
-  sequenceDescription: Looking at Tin Town for evidence
-  mySequenceType: 3
+  sequenceDescription: Enter Tin Town
+  mySequenceType: 0
   sequenceLocation: {fileID: 11400000, guid: 41e0094a981644906bf89ebcfa40b460, type: 2}
   dialogueBitsInSequence:
   - interrogationTimeHappening: 0
     lastBitInSequence: 0
-    heartbeatFreq: 0.5
+    heartbeatFreq: 0.4
     activeChar: {fileID: 11400000, guid: ab1b50ad4c7c9401e9c744f6f0bdf3fb, type: 2}
-    dialouge: 
+    dialouge: 'We are now in tin town and you will progress to a new type of sequence
+      after pressing f. '
     stopIsCorrect: 0
     investigateItemPic: {fileID: 0}
     evidenceFromBit: {fileID: 0}
-  evidenceInSequence:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  evidenceInSequence: []

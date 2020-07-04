@@ -12,7 +12,11 @@
           <e p="Managers" t="Include">
             <e p="HeartbeatManager.cs" t="Include" />
             <e p="LivesManager.cs" t="Include" />
-            <e p="TextManager.cs" t="Include" />
+          </e>
+          <e p="MVC" t="Include">
+            <e p="Controller.cs" t="Include" />
+            <e p="Model.cs" t="Include" />
+            <e p="View.cs" t="Include" />
           </e>
           <e p="Object Bases" t="Include">
             <e p="Character.cs" t="Include" />

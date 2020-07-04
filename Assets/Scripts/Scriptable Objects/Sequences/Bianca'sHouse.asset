@@ -14,20 +14,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sequenceDescription: Arrive In Biancas House
   mySequenceType: 0
-  evidenceInSequence: []
+  sequenceLocation: {fileID: 11400000, guid: 0431deb7aaaee485ebce02e454b7dc8b, type: 2}
   dialogueBitsInSequence:
-  - activeChar: {fileID: 11400000, guid: ab1b50ad4c7c9401e9c744f6f0bdf3fb, type: 2}
-    dialouge: We are in my house don't look at how messy it is.
+  - interrogationTimeHappening: 0
+    lastBitInSequence: 0
     heartbeatFreq: 1.69
+    activeChar: {fileID: 11400000, guid: ab1b50ad4c7c9401e9c744f6f0bdf3fb, type: 2}
+    dialouge: We are in my house don't look at how messy it is.
     stopIsCorrect: 0
-    interrogationTimeHappening: 0
-  - activeChar: {fileID: 11400000, guid: ffbc8c4e97574415cab78e5db6115d27, type: 2}
+    investigateItemPic: {fileID: 0}
+    evidenceFromBit: {fileID: 0}
+  - interrogationTimeHappening: 0
+    lastBitInSequence: 0
+    heartbeatFreq: 0.55
+    activeChar: {fileID: 11400000, guid: ffbc8c4e97574415cab78e5db6115d27, type: 2}
     dialouge: I see nothing, dearest Bianca!
-    heartbeatFreq: 0.55
     stopIsCorrect: 0
-    interrogationTimeHappening: 0
-  - activeChar: {fileID: 11400000, guid: ab1b50ad4c7c9401e9c744f6f0bdf3fb, type: 2}
+    investigateItemPic: {fileID: 0}
+    evidenceFromBit: {fileID: 0}
+  - interrogationTimeHappening: 0
+    lastBitInSequence: 0
+    heartbeatFreq: 0.55
+    activeChar: {fileID: 11400000, guid: ab1b50ad4c7c9401e9c744f6f0bdf3fb, type: 2}
     dialouge: You see nothing.
-    heartbeatFreq: 0.55
     stopIsCorrect: 0
-    interrogationTimeHappening: 0
+    investigateItemPic: {fileID: 0}
+    evidenceFromBit: {fileID: 0}
+  evidenceInSequence: []
