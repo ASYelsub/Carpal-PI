@@ -494,7 +494,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 264309063}
-  - component: {fileID: 264309062}
   m_Layer: 0
   m_Name: LogicHolder2
   m_TagString: Untagged
@@ -502,25 +501,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &264309062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 264309061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b0d230e98872481b9f60980e53b003c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeSequence: {fileID: 0}
-  sequencesInCase:
-  - {fileID: 11400000, guid: 663fbb52d5bcf4efea27a70a65dd3960, type: 2}
-  activeSequenceNumber: 0
-  uiDisplay: {fileID: 0}
-  talkID: 0
-  tempTalkID: 0
 --- !u!4 &264309063
 Transform:
   m_ObjectHideFlags: 0
@@ -620,9 +600,9 @@ GameObject:
   - component: {fileID: 370201625}
   - component: {fileID: 370201624}
   - component: {fileID: 370201627}
-  - component: {fileID: 370201628}
-  - component: {fileID: 370201630}
   - component: {fileID: 370201629}
+  - component: {fileID: 370201628}
+  - component: {fileID: 370201626}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -637,7 +617,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 370201623}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31a612f46aa214be1b0a673f43a3e80a, type: 3}
   m_Name: 
@@ -660,6 +640,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &370201626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370201623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ebd2bce7f3c8487fb0c3f0a0ac0de61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameTextDisplay: {fileID: 1482833860}
+  activeCharDisplay: {fileID: 1559476065}
+  dialogueTextDisplay: {fileID: 1631415543}
+  courtRecordDisplay: {fileID: 693773544}
+  backgroundImage: {fileID: 157102155}
+  stopButton: {fileID: 1777619822}
+  evidenceDisplay:
+  - {fileID: 103856359}
+  - {fileID: 1163387030}
+  - {fileID: 830885588}
+  - {fileID: 1973995973}
+  - {fileID: 278833146}
+  model: {fileID: 370201629}
+  controller: {fileID: 370201628}
+  heartbeatManager: {fileID: 370201624}
+  textTyper: {fileID: 1631415545}
 --- !u!114 &370201627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -667,7 +675,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 370201623}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa96a4f84b0024eab806c84291f9e9a1, type: 3}
   m_Name: 
@@ -687,48 +695,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 370201623}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95120b07ef40d4e38be014c1bd59715f, type: 3}
+  m_Script: {fileID: 11500000, guid: 7adb92e8c73cf4ae88f0d5c4740eda54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeImages:
-  - {fileID: 1130423567}
-  - {fileID: 947664018}
-  textTyper: {fileID: 1631415545}
-  uiDisplay: {fileID: 370201629}
-  activeCase: {fileID: 0}
-  cases:
-  - {fileID: 1035282010}
-  - {fileID: 264309062}
+  model: {fileID: 370201629}
+  view: {fileID: 370201626}
 --- !u!114 &370201629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 370201623}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba814ce31b33e49929bf7bd9b3cef23c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameTextDisplay: {fileID: 1482833860}
-  activeCharDisplay: {fileID: 1559476065}
-  dialogueTextDisplay: {fileID: 1631415543}
-  courtRecordDisplay: {fileID: 693773544}
-  evidenceDisplay:
-  - {fileID: 103856359}
-  - {fileID: 1163387030}
-  - {fileID: 830885588}
-  - {fileID: 1973995973}
-  - {fileID: 278833146}
-  case1Logic: {fileID: 1035282010}
-  gameManager: {fileID: 370201628}
-  textTyper: {fileID: 1631415545}
-  heartbeatManager: {fileID: 370201624}
-  livesManager: {fileID: 370201627}
-  activeSequenceBase: {fileID: 0}
-  activeCaseLogic: {fileID: 0}
---- !u!114 &370201630
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -737,15 +709,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 370201623}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2431c7444fd90446bb5b2aced9a343ec, type: 3}
+  m_Script: {fileID: 11500000, guid: fc7e0f210db694a2fbf447b2a285b9d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeSequence: {fileID: 0}
-  sequencesInCase: []
-  activeSequenceNumber: 0
-  uiDisplay: {fileID: 370201629}
-  talkID: 0
-  tempTalkID: 0
+  view: {fileID: 370201626}
+  controller: {fileID: 370201628}
+  TextTyper: {fileID: 1631415545}
+  cases:
+  - {fileID: 1035282009}
+  - {fileID: 1035282009}
+  activeCase: {fileID: 0}
 --- !u!1 &379541470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1533,12 +1506,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 370201628}
-        m_MethodName: LoadCase
+        m_MethodName: GetActiveCase
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1944,7 +1917,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1035282008}
-  - component: {fileID: 1035282010}
+  - component: {fileID: 1035282009}
   m_Layer: 0
   m_Name: LogicHolder1
   m_TagString: Untagged
@@ -1966,7 +1939,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1035282010
+--- !u!114 &1035282009
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1975,18 +1948,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1035282007}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bef66fc651844f249d47dc952896cf5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2431c7444fd90446bb5b2aced9a343ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   activeSequence: {fileID: 0}
   sequencesInCase:
   - {fileID: 11400000, guid: aa380dc1d3f5b4e2e92c8104da068dd3, type: 2}
   - {fileID: 11400000, guid: 4e125ee8b14a24680a1dd3e90ed0a7a1, type: 2}
-  - {fileID: 11400000, guid: 663fbb52d5bcf4efea27a70a65dd3960, type: 2}
-  activeSequenceNumber: 0
-  uiDisplay: {fileID: 370201629}
+  - {fileID: 11400000, guid: d0394b4a8532c4ec6851bf2806a199fb, type: 2}
   talkID: 0
   tempTalkID: 0
+  activeSequenceNumber: 0
 --- !u!1 &1130423567
 GameObject:
   m_ObjectHideFlags: 0
@@ -2182,12 +2154,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 370201628}
-        m_MethodName: LoadCase
+        m_MethodName: GetActiveCase
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3265,7 +3237,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 370201629}
+      - m_Target: {fileID: 0}
         m_MethodName: UpdateCourtRecordState
         m_Mode: 1
         m_Arguments:

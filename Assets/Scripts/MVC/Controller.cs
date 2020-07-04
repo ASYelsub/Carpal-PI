@@ -9,9 +9,6 @@ public class Controller : MonoBehaviour
     public Model model;
     public View view;
 
-    
-    
-
     //This function gets an integer from one of the two start buttons to set the activeCase.
     //1 is the first case. 2 is the second case.
     public void GetActiveCase(int caseNumber)
@@ -20,9 +17,9 @@ public class Controller : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F))
+        if(Input.GetKeyDown(KeyCode.F) && model.activeCase.activeSequence.mySequenceType != SequenceBase.SequenceType.InvestigateItem)
         {
-            //
+            model.TextProgress();
         }
     }
 }

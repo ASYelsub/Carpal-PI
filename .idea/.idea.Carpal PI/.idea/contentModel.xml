@@ -6,9 +6,6 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="BaseCaseLogic.cs" t="Include" />
-          <e p="Case1Logic.cs" t="Include" />
-          <e p="Case2Logic.cs" t="Include" />
-          <e p="GameManager.cs" t="Include" />
           <e p="Managers" t="Include">
             <e p="HeartbeatManager.cs" t="Include" />
             <e p="LivesManager.cs" t="Include" />
@@ -25,7 +22,6 @@
             <e p="SequenceBase.cs" t="Include" />
           </e>
           <e p="TextTyper.cs" t="Include" />
-          <e p="UIDisplay.cs" t="Include" />
         </e>
       </e>
       <e p="Carpal PI.sln" t="IncludeFlat" />

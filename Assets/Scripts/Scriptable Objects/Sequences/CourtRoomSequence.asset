@@ -12,7 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f479bb4278c784cf186b05f0a6e57970, type: 3}
   m_Name: CourtRoomSequence
   m_EditorClassIdentifier: 
-  sceneTextsInSequence:
-  - {fileID: 11400000, guid: 224da3ff6529943e0bda9d31488938e0, type: 2}
-  - {fileID: 11400000, guid: 2efd68c62abed4803a84c198e2d11b93, type: 2}
-  - {fileID: 11400000, guid: 1bcd4a92dad644608a05b362d829b3d5, type: 2}
+  sequenceDescription: 
+  mySequenceType: 4
+  sequenceLocation: {fileID: 11400000, guid: 6040e972ede1049e499ce023e3d352b8, type: 2}
+  dialogueBitsInSequence:
+  - interrogationTimeHappening: 1
+    lastBitInSequence: 0
+    heartbeatFreq: 0.99
+    activeChar: {fileID: 11400000, guid: ab1b50ad4c7c9401e9c744f6f0bdf3fb, type: 2}
+    dialouge: HI TIME TO PRESS STOOP
+    stopIsCorrect: 0
+    investigateItemPic: {fileID: 0}
+    evidenceFromBit: {fileID: 0}
+  evidenceInSequence: []
