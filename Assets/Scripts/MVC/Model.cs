@@ -71,7 +71,7 @@ public class Model : MonoBehaviour
     //not being on BaseCaseLogic and be like AdvanceToNextSequence(SequenceInt) where SequenceInt has important
     //shit it does on BaseCaseObject.
     //For Return... I forget the difference between this and Banter. OOPS
-    public void TextProgress()
+    public void TextProgressBanter()
     {
         if (TextTyper.IsTyping())
         {
@@ -87,6 +87,29 @@ public class Model : MonoBehaviour
             {
                 activeCase.talkID++;
                 view.DisplayBanter(true);   
+            }
+        }
+    }
+
+    //This code is currently copying banter, it needs to be able to loop around on itself,
+    //switch out dialoguebits when stop and the correct evidence are used, and then progress
+    //to the next sequence when all the dialogueBits are in their ultimate "discovered" state.
+    public void TextProgressCrossExamine()
+    {
+        if (TextTyper.IsTyping())
+        {
+            TextTyper.QuickSkip();
+        }
+        else
+        {
+            if (activeCase.talkID >= activeCase.activeSequence.dialogueBitsInSequence.Length - 1)
+            {
+                AdvanceToNextSequence();
+            }
+            else
+            {
+                activeCase.talkID++;
+                view.DisplayCrossExamine(true);  
             }
         }
     }

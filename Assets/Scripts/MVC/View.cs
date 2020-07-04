@@ -21,6 +21,7 @@ public class View : MonoBehaviour
     public HeartbeatManager heartbeatManager;
     public TextTyper textTyper;
 
+    public bool courtRecordIsActive;
     private void Awake()
     {
         nameTextDisplay.gameObject.SetActive(false);
@@ -28,8 +29,15 @@ public class View : MonoBehaviour
         dialogueTextDisplay.gameObject.SetActive(false);
         backgroundImage.gameObject.SetActive(false);
         courtRecordDisplay.SetActive(false);
+        courtRecordIsActive = false;
         backgroundImage.gameObject.SetActive(false);
         stopButton.SetActive(false);
+    }
+
+    public void ToggleCourtRecord()
+    {
+        courtRecordIsActive = !courtRecordIsActive;
+        courtRecordDisplay.SetActive(courtRecordIsActive);
     }
 
     public void DisplayBanter(bool componentsAreSet)
@@ -56,19 +64,7 @@ public class View : MonoBehaviour
             .heartbeatFreq);
         textTyper.UpdateText(model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].dialouge);
     }
-    public void DisplayCrossExamine(bool isSettingComponents)
-    {
-        
-    }
-    public void DisplayShowSomethingOnEvidence(bool isSettingComponents)
-    {
-        
-    }
-    public void DisplayInvestigateItem(bool isSettingComponents)
-    {
-        
-    }
-    public void DisplayInterrogateWitness(bool componentsAreSet)
+    public void DisplayCrossExamine(bool componentsAreSet)
     {
         if (!componentsAreSet) {
             nameTextDisplay.gameObject.SetActive(true);
@@ -92,9 +88,42 @@ public class View : MonoBehaviour
         heartbeatManager.ChangeHeartbeat(model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID]
             .heartbeatFreq);
         textTyper.UpdateText(model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].dialouge);
+    }
+    public void DisplayShowSomethingOnEvidence(bool componentsAreSet)
+    {
+        
+    }
+    public void DisplayInvestigateItem(bool componentsAreSet)
+    {
+        
+    }
+    public void DisplayInterrogateWitness(bool componentsAreSet)
+    {
+        if (!componentsAreSet) {
+            nameTextDisplay.gameObject.SetActive(true);
+            activeCharDisplay.gameObject.SetActive(true);
+            dialogueTextDisplay.gameObject.SetActive(true);
+            backgroundImage.gameObject.SetActive(true);
+            courtRecordDisplay.SetActive(false);
+            backgroundImage.gameObject.SetActive(true);
+            backgroundImage.sprite = model.activeCase.activeSequence.sequenceLocation.locationBackgroundSprite[0];
+            stopButton.SetActive(false);
+            print("components set");
+        }
+        nameTextDisplay.text = 
+            model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].activeChar.charName;
+        dialogueTextDisplay.text =
+            model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].dialouge;
+        nameTextDisplay.color = 
+            model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].activeChar.charNameColor;
+        activeCharDisplay.sprite = 
+            model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].activeChar.charImage;
+        heartbeatManager.ChangeHeartbeat(model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID]
+            .heartbeatFreq);
+        textTyper.UpdateText(model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].dialouge);
 
     }
-    public void DisplayReturn(bool isSettingComponents)
+    public void DisplayReturn(bool componentsAreSet)
     {
         
     }

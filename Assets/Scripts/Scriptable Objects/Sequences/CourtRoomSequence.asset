@@ -13,15 +13,23 @@ MonoBehaviour:
   m_Name: CourtRoomSequence
   m_EditorClassIdentifier: 
   sequenceDescription: 
-  mySequenceType: 4
+  mySequenceType: 1
   sequenceLocation: {fileID: 11400000, guid: 6040e972ede1049e499ce023e3d352b8, type: 2}
   dialogueBitsInSequence:
   - interrogationTimeHappening: 1
     lastBitInSequence: 0
     heartbeatFreq: 0.99
     activeChar: {fileID: 11400000, guid: ab1b50ad4c7c9401e9c744f6f0bdf3fb, type: 2}
-    dialouge: HI TIME TO PRESS STOOP
+    dialouge: Hi we are in the cross examine sequence.
     stopIsCorrect: 0
+    investigateItemPic: {fileID: 0}
+    evidenceFromBit: {fileID: 0}
+  - interrogationTimeHappening: 1
+    lastBitInSequence: 0
+    heartbeatFreq: 0.99
+    activeChar: {fileID: 11400000, guid: ab1b50ad4c7c9401e9c744f6f0bdf3fb, type: 2}
+    dialouge: HI TIME TO PRESS STOOP
+    stopIsCorrect: 1
     investigateItemPic: {fileID: 0}
     evidenceFromBit: {fileID: 0}
   evidenceInSequence: []

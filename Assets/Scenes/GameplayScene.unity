@@ -1955,7 +1955,7 @@ MonoBehaviour:
   sequencesInCase:
   - {fileID: 11400000, guid: aa380dc1d3f5b4e2e92c8104da068dd3, type: 2}
   - {fileID: 11400000, guid: 4e125ee8b14a24680a1dd3e90ed0a7a1, type: 2}
-  - {fileID: 11400000, guid: d0394b4a8532c4ec6851bf2806a199fb, type: 2}
+  - {fileID: 11400000, guid: 663fbb52d5bcf4efea27a70a65dd3960, type: 2}
   talkID: 0
   tempTalkID: 0
   activeSequenceNumber: 0
@@ -3237,8 +3237,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: UpdateCourtRecordState
+      - m_Target: {fileID: 370201626}
+        m_MethodName: ToggleCourtRecord
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

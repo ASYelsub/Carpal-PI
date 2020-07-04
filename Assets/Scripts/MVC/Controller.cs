@@ -17,9 +17,19 @@ public class Controller : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F) && model.activeCase.activeSequence.mySequenceType != SequenceBase.SequenceType.InvestigateItem)
+        if (!view.courtRecordIsActive)
         {
-            model.TextProgress();
+            if(Input.GetKeyDown(KeyCode.F) && 
+               model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.Banter)
+            {
+                model.TextProgressBanter();
+            }
+
+            if (Input.GetKeyDown(KeyCode.F) &&
+                model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.CrossExamine)
+            {
+                model.TextProgressCrossExamine();
+            }   
         }
     }
 }
