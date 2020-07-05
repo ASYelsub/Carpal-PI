@@ -25,11 +25,27 @@ public class Controller : MonoBehaviour
                 model.TextProgressBanter();
             }
 
-            if (Input.GetKeyDown(KeyCode.F) &&
+            else if (Input.GetKeyDown(KeyCode.F) &&
                 model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.CrossExamine)
             {
                 model.TextProgressCrossExamine();
+                print(" f pressed");
             }   
+        }
+    }
+
+    public void StopDuringCrossExamine()
+    {
+        if (!view.courtRecordIsActive)
+        {
+            if (model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.CrossExamine)
+            {
+                model.OpenCourtRecordViaStop();
+            }
+            else
+            {
+                print("stop pressed during incompatible sequenceType");
+            }
         }
     }
 }

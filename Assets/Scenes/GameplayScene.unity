@@ -281,6 +281,7 @@ GameObject:
   - component: {fileID: 200220398}
   - component: {fileID: 200220397}
   - component: {fileID: 200220399}
+  - component: {fileID: 200220400}
   m_Layer: 5
   m_Name: Background - Evidence4
   m_TagString: Untagged
@@ -352,7 +353,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 200220395}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
@@ -360,6 +361,49 @@ MonoBehaviour:
   m_EffectColor: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 1}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &200220400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200220395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 370201626}
+          m_MethodName: InCourtRecordDisplayEvidenceOutline
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 370201626}
+          m_MethodName: InCourtRecordDisplayEvidenceOutline
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 6
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &222623267
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,6 +450,7 @@ GameObject:
   - component: {fileID: 239180381}
   - component: {fileID: 239180380}
   - component: {fileID: 239180382}
+  - component: {fileID: 239180383}
   m_Layer: 5
   m_Name: Background - Evidence2
   m_TagString: Untagged
@@ -477,7 +522,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239180378}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
@@ -485,6 +530,49 @@ MonoBehaviour:
   m_EffectColor: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 1}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &239180383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239180378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 370201626}
+          m_MethodName: InCourtRecordDisplayEvidenceOutline
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 370201626}
+          m_MethodName: InCourtRecordDisplayEvidenceOutline
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 6
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &264309061
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,16 +746,27 @@ MonoBehaviour:
   courtRecordDisplay: {fileID: 693773544}
   backgroundImage: {fileID: 157102155}
   stopButton: {fileID: 1777619822}
+  textboxBack: {fileID: 428996314}
+  heartbeatDisplay: {fileID: 965503445}
   evidenceDisplay:
   - {fileID: 103856359}
   - {fileID: 1163387030}
   - {fileID: 830885588}
   - {fileID: 1973995973}
   - {fileID: 278833146}
+  evidenceBackOutline:
+  - {fileID: 2029611825}
+  - {fileID: 239180382}
+  - {fileID: 2126707796}
+  - {fileID: 200220399}
+  - {fileID: 629558149}
+  preCase: {fileID: 1130423567}
+  duringCase: {fileID: 947664018}
   model: {fileID: 370201629}
   controller: {fileID: 370201628}
   heartbeatManager: {fileID: 370201624}
   textTyper: {fileID: 1631415545}
+  courtRecordIsActive: 0
 --- !u!114 &370201627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1188,6 +1287,7 @@ GameObject:
   - component: {fileID: 629558148}
   - component: {fileID: 629558147}
   - component: {fileID: 629558149}
+  - component: {fileID: 629558150}
   m_Layer: 5
   m_Name: Background - Evidence5
   m_TagString: Untagged
@@ -1259,7 +1359,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629558145}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
@@ -1267,6 +1367,49 @@ MonoBehaviour:
   m_EffectColor: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 1}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &629558150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629558145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 370201626}
+          m_MethodName: InCourtRecordDisplayEvidenceOutline
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 4
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 370201626}
+          m_MethodName: InCourtRecordDisplayEvidenceOutline
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 6
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &655087965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1955,10 +2098,13 @@ MonoBehaviour:
   sequencesInCase:
   - {fileID: 11400000, guid: aa380dc1d3f5b4e2e92c8104da068dd3, type: 2}
   - {fileID: 11400000, guid: 4e125ee8b14a24680a1dd3e90ed0a7a1, type: 2}
-  - {fileID: 11400000, guid: 663fbb52d5bcf4efea27a70a65dd3960, type: 2}
+  - {fileID: 11400000, guid: d0394b4a8532c4ec6851bf2806a199fb, type: 2}
   talkID: 0
   tempTalkID: 0
   activeSequenceNumber: 0
+  evidenceCollectedNumber: 0
+  evidenceProgressionReq: 0
+  testimonyProgressionReq: 0
 --- !u!1 &1130423567
 GameObject:
   m_ObjectHideFlags: 0
@@ -3367,8 +3513,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: StopPressed
+      - m_Target: {fileID: 370201628}
+        m_MethodName: StopDuringCrossExamine
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4010,6 +4156,7 @@ GameObject:
   - component: {fileID: 2029611824}
   - component: {fileID: 2029611823}
   - component: {fileID: 2029611825}
+  - component: {fileID: 2029611826}
   m_Layer: 5
   m_Name: Background - Evidence1
   m_TagString: Untagged
@@ -4081,7 +4228,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029611821}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
@@ -4089,6 +4236,49 @@ MonoBehaviour:
   m_EffectColor: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 1}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &2029611826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029611821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 370201626}
+          m_MethodName: InCourtRecordDisplayEvidenceOutline
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 370201626}
+          m_MethodName: InCourtRecordDisplayEvidenceOutline
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 6
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2126707792
 GameObject:
   m_ObjectHideFlags: 0
@@ -4101,6 +4291,7 @@ GameObject:
   - component: {fileID: 2126707795}
   - component: {fileID: 2126707794}
   - component: {fileID: 2126707796}
+  - component: {fileID: 2126707797}
   m_Layer: 5
   m_Name: Background - Evidence3
   m_TagString: Untagged
@@ -4172,7 +4363,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126707792}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
@@ -4180,3 +4371,46 @@ MonoBehaviour:
   m_EffectColor: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 1}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &2126707797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126707792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 370201626}
+          m_MethodName: InCourtRecordDisplayEvidenceOutline
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 370201626}
+          m_MethodName: InCourtRecordDisplayEvidenceOutline
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 6
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

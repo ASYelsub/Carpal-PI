@@ -18,9 +18,12 @@ public class Model : MonoBehaviour
 
     public void SetActiveCase(int caseNumber)
     {
+        view.duringCase.SetActive(true);
+        view.preCase.SetActive(false);
         cases[caseNumber].ActivateCase();
         activeCase = cases[caseNumber];
         CheckSequenceType(false);
+        
     }
     
     //This function looks at the sequence type of the
@@ -104,7 +107,8 @@ public class Model : MonoBehaviour
         {
             if (activeCase.talkID >= activeCase.activeSequence.dialogueBitsInSequence.Length - 1)
             {
-                AdvanceToNextSequence();
+                activeCase.talkID = 0;
+                view.DisplayCrossExamine( true);
             }
             else
             {
@@ -112,6 +116,12 @@ public class Model : MonoBehaviour
                 view.DisplayCrossExamine(true);  
             }
         }
+    }
+
+    public void OpenCourtRecordViaStop()
+    {
+        TextTyper.QuickSkip();
+        view.ToggleCourtRecord();
     }
 
     public void AdvanceToNextSequence()

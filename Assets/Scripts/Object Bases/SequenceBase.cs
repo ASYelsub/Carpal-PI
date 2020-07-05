@@ -30,6 +30,8 @@ public class SequenceBase : ScriptableObject
    //InterrogateWitness : Talking to someone at crime scene, questions unlock the more you listen to them. Other locations unlock as well.
    //                     Way to add to CourtRecord
    //Return : This is what plays if you go to a location where you've gotten everything.
+  
+   public Evidence[] evidenceInSequence; 
    [System.Serializable]
    public class DialogueBit
    {
@@ -47,13 +49,12 @@ public class SequenceBase : ScriptableObject
 
       [Header("Inv Item Only")]
       public Image investigateItemPic; //picture that shows up after you click on an item
+                                       ////number the player is expected to fill to continue 
       
       [Header("Inv Item and Interrogate")]
       public Evidence evidenceFromBit; //evidence that gets added to the courtRecord when this bit is cycled through
    }                                         
    public DialogueBit[] dialogueBitsInSequence;
-   public Evidence[] evidenceInSequence; //this number changes from sequence to sequence,
-                                    //the player must collect all the evidence
-                                    //in this sequence to proceed, it's like finite
+   
 
 }
