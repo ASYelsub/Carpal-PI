@@ -56,6 +56,15 @@ public class View : MonoBehaviour
         }
     }
 
+    public void DisplayEvidenceInCourtRecord()
+    {
+        print("is this happening?");
+        for (int i = 0; i <= 4; i++) //5 is the amount of slots in the thing
+        {
+            evidenceDisplay[i].sprite = model.evidenceRows[model.activeEvidenceRowNumber].evidenceInEvidenceRow[i].imageInCourtRecord;
+        }
+        print("yes it happened.");
+    }
     public void DisplayBanter(bool componentsAreSet)
     { if (!componentsAreSet) {
             nameTextDisplay.gameObject.SetActive(true);

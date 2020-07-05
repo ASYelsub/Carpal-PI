@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class Model : MonoBehaviour
@@ -15,6 +16,18 @@ public class Model : MonoBehaviour
     
     [HideInInspector]
     public BaseCaseLogic activeCase;
+    
+    
+    [System.Serializable]
+    public class EvidenceRow
+    {
+        [CanBeNull] public Evidence[] evidenceInEvidenceRow = new Evidence[5];
+    }
+    [Header("Don't even touch this thing.")]
+    public new EvidenceRow[] evidenceRows = new EvidenceRow[3];
+    
+    public int activeEvidenceRowNumber = 0;
+    
 
     public void SetActiveCase(int caseNumber)
     {
@@ -118,12 +131,6 @@ public class Model : MonoBehaviour
         }
     }
 
-    public void OpenCourtRecordViaStop()
-    {
-        TextTyper.QuickSkip();
-        view.ToggleCourtRecord();
-    }
-
     public void AdvanceToNextSequence()
     {
         activeCase.talkID = 0;
@@ -131,5 +138,47 @@ public class Model : MonoBehaviour
         activeCase.activeSequence = activeCase.sequencesInCase[activeCase.activeSequenceNumber];
         CheckSequenceType(false);
     }
+
+    public void SetEvidenceRows()
+    {
+        print("evidence rows set begin");
+        for (int i = 0; i <= 4; i++)
+        {
+            evidenceRows[activeEvidenceRowNumber].evidenceInEvidenceRow[i] =
+                activeCase.activeSequence.evidenceInSequence[i];
+        }
+        activeEvidenceRowNumber++;
+        for (int i = 5; i <= 9; i++)
+        {
+            evidenceRows[activeEvidenceRowNumber].evidenceInEvidenceRow[i] =
+                activeCase.activeSequence.evidenceInSequence[i];
+        }
+        activeEvidenceRowNumber++;
+        for (int i = 10; i <= 14; i++)
+        {
+            evidenceRows[activeEvidenceRowNumber].evidenceInEvidenceRow[i] =
+                activeCase.activeSequence.evidenceInSequence[i];
+        }
+
+        activeEvidenceRowNumber = 0;
+        print("evidence rows set end");
+        TextTyper.QuickSkip();
+        view.ToggleCourtRecord();
+        view.DisplayEvidenceInCourtRecord();
+    }
+    
+    //algorithm for moving shit to the left
+    public void MoveEvidenceToTheLeftCourtRecord()
+    {
+        
+        
+        view.DisplayEvidenceInCourtRecord();
+    }
+
+    public void MoveEvidenceToTheRightCourtRecord()
+    {
+        
+    }
+    
     
 }

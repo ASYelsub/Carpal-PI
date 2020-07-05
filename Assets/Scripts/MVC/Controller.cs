@@ -34,13 +34,27 @@ public class Controller : MonoBehaviour
         }
     }
 
+    public void CycleCourtRecordDisplay(int leftRight) //left is 0 right is 1
+    {
+        switch (leftRight)
+        { 
+            case 0 :
+                model.MoveEvidenceToTheLeftCourtRecord();
+                break;
+            case 1 :
+                model.MoveEvidenceToTheRightCourtRecord();
+                break;
+        }
+        
+    }
     public void StopDuringCrossExamine()
     {
         if (!view.courtRecordIsActive)
         {
             if (model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.CrossExamine)
             {
-                model.OpenCourtRecordViaStop();
+                print("This happened.");
+                model.SetEvidenceRows();
             }
             else
             {
