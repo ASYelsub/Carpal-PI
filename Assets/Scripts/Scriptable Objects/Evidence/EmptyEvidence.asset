@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198b7850bc4e1421d8f7049f8dcda2cb, type: 3}
   m_Name: EmptyEvidence
   m_EditorClassIdentifier: 
+  isEmptyEvidence: 1
   hasBeenPickedUp: 0
   imageInCourtRecord: {fileID: 0}
   imageInCrimeScene: {fileID: 0}
