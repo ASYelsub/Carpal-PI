@@ -12,19 +12,20 @@ public class SequenceBase : ScriptableObject
    {
       Banter,
       CrossExamine,
-      ShowSomethingOnEvidence,
+      ExplainEvidence,
       InvestigateItem,
       InterrogateWitness,
       Return
    };
 
+   public MinigameEvidenceBase minigameEvidenceBaseInSequence;
    public LocationBase sequenceLocation; //sometimes there is evidence in the background
    //sometimes there is not and it is just behind the stuff
 
    //Banter : Talking in or outside court, does not loop, cannot lose health/health not shown
    //CrossExamine : Loops, have the ability to press "STOP,"
    //                  is done looping when everything is learned from testimony, can lose health
-   //ShowSomethingOnEvidence : Someone talks, a little mini-game pops up to look for something in an image, can lose health
+   //ExplainEvidence : Someone talks, a little mini-game pops up to look for something in an image, can lose health
    //InvestigateItem : Outside court at crime scene, happens when you click on an item in a crime scene, can unlock more options in InterrogateWitness
    //                  Way to add to CourtRecord
    //InterrogateWitness : Talking to someone at crime scene, questions unlock the more you listen to them. Other locations unlock as well.

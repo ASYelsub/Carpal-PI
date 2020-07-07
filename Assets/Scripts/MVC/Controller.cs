@@ -2,12 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Controller : MonoBehaviour
 {
     [Header("Other Scripts")] 
     public Model model;
     public View view;
+    
+    
+    public bool pointerInImageExamineEvidence;
 
     //This function gets an integer from one of the two start buttons to set the activeCase.
     //1 is the first case. 2 is the second case.
@@ -24,42 +28,64 @@ public class Controller : MonoBehaviour
             {
                 model.TextProgressBanter();
             }
-
-            else if (Input.GetKeyDown(KeyCode.F) &&
+            if(Input.GetKeyUp(KeyCode.Mouse0))
+            {
+                if (model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.ExplainEvidence)
+                {
+                    if (pointerInImageExamineEvidence)
+                    {
+                        model.textProgressValid = true;
+                        model.TextProgressExplainEvidence();
+                    }
+                    else if (!pointerInImageExamineEvidence)
+                    {
+                        model.livesManager.LoseOneLife();
+                    }
+                }
+            }
+            /*else if (Input.GetKeyDown(KeyCode.F) &&
+                     model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.ExplainEvidence)
+            {
+                
+            }*/
+            /*else if (Input.GetKeyDown(KeyCode.F) &&
                 model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.CrossExamine)
             {
                 model.TextProgressCrossExamine();
                 print(" f pressed");
-            }   
+            } */  
         }
     }
 
-    public void CycleCourtRecordDisplay(int leftRight) //left is 0 right is 1
+    public void PointerFlipExamineEvidence(bool pointerIsIn)
     {
-        switch (leftRight)
-        { 
-            case 0 :
-                model.MoveEvidenceToTheLeftCourtRecord();
-                break;
-            case 1 :
-                model.MoveEvidenceToTheRightCourtRecord();
-                break;
-        }
-        
+        pointerIsIn = pointerInImageExamineEvidence;
     }
-    public void StopDuringCrossExamine()
+   /* public void StopDuringCrossExamine()
     {
         if (!view.courtRecordIsActive)
         {
             if (model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.CrossExamine)
             {
                 print("This happened.");
-                model.SetEvidenceRows();
+                view.ToggleCourtRecord();
             }
             else
             {
                 print("stop pressed during incompatible sequenceType");
             }
         }
-    }
+    }*/
+   /* public void CycleCourtRecordDisplay(int leftRight) //left is 0 right is 1
+ {
+     switch (leftRight)
+     { 
+         case 0 :
+             //model.MoveEvidenceToTheLeftCourtRecord();
+             break;
+         case 1 :
+             // model.MoveEvidenceToTheRightCourtRecord();
+             break;
+     }
+ }*/
 }

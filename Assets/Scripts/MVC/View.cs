@@ -16,7 +16,11 @@ public class View : MonoBehaviour
     public GameObject heartbeatDisplay;
     public Image[] evidenceDisplay;
     public Outline[] evidenceBackOutline;
-
+    
+    [Header("UI Specifically for ExplainEvidence")]
+    public Image showSomethingOnEvidenceImage;
+    public Image showSomethingOnEvidenceClickable;
+    
     [Header ("GameStates")]
     public GameObject preCase;
     public GameObject duringCase;
@@ -35,12 +39,17 @@ public class View : MonoBehaviour
         InCourtRecordDisplayEvidenceOutline(6);
     }
 
+    //this technically shouldn't be in view
     public void ToggleCourtRecord()
     {
         courtRecordIsActive = !courtRecordIsActive;
         courtRecordDisplay.SetActive(courtRecordIsActive);
+        model.GetEvidneceInSequence();
     }
 
+    
+    
+    ///////////    //Court record Functions//    ////////////
     public void InCourtRecordDisplayEvidenceOutline(int evidenceNumber)
     {
         for (int i = 0; i <= evidenceBackOutline.Length - 1; i++)
@@ -55,16 +64,14 @@ public class View : MonoBehaviour
             }
         }
     }
-
     public void DisplayEvidenceInCourtRecord()
     {
-        print("is this happening?");
-        for (int i = 0; i <= 4; i++) //5 is the amount of slots in the thing
-        {
-            evidenceDisplay[i].sprite = model.evidenceRows[model.activeEvidenceRowNumber].evidenceInEvidenceRow[i].imageInCourtRecord;
-        }
-        print("yes it happened.");
+        
     }
+    
+    
+    
+    //////// //   //Sequence Display functions//  //  ///////
     public void DisplayBanter(bool componentsAreSet)
     { if (!componentsAreSet) {
             nameTextDisplay.gameObject.SetActive(true);
@@ -72,11 +79,12 @@ public class View : MonoBehaviour
             dialogueTextDisplay.gameObject.SetActive(true);
             backgroundImage.gameObject.SetActive(true);
             courtRecordDisplay.SetActive(false);
-            backgroundImage.gameObject.SetActive(true);
             backgroundImage.sprite = model.activeCase.activeSequence.sequenceLocation.locationBackgroundSprite[0];
             stopButton.SetActive(false);
             heartbeatDisplay.SetActive(true);
             textboxBack.gameObject.SetActive(true);
+            showSomethingOnEvidenceImage.gameObject.SetActive(false);
+            showSomethingOnEvidenceClickable.gameObject.SetActive(false);
             print("components set");
         }
         nameTextDisplay.text = 
@@ -103,6 +111,8 @@ public class View : MonoBehaviour
             stopButton.SetActive(true);
             heartbeatDisplay.SetActive(true);
             textboxBack.gameObject.SetActive(true);
+            showSomethingOnEvidenceImage.gameObject.SetActive(false);
+            showSomethingOnEvidenceClickable.gameObject.SetActive(false);
             print("components set");
         }
         nameTextDisplay.text = 
@@ -117,12 +127,36 @@ public class View : MonoBehaviour
             .heartbeatFreq);
         textTyper.UpdateText(model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].dialouge);
     }
-    public void DisplayShowSomethingOnEvidence(bool componentsAreSet)
+    public void DisplayExplainEvidence(bool componentsAreSet)
     {
-        
+        if (!componentsAreSet)
+        {
+            nameTextDisplay.gameObject.SetActive(true);
+            activeCharDisplay.gameObject.SetActive(false);
+            dialogueTextDisplay.gameObject.SetActive(true);
+            backgroundImage.gameObject.SetActive(true);
+            courtRecordDisplay.SetActive(false);
+            backgroundImage.sprite = model.activeCase.activeSequence.sequenceLocation.locationBackgroundSprite[0];
+            stopButton.SetActive(false);
+            heartbeatDisplay.SetActive(false);
+            textboxBack.gameObject.SetActive(true);
+            showSomethingOnEvidenceImage.gameObject.SetActive(true);
+            showSomethingOnEvidenceClickable.gameObject.SetActive(true);
+            print("components set");
+        }   
+        nameTextDisplay.text = 
+            model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].activeChar.charName;
+        dialogueTextDisplay.text =
+            model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].dialouge;
+        nameTextDisplay.color = 
+            model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].activeChar.charNameColor;
+        textTyper.UpdateText(model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].dialouge);
+        showSomethingOnEvidenceImage.sprite = model.activeCase.activeSequence.minigameEvidenceBaseInSequence.bigImage;
+        showSomethingOnEvidenceClickable.sprite = model.activeCase.activeSequence.minigameEvidenceBaseInSequence.smallImage;
     }
     public void DisplayInvestigateItem(bool componentsAreSet)
     {
+        //literally just the backgrown and like arrows to show one or another background are shown, also the evidence sort of sprinkled throughout is shown
         if (!componentsAreSet) {
             nameTextDisplay.gameObject.SetActive(false);
             activeCharDisplay.gameObject.SetActive(false);
@@ -133,6 +167,8 @@ public class View : MonoBehaviour
             stopButton.SetActive(false);
             heartbeatDisplay.SetActive(false);
             textboxBack.gameObject.SetActive(false);
+            showSomethingOnEvidenceImage.gameObject.SetActive(false);
+            showSomethingOnEvidenceClickable.gameObject.SetActive(false);
             print("components set");
         }
     }
@@ -148,6 +184,8 @@ public class View : MonoBehaviour
             stopButton.SetActive(false);
             heartbeatDisplay.SetActive(true);
             textboxBack.gameObject.SetActive(true);
+            showSomethingOnEvidenceImage.gameObject.SetActive(false);
+            showSomethingOnEvidenceClickable.gameObject.SetActive(false);
             print("components set");
         }
         nameTextDisplay.text = 

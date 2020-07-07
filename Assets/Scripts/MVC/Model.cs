@@ -10,25 +10,23 @@ public class Model : MonoBehaviour
     public View view;
     public Controller controller;
     public TextTyper TextTyper;
+    public LivesManager livesManager;
 
     [SerializeField]
     private BaseCaseLogic[] cases;
     
     [HideInInspector]
     public BaseCaseLogic activeCase;
-    
-    
-    [System.Serializable]
-    public class EvidenceRow
-    {
-        [CanBeNull] public Evidence[] evidenceInEvidenceRow = new Evidence[5];
-    }
-    [Header("Don't even touch this thing.")]
-    public new EvidenceRow[] evidenceRows = new EvidenceRow[3];
-    
-    public int activeEvidenceRowNumber = 0;
-    
 
+    [HideInInspector] public bool textProgressValid;
+
+    public Evidence[] displayedEvidence = new Evidence[5];
+    public Evidence[] storedEvidence1 = new Evidence[5];
+    public Evidence[] storedEvidence2 = new Evidence[5];
+    public Evidence[] storedEvidence3 = new Evidence[5];
+
+    public Evidence[] activeSequenceEvidence;
+        
     public void SetActiveCase(int caseNumber)
     {
         view.duringCase.SetActive(true);
@@ -36,7 +34,8 @@ public class Model : MonoBehaviour
         cases[caseNumber].ActivateCase();
         activeCase = cases[caseNumber];
         CheckSequenceType(false);
-        
+        textProgressValid = false;
+
     }
     
     //This function looks at the sequence type of the
@@ -58,8 +57,8 @@ public class Model : MonoBehaviour
             case SequenceBase.SequenceType.CrossExamine :
                 view.DisplayCrossExamine(isAlreadyLoaded);
                 break;
-            case SequenceBase.SequenceType.ShowSomethingOnEvidence :
-                view.DisplayShowSomethingOnEvidence(isAlreadyLoaded);
+            case SequenceBase.SequenceType.ExplainEvidence :
+                view.DisplayExplainEvidence(isAlreadyLoaded);
                 break;
             case SequenceBase.SequenceType.InvestigateItem :
                 view.DisplayInvestigateItem(isAlreadyLoaded);
@@ -131,6 +130,28 @@ public class Model : MonoBehaviour
         }
     }
 
+    public void TextProgressExplainEvidence()
+    {
+        if (TextTyper.IsTyping())
+        {
+            TextTyper.QuickSkip();
+        }
+        else
+        {
+            if (activeCase.talkID >= activeCase.activeSequence.dialogueBitsInSequence.Length - 1)
+            {
+                if (textProgressValid)
+                {
+                    AdvanceToNextSequence();
+                }
+            }
+            else
+            {
+                view.DisplayExplainEvidence(true);
+            }
+        }
+    }
+
     public void AdvanceToNextSequence()
     {
         activeCase.talkID = 0;
@@ -139,46 +160,26 @@ public class Model : MonoBehaviour
         CheckSequenceType(false);
     }
 
-    public void SetEvidenceRows()
+    public void GetEvidneceInSequence()
     {
-        print("evidence rows set begin");
-        for (int i = 0; i <= 4; i++)
+        for (int i = 0; i < storedEvidence1.Length; i++)
         {
-            evidenceRows[activeEvidenceRowNumber].evidenceInEvidenceRow[i] =
-                activeCase.activeSequence.evidenceInSequence[i];
+            storedEvidence1[i]  = activeCase.activeSequence.evidenceInSequence[i];
+            print("In stored Evidence1." + i + " is " + storedEvidence1[i]);
         }
-        activeEvidenceRowNumber++;
-        for (int i = 5; i <= 9; i++)
+        /*for (int i = 5; i < storedEvidence2.Length + 5; i++)
         {
-            evidenceRows[activeEvidenceRowNumber].evidenceInEvidenceRow[i] =
-                activeCase.activeSequence.evidenceInSequence[i];
-        }
-        activeEvidenceRowNumber++;
-        for (int i = 10; i <= 14; i++)
-        {
-            evidenceRows[activeEvidenceRowNumber].evidenceInEvidenceRow[i] =
-                activeCase.activeSequence.evidenceInSequence[i];
-        }
-
-        activeEvidenceRowNumber = 0;
-        print("evidence rows set end");
-        TextTyper.QuickSkip();
-        view.ToggleCourtRecord();
-        view.DisplayEvidenceInCourtRecord();
+            storedEvidence2[i] = activeCase.activeSequence.evidenceInSequence[i];
+            print("In stored Evidence2." + i + " is " + storedEvidence2[i]);
+        }*/
+       //get the first five evidences in the sequence
+       //set them to row 1
+       //get the second five evidences in the sequence
+       //set them to row 2
     }
     
-    //algorithm for moving shit to the left
-    public void MoveEvidenceToTheLeftCourtRecord()
-    {
-        
-        
-        view.DisplayEvidenceInCourtRecord();
-    }
-
-    public void MoveEvidenceToTheRightCourtRecord()
-    {
-        
-    }
+    
+   
     
     
 }
