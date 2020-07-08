@@ -19,7 +19,8 @@ public class View : MonoBehaviour
     
     [Header("UI Specifically for ExplainEvidence")]
     public Image showSomethingOnEvidenceImage;
-    public Button showSomethingOnEvidenceClickable;
+    public Image showSomethingOnEvidenceClickable;
+    public Button buttonForExplainEvidence;
     
     [Header ("GameStates")]
     public GameObject preCase;
@@ -37,6 +38,8 @@ public class View : MonoBehaviour
         duringCase.SetActive(false);
         preCase.SetActive(true);
         InCourtRecordDisplayEvidenceOutline(6);
+        showSomethingOnEvidenceClickable.gameObject.SetActive(false);
+        showSomethingOnEvidenceImage.gameObject.SetActive(false);
     }
 
     //this technically shouldn't be in view
@@ -152,7 +155,11 @@ public class View : MonoBehaviour
             model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].activeChar.charNameColor;
         textTyper.UpdateText(model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].dialouge);
         showSomethingOnEvidenceImage.sprite = model.activeCase.activeSequence.minigameEvidenceBaseInSequence.bigImage;
-        showSomethingOnEvidenceClickable.image.sprite = model.activeCase.activeSequence.minigameEvidenceBaseInSequence.smallImage;
+        showSomethingOnEvidenceClickable.sprite = model.activeCase.activeSequence.minigameEvidenceBaseInSequence.smallImage;
+        buttonForExplainEvidence.image.rectTransform.anchoredPosition =
+            model.activeCase.activeSequence.minigameEvidenceBaseInSequence.buttonCoordinates;
+        buttonForExplainEvidence.image.rectTransform.sizeDelta =
+            model.activeCase.activeSequence.minigameEvidenceBaseInSequence.buttonSizing;
     }
     public void DisplayInvestigateItem(bool componentsAreSet)
     {

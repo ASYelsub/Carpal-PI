@@ -28,6 +28,20 @@ public class Controller : MonoBehaviour
             {
                 model.TextProgressBanter();
             }
+
+            if (Input.GetKeyDown(KeyCode.Mouse0) &&
+                model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.ExplainEvidence)
+            {
+                if (pointerInImageExamineEvidence)
+                {
+                    model.textProgressValid = true; 
+                    model.TextProgressExplainEvidence();
+                }
+                else if (!pointerInImageExamineEvidence)
+                {
+                    model.livesManager.LoseOneLife();
+                }
+            }
             /*else if (Input.GetKeyDown(KeyCode.F) &&
                      model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.ExplainEvidence)
             {
@@ -41,30 +55,27 @@ public class Controller : MonoBehaviour
             } */  
         }
     }
-
-    public void secretButtonPressed()
+    public void PointerInButton(bool pointerEnters)
     {
-        if (model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.ExplainEvidence) 
-        {
-                model.textProgressValid = true; 
-                model.TextProgressExplainEvidence();
-        }
+        print("pointerInbutton = " + pointerEnters);
+         pointerInImageExamineEvidence = pointerEnters;
     }
-   /* public void StopDuringCrossExamine()
-    {
-        if (!view.courtRecordIsActive)
-        {
-            if (model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.CrossExamine)
-            {
-                print("This happened.");
-                view.ToggleCourtRecord();
-            }
-            else
-            {
-                print("stop pressed during incompatible sequenceType");
-            }
-        }
-    }*/
+
+    /* public void StopDuringCrossExamine()
+     {
+         if (!view.courtRecordIsActive)
+         {
+             if (model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.CrossExamine)
+             {
+                 print("This happened.");
+                 view.ToggleCourtRecord();
+             }
+             else
+             {
+                 print("stop pressed during incompatible sequenceType");
+             }
+         }
+     }*/
    /* public void CycleCourtRecordDisplay(int leftRight) //left is 0 right is 1
  {
      switch (leftRight)

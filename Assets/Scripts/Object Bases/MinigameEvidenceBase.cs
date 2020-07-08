@@ -9,6 +9,7 @@ public class MinigameEvidenceBase : ScriptableObject
 
     public Sprite bigImage;
     public Sprite smallImage;
-    public Vector2 smallImageCoordinates;
+    public Vector2 buttonCoordinates;
+    public Vector2 buttonSizing;
 
 }

@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bigImage: {fileID: 21300000, guid: 4436583405d3d43ae98efe4964a26fb3, type: 3}
   smallImage: {fileID: 21300000, guid: 68aae4a99690f4c3daf463d5fdd783b5, type: 3}
-  smallImageCoordinates: {x: 0, y: 0}
+  buttonCoordinates: {x: -11, y: -87}
+  buttonSizing: {x: 166.66, y: 111.1}
