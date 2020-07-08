@@ -19,7 +19,7 @@ public class View : MonoBehaviour
     
     [Header("UI Specifically for ExplainEvidence")]
     public Image showSomethingOnEvidenceImage;
-    public Image showSomethingOnEvidenceClickable;
+    public Button showSomethingOnEvidenceClickable;
     
     [Header ("GameStates")]
     public GameObject preCase;
@@ -152,7 +152,7 @@ public class View : MonoBehaviour
             model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].activeChar.charNameColor;
         textTyper.UpdateText(model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].dialouge);
         showSomethingOnEvidenceImage.sprite = model.activeCase.activeSequence.minigameEvidenceBaseInSequence.bigImage;
-        showSomethingOnEvidenceClickable.sprite = model.activeCase.activeSequence.minigameEvidenceBaseInSequence.smallImage;
+        showSomethingOnEvidenceClickable.image.sprite = model.activeCase.activeSequence.minigameEvidenceBaseInSequence.smallImage;
     }
     public void DisplayInvestigateItem(bool componentsAreSet)
     {

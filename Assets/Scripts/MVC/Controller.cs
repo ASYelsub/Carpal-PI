@@ -28,21 +28,6 @@ public class Controller : MonoBehaviour
             {
                 model.TextProgressBanter();
             }
-            if(Input.GetKeyUp(KeyCode.Mouse0))
-            {
-                if (model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.ExplainEvidence)
-                {
-                    if (pointerInImageExamineEvidence)
-                    {
-                        model.textProgressValid = true;
-                        model.TextProgressExplainEvidence();
-                    }
-                    else if (!pointerInImageExamineEvidence)
-                    {
-                        model.livesManager.LoseOneLife();
-                    }
-                }
-            }
             /*else if (Input.GetKeyDown(KeyCode.F) &&
                      model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.ExplainEvidence)
             {
@@ -57,9 +42,13 @@ public class Controller : MonoBehaviour
         }
     }
 
-    public void PointerFlipExamineEvidence(bool pointerIsIn)
+    public void secretButtonPressed()
     {
-        pointerIsIn = pointerInImageExamineEvidence;
+        if (model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.ExplainEvidence) 
+        {
+                model.textProgressValid = true; 
+                model.TextProgressExplainEvidence();
+        }
     }
    /* public void StopDuringCrossExamine()
     {
