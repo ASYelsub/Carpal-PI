@@ -129,6 +129,27 @@ public class Model : MonoBehaviour
         }
     }
 
+    public void TextBackCrossExamine()
+    {
+        if (TextTyper.IsTyping())
+        {
+            TextTyper.QuickSkip();
+        }
+        else
+        {
+            if (activeCase.talkID <= 0)
+            {
+                activeCase.talkID = activeCase.activeSequence.dialogueBitsInSequence.Length - 1;
+                view.DisplayCrossExamine( true);
+            }
+            else
+            {
+                activeCase.talkID--;
+                view.DisplayCrossExamine(true);  
+            }
+        }
+    }
+
     public void TextProgressExplainEvidence()
     {
         if (TextTyper.IsTyping())

@@ -36,6 +36,14 @@ public class Controller : MonoBehaviour
                 }
             }
 
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                if (model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.CrossExamine)
+                {
+                    model.TextBackCrossExamine();
+                }
+            }
+
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 if (model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.ExplainEvidence)
@@ -66,12 +74,14 @@ public class Controller : MonoBehaviour
 
      public void StopDuringCrossExamine()
      {
+         
+         //need to write in that we like check if it's correct or not, and then the next thing is loaded if it's correct
          if (!view.courtRecordIsActive)
          {
              if (model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.CrossExamine)
              {
                  print("This happened.");
-                 view.ToggleCourtRecord();
+                 //view.ToggleCourtRecord();
              }
              else
              {
@@ -103,6 +113,5 @@ public class Controller : MonoBehaviour
              model.DisplayEvidenceCourtRecord();
              break;
      }
-     //print("model.evidencebeingShown: " + model.evidenceBeingShown);
  }
 }

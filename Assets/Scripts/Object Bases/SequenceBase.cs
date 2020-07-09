@@ -24,7 +24,9 @@ public class SequenceBase : ScriptableObject
 
    //Banter : Talking in or outside court, does not loop, cannot lose health/health not shown
    //CrossExamine : Loops, have the ability to press "STOP,"
-   //                  is done looping when everything is learned from testimony, can lose health
+   //                  is done looping when everything is learned from testimony, can lose health, can go back and forth, if stop is pressed during the wrong time lose life,
+                        //if "stop" is correct it may open some options to click on or whatever or just continue to the next banter, if it is incorrect, a dialogue bit of it being proved wrong is shown
+                        //apparently you should be able to present when someone is talking in their testimony.
    //ExplainEvidence : Someone talks, a little mini-game pops up to look for something in an image, can lose health
    //InvestigateItem : Outside court at crime scene, happens when you click on an item in a crime scene, can unlock more options in InterrogateWitness
    //                  Way to add to CourtRecord
