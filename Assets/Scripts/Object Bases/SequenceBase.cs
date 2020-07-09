@@ -32,7 +32,10 @@ public class SequenceBase : ScriptableObject
    //                     Way to add to CourtRecord
    //Return : This is what plays if you go to a location where you've gotten everything.
   
-   public Evidence[] evidenceInSequence; 
+   [Header("Cursed Index For Court Record")]
+   public Evidence[] evidenceInSequence1;
+   public Evidence[] evidenceInSequence2;
+   public Evidence[] evidenceInSequence3;
    [System.Serializable]
    public class DialogueBit
    {
@@ -54,7 +57,8 @@ public class SequenceBase : ScriptableObject
       
       [Header("Inv Item and Interrogate")]
       public Evidence evidenceFromBit; //evidence that gets added to the courtRecord when this bit is cycled through
-   }                                         
+   }
+   [Header("Dialogue Bit Time")]
    public DialogueBit[] dialogueBitsInSequence;
    
 

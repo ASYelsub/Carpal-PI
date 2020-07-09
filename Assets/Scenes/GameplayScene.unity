@@ -2381,7 +2381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeSequence: {fileID: 0}
   sequencesInCase:
-  - {fileID: 11400000, guid: aa380dc1d3f5b4e2e92c8104da068dd3, type: 2}
+  - {fileID: 11400000, guid: d0394b4a8532c4ec6851bf2806a199fb, type: 2}
   - {fileID: 11400000, guid: 4e125ee8b14a24680a1dd3e90ed0a7a1, type: 2}
   - {fileID: 11400000, guid: eab6d6cc93afb4b598817943859195f0, type: 2}
   - {fileID: 11400000, guid: aa380dc1d3f5b4e2e92c8104da068dd3, type: 2}
@@ -3424,9 +3424,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e8afff3d1ff4ffd95bc75cea32af0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeSpeed: 0.05
+  typeSpeed: 0.08
   startDelay: 0.1
-  volumeVariation: 0.1
+  volumeVariation: 0
   startOnStart: 0
   mainAudioSource: {fileID: 1631415546}
   theAudioClip: {fileID: 8300000, guid: 35a49adb20f1a47aea331d80f216abe5, type: 3}

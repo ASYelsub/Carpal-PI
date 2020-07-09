@@ -23,23 +23,32 @@ public class Controller : MonoBehaviour
     {
         if (!view.courtRecordIsActive)
         {
-            if(Input.GetKeyDown(KeyCode.F) && 
-               model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.Banter)
+            if(Input.GetKeyDown(KeyCode.F))
             {
-                model.TextProgressBanter();
+                print(" f pressed");
+                if (model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.Banter)
+                {
+                    model.TextProgressBanter();
+                }
+                else if(model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.CrossExamine)
+                {
+                    model.TextProgressCrossExamine();
+                }
             }
 
-            if (Input.GetKeyDown(KeyCode.Mouse0) &&
-                model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.ExplainEvidence)
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                if (pointerInImageExamineEvidence)
+                if (model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.ExplainEvidence)
                 {
-                    model.textProgressValid = true; 
-                    model.TextProgressExplainEvidence();
-                }
-                else if (!pointerInImageExamineEvidence)
-                {
-                    model.livesManager.LoseOneLife();
+                    if (pointerInImageExamineEvidence)
+                    {
+                        model.textProgressValid = true; 
+                        model.TextProgressExplainEvidence();
+                    }
+                    else if (!pointerInImageExamineEvidence)
+                    {
+                        model.livesManager.LoseOneLife();
+                    }   
                 }
             }
             /*else if (Input.GetKeyDown(KeyCode.F) &&
@@ -47,12 +56,6 @@ public class Controller : MonoBehaviour
             {
                 
             }*/
-            /*else if (Input.GetKeyDown(KeyCode.F) &&
-                model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.CrossExamine)
-            {
-                model.TextProgressCrossExamine();
-                print(" f pressed");
-            } */  
         }
     }
     public void PointerInButton(bool pointerEnters)
@@ -61,7 +64,7 @@ public class Controller : MonoBehaviour
          pointerInImageExamineEvidence = pointerEnters;
     }
 
-    /* public void StopDuringCrossExamine()
+     public void StopDuringCrossExamine()
      {
          if (!view.courtRecordIsActive)
          {
@@ -75,17 +78,31 @@ public class Controller : MonoBehaviour
                  print("stop pressed during incompatible sequenceType");
              }
          }
-     }*/
-   /* public void CycleCourtRecordDisplay(int leftRight) //left is 0 right is 1
+     }
+    public void CycleCourtRecordDisplay(int leftRight) //left is 0 right is 1
  {
      switch (leftRight)
      { 
          case 0 :
-             //model.MoveEvidenceToTheLeftCourtRecord();
+             if (model.evidenceBeingShown <= 0)
+             {
+                 model.evidenceBeingShown = 3;
+             }
+             model.evidenceBeingShown--;
+             model.DisplayEvidenceCourtRecord();
              break;
          case 1 :
-             // model.MoveEvidenceToTheRightCourtRecord();
+             if (model.evidenceBeingShown >= 2)
+             {
+                 model.evidenceBeingShown = 0;
+             }
+             else
+             {
+                 model.evidenceBeingShown++;   
+             }
+             model.DisplayEvidenceCourtRecord();
              break;
      }
- }*/
+     //print("model.evidencebeingShown: " + model.evidenceBeingShown);
+ }
 }

@@ -12,20 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f479bb4278c784cf186b05f0a6e57970, type: 3}
   m_Name: CourtRoomSequence
   m_EditorClassIdentifier: 
-  sequenceDescription: 
+  sequenceDescription: A testing cross examine thing
   mySequenceType: 1
+  minigameEvidenceBaseInSequence: {fileID: 0}
   sequenceLocation: {fileID: 11400000, guid: 6040e972ede1049e499ce023e3d352b8, type: 2}
-  evidenceInSequence:
+  evidenceInSequence1:
   - {fileID: 11400000, guid: 5432dcf2fbaa74add85570c14b04031b, type: 2}
   - {fileID: 11400000, guid: 21b4628c84d0f4e86871aa0e0ed17fb8, type: 2}
   - {fileID: 11400000, guid: e1d3782c35d1d42508b105f68d21b044, type: 2}
   - {fileID: 11400000, guid: 69e00764bdd1048f3a996db1737ee437, type: 2}
   - {fileID: 11400000, guid: f1e58cab6eb7e4257911aa4303d674eb, type: 2}
+  evidenceInSequence2:
   - {fileID: 11400000, guid: 14ad03c4b2ec8429a955b0a91a82f364, type: 2}
   - {fileID: 11400000, guid: 978e9e0182665435ab46eaf2f00be6c9, type: 2}
   - {fileID: 11400000, guid: 978e9e0182665435ab46eaf2f00be6c9, type: 2}
   - {fileID: 11400000, guid: 978e9e0182665435ab46eaf2f00be6c9, type: 2}
   - {fileID: 11400000, guid: 978e9e0182665435ab46eaf2f00be6c9, type: 2}
+  evidenceInSequence3:
   - {fileID: 11400000, guid: 978e9e0182665435ab46eaf2f00be6c9, type: 2}
   - {fileID: 11400000, guid: 978e9e0182665435ab46eaf2f00be6c9, type: 2}
   - {fileID: 11400000, guid: 978e9e0182665435ab46eaf2f00be6c9, type: 2}

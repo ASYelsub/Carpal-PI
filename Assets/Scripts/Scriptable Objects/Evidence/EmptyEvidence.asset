@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEmptyEvidence: 1
   hasBeenPickedUp: 0
-  imageInCourtRecord: {fileID: 0}
+  imageInCourtRecord: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   imageInCrimeScene: {fileID: 0}

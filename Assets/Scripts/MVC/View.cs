@@ -47,9 +47,34 @@ public class View : MonoBehaviour
     {
         courtRecordIsActive = !courtRecordIsActive;
         courtRecordDisplay.SetActive(courtRecordIsActive);
-        model.GetEvidneceInSequence();
+        model.DisplayEvidenceCourtRecord();
     }
 
+    public void ShowEvidenceCourtRecord(int evidenceID)
+    {
+        switch (evidenceID)
+        {
+            case 0:
+                for (int i = 0; i < evidenceDisplay.Length; i++)
+                {
+                    evidenceDisplay[i].sprite = model.activeCase.activeSequence.evidenceInSequence1[i].imageInCourtRecord;
+                }   
+                break;
+            case 1:
+                for (int i = 0; i < evidenceDisplay.Length; i++)
+                {
+                    evidenceDisplay[i].sprite = model.activeCase.activeSequence.evidenceInSequence2[i].imageInCourtRecord;
+                }   
+                break;
+            case 2:
+                for (int i = 0; i < evidenceDisplay.Length; i++)
+                {
+                    evidenceDisplay[i].sprite = model.activeCase.activeSequence.evidenceInSequence3[i].imageInCourtRecord;
+                }   
+                break;
+        }
+        
+    }
     
     
     ///////////    //Court record Functions//    ////////////

@@ -18,15 +18,14 @@ public class Model : MonoBehaviour
     [HideInInspector]
     public BaseCaseLogic activeCase;
 
+    [HideInInspector]
+    public int evidenceBeingShown;
+
     [HideInInspector] public bool textProgressValid;
 
-    public Evidence[] displayedEvidence = new Evidence[5];
-    public Evidence[] storedEvidence1 = new Evidence[5];
-    public Evidence[] storedEvidence2 = new Evidence[5];
-    public Evidence[] storedEvidence3 = new Evidence[5];
+    public Evidence[] 
+        displayedEvidence = new Evidence[5];
 
-    public Evidence[] activeSequenceEvidence;
-        
     public void SetActiveCase(int caseNumber)
     {
         view.duringCase.SetActive(true);
@@ -160,26 +159,10 @@ public class Model : MonoBehaviour
         CheckSequenceType(false);
     }
 
-    public void GetEvidneceInSequence()
+    public void DisplayEvidenceCourtRecord()
     {
-        for (int i = 0; i < storedEvidence1.Length; i++)
-        {
-            storedEvidence1[i]  = activeCase.activeSequence.evidenceInSequence[i];
-            print("In stored Evidence1." + i + " is " + storedEvidence1[i]);
-        }
-        /*for (int i = 5; i < storedEvidence2.Length + 5; i++)
-        {
-            storedEvidence2[i] = activeCase.activeSequence.evidenceInSequence[i];
-            print("In stored Evidence2." + i + " is " + storedEvidence2[i]);
-        }*/
-       //get the first five evidences in the sequence
-       //set them to row 1
-       //get the second five evidences in the sequence
-       //set them to row 2
+        view.ShowEvidenceCourtRecord(evidenceBeingShown);
     }
-    
-    
-   
     
     
 }
