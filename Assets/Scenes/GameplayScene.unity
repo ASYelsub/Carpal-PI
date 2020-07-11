@@ -823,6 +823,7 @@ MonoBehaviour:
   - {fileID: 1035282009}
   - {fileID: 1035282009}
   activeCase: {fileID: 0}
+  evidenceBeingShown: 0
   textProgressValid: 0
   displayedEvidence:
   - {fileID: 0}
@@ -830,25 +831,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  storedEvidence1:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  storedEvidence2:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  storedEvidence3:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  activeSequenceEvidence: []
 --- !u!1 &379541470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1648,7 +1630,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -48, y: 212.00002}
+  m_AnchoredPosition: {x: 269.99997, y: 0.000030517578}
   m_SizeDelta: {x: 30, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &655087967
@@ -2015,7 +1997,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -16, y: 212.00002}
+  m_AnchoredPosition: {x: 301.99997, y: 0.000030517578}
   m_SizeDelta: {x: 30, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &769810448
@@ -2163,7 +2145,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16, y: 212.00002}
+  m_AnchoredPosition: {x: 333.99997, y: 0.000030517578}
   m_SizeDelta: {x: 30, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &897045387
@@ -2281,7 +2263,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -327.7, y: 184}
+  m_AnchoredPosition: {x: 311, y: -57}
   m_SizeDelta: {x: 135.82504, y: 73.52167}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &965503447
@@ -2381,10 +2363,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeSequence: {fileID: 0}
   sequencesInCase:
-  - {fileID: 11400000, guid: d0394b4a8532c4ec6851bf2806a199fb, type: 2}
   - {fileID: 11400000, guid: 4e125ee8b14a24680a1dd3e90ed0a7a1, type: 2}
   - {fileID: 11400000, guid: eab6d6cc93afb4b598817943859195f0, type: 2}
   - {fileID: 11400000, guid: aa380dc1d3f5b4e2e92c8104da068dd3, type: 2}
+  - {fileID: 11400000, guid: 4e125ee8b14a24680a1dd3e90ed0a7a1, type: 2}
   talkID: 0
   tempTalkID: 0
   activeSequenceNumber: 0
@@ -3561,7 +3543,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 48, y: 212}
+  m_AnchoredPosition: {x: 366, y: 0}
   m_SizeDelta: {x: 30, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1641903243
@@ -3841,7 +3823,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 341.9, y: -106}
+  m_AnchoredPosition: {x: 194, y: -106}
   m_SizeDelta: {x: 82.056, y: 40.392548}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1777619825
