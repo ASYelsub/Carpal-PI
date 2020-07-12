@@ -68,6 +68,9 @@ public class Model : MonoBehaviour
             case SequenceBase.SequenceType.Return :
                 view.DisplayReturn(isAlreadyLoaded);
                 break;
+            case SequenceBase.SequenceType.Map :
+                view.DisplayMap(isAlreadyLoaded);
+                break;
         }
         print(activeCase.activeSequence.mySequenceType);
     }
@@ -140,7 +143,7 @@ public class Model : MonoBehaviour
             if (activeCase.talkID <= 0)
             {
                 activeCase.talkID = activeCase.activeSequence.dialogueBitsInSequence.Length - 1;
-                view.DisplayCrossExamine( true);
+                view.DisplayCrossExamine(true);
             }
             else
             {

@@ -19,6 +19,11 @@ public class Controller : MonoBehaviour
     {
         model.SetActiveCase(caseNumber);
     }
+
+    public void InputToggleCourtRecord()
+    {
+        view.ToggleCourtRecord();
+    }
     private void Update()
     {
         if (!view.courtRecordIsActive)
@@ -59,11 +64,6 @@ public class Controller : MonoBehaviour
                     }   
                 }
             }
-            /*else if (Input.GetKeyDown(KeyCode.F) &&
-                     model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.ExplainEvidence)
-            {
-                
-            }*/
         }
     }
     public void PointerInButton(bool pointerEnters)

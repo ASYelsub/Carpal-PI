@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f479bb4278c784cf186b05f0a6e57970, type: 3}
+  m_Name: TempFirstMap
+  m_EditorClassIdentifier: 
+  sequenceDescription: temp map
+  mySequenceType: 6
+  minigameEvidenceBaseInSequence: {fileID: 0}
+  sequenceLocation: {fileID: 0}
+  evidenceInSequence1: []
+  evidenceInSequence2: []
+  evidenceInSequence3: []
+  dialogueBitsInSequence: []
+  mapInSequence:
+    mapImage: {fileID: 21300000, guid: 032a252d0f31b44689e23ba73a46ec6f, type: 3}
+    locationsInMap:
+    - {fileID: 11400000, guid: 0431deb7aaaee485ebce02e454b7dc8b, type: 2}
+    - {fileID: 11400000, guid: d0f4ba96d44de4d5f93245fc3f8d38ef, type: 2}
+    - {fileID: 11400000, guid: 41e0094a981644906bf89ebcfa40b460, type: 2}
+    locationCoordinats:
+    - {x: -200, y: 106}
+    - {x: 100, y: -100}
+    - {x: -163, y: -100}
