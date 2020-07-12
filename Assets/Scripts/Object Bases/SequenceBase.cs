@@ -16,7 +16,8 @@ public class SequenceBase : ScriptableObject
       InvestigateItem,
       InterrogateWitness,
       Return,
-      Map
+      Map,
+      SurveyCrimeScene //honestly probably just gonna use all the Map shit plus some added logic to load more specific stuff
    };
 
    [System.Serializable]

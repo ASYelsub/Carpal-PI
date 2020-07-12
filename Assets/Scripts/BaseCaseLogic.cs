@@ -5,29 +5,42 @@ using UnityEngine;
 //handles maneuvering scenes and sequences in case 1
 public class BaseCaseLogic : MonoBehaviour
 {
+    public int activeSequenceNumber;
+    public int evidenceCollectedNumber; //check hasBeenPickedUp in all evidence...
+                                         //amount of evidence that has been collected,
+                                         //to progress the sequence it must match the
+                                         //activeSequence.evidenceProgressionReq
+    public int ultimateEvidenceCollected;
+    
     [HideInInspector]
     public SequenceBase activeSequence;
 
     //public SceneTextBase currentScene;
     public SequenceBase[] sequencesInCase; //linear, the spine of the game, may take a break from these when you get to one of them and load the other types of sequence lists
-    public SequenceBase[] sequencesWhileGatheringEvidenceUsingMap; //these ones need to be fanoodled or whatever with special code voodoo, insert themselves
-                                                                    //during the map but don't change activesequenceNumber so the game can continue being linear
-                                                                    //after the expectations of these are fulfilled
+
+    //these ones need to be fanoodled or whatever with special code voodoo, insert themselves
+//during the map but don't change activesequenceNumber so the game can continue being linear
+//after the expectations of these are fulfilled
+    [System.Serializable]
+    public class sequencesWhileGatheringEvidenceUsingMap
+    {
+        public LocationBase activeLocation;
+        public SequenceBase[] sequencesAtLocation;
+    }
+
+
+    public sequencesWhileGatheringEvidenceUsingMap[] EvidenceGatheringSequences;
+                                                                    
+                                                                    
     [HideInInspector] public int talkID;
     [HideInInspector] public int tempTalkID;
-    public int activeSequenceNumber;
-    public int evidenceCollectedNumber; //check hasBeenPickedUp in all evidence...
-                                        //amount of evidence that has been collected,
-                                        //to progress the sequence it must match the
-                                        //activeSequence.evidenceProgressionReq
-                         
-                                        
+
     //activesequence.evidenceProgressionReq = activeSequence.evidenceInSequence.Length - 1;
-    public int evidenceProgressionReq; //this number changes from sequence to sequence,
+    //public int evidenceProgressionReq; //this number changes from sequence to sequence,
                                         //the player must collect all the evidence
                                         //in this sequence to proceed, it's like finite
                                         
-    public int testimonyProgressionReq;
+   // public int testimonyProgressionReq;
     
     public void ActivateCase()
     {

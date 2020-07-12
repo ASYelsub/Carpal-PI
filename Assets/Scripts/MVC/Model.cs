@@ -22,7 +22,10 @@ public class Model : MonoBehaviour
     public int evidenceBeingShown;
 
     [HideInInspector] public bool textProgressValid;
-
+    [HideInInspector] public int sequenceProgressionStyle; //0 is linear,
+                                                            //1 is crime scenes,
+                                                            //2 is cross examine
+    
     public Evidence[] 
         displayedEvidence = new Evidence[5];
 
@@ -51,7 +54,7 @@ public class Model : MonoBehaviour
         switch (activeCase.activeSequence.mySequenceType)
         {
             case SequenceBase.SequenceType.Banter :
-                view.DisplayBanter(isAlreadyLoaded);
+                view.DisplayBanter(isAlreadyLoaded, 0);
                 break;
             case SequenceBase.SequenceType.CrossExamine :
                 view.DisplayCrossExamine(isAlreadyLoaded);
@@ -70,6 +73,9 @@ public class Model : MonoBehaviour
                 break;
             case SequenceBase.SequenceType.Map :
                 view.DisplayMap(isAlreadyLoaded);
+                break;
+            case SequenceBase.SequenceType.SurveyCrimeScene :
+                //view.DisplaySurveyCrimeScene(isAlreadyLoaded, null);
                 break;
         }
         print(activeCase.activeSequence.mySequenceType);
@@ -103,11 +109,18 @@ public class Model : MonoBehaviour
             else
             {
                 activeCase.talkID++;
-                view.DisplayBanter(true);   
+                view.DisplayBanter(true, 0);   
             }
         }
     }
 
+    public void MapLoadLocation(int mapBeingClickedOn)
+    {
+        sequenceProgressionStyle = 1;
+        view.DisplayBanter(true, mapBeingClickedOn);
+        
+    }
+    
     //This code is currently copying banter, it needs to be able to loop around on itself,
     //switch out dialoguebits when stop and the correct evidence are used, and then progress
     //to the next sequence when all the dialogueBits are in their ultimate "discovered" state.
@@ -131,7 +144,11 @@ public class Model : MonoBehaviour
             }
         }
     }
+    
+    
+    
 
+    //unfinished
     public void TextBackCrossExamine()
     {
         if (TextTyper.IsTyping())
@@ -153,6 +170,7 @@ public class Model : MonoBehaviour
         }
     }
 
+    
     public void TextProgressExplainEvidence()
     {
         if (TextTyper.IsTyping())

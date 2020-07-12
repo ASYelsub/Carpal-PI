@@ -14,10 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sequenceDescription: Enter Tin Town
   mySequenceType: 0
+  minigameEvidenceBaseInSequence: {fileID: 0}
   sequenceLocation: {fileID: 11400000, guid: 41e0094a981644906bf89ebcfa40b460, type: 2}
+  evidenceInSequence1: []
+  evidenceInSequence2: []
+  evidenceInSequence3: []
   dialogueBitsInSequence:
-  - interrogationTimeHappening: 0
-    lastBitInSequence: 0
+  - lastBitInSequence: 0
     heartbeatFreq: 0.4
     activeChar: {fileID: 11400000, guid: ab1b50ad4c7c9401e9c744f6f0bdf3fb, type: 2}
     dialouge: 'We are now in tin town and you will progress to a new type of sequence
@@ -25,4 +28,7 @@ MonoBehaviour:
     stopIsCorrect: 0
     investigateItemPic: {fileID: 0}
     evidenceFromBit: {fileID: 0}
-  evidenceInSequence: []
+  mapInSequence:
+    mapImage: {fileID: 0}
+    locationsInMap: []
+    locationCoordinats: []

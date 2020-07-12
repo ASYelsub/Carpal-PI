@@ -12,6 +12,7 @@ public class Controller : MonoBehaviour
     
     
     public bool pointerInImageExamineEvidence;
+    public int pointerInLocationValue;
 
     //This function gets an integer from one of the two start buttons to set the activeCase.
     //1 is the first case. 2 is the second case.
@@ -63,6 +64,14 @@ public class Controller : MonoBehaviour
                         model.livesManager.LoseOneLife();
                     }   
                 }
+
+                if (model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.Banter)
+                {
+                    if (pointerInImageExamineEvidence)
+                    {
+                        model.MapLoadLocation(pointerInLocationValue);
+                    }
+                }
             }
         }
     }
@@ -70,6 +79,12 @@ public class Controller : MonoBehaviour
     {
         print("pointerInbutton = " + pointerEnters);
          pointerInImageExamineEvidence = pointerEnters;
+         
+    }
+
+    public void PointerInputMap(int mapLocationValue)
+    {
+        pointerInLocationValue = mapLocationValue;
     }
 
      public void StopDuringCrossExamine()

@@ -224,9 +224,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 860025579}
-  - {fileID: 953863067}
   - {fileID: 1193431519}
+  - {fileID: 953863067}
+  - {fileID: 860025579}
   m_Father: {fileID: 1622990298}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -812,6 +812,7 @@ MonoBehaviour:
   model: {fileID: 370201629}
   view: {fileID: 370201626}
   pointerInImageExamineEvidence: 0
+  pointerInLocationValue: 0
 --- !u!114 &370201629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2131,6 +2132,7 @@ GameObject:
   - component: {fileID: 860025579}
   - component: {fileID: 860025581}
   - component: {fileID: 860025580}
+  - component: {fileID: 860025582}
   m_Layer: 5
   m_Name: Image - LocationOnMap3
   m_TagString: Untagged
@@ -2150,7 +2152,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 157102154}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2194,6 +2196,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 860025578}
   m_CullTransparentMesh: 0
+--- !u!114 &860025582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860025578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 370201628}
+          m_MethodName: PointerInButton
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 370201628}
+          m_MethodName: PointerInputMap
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 370201628}
+          m_MethodName: PointerInButton
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &897045385
 GameObject:
   m_ObjectHideFlags: 0
@@ -2321,6 +2377,7 @@ GameObject:
   - component: {fileID: 953863067}
   - component: {fileID: 953863069}
   - component: {fileID: 953863068}
+  - component: {fileID: 953863070}
   m_Layer: 5
   m_Name: Image - LocationOnMap2
   m_TagString: Untagged
@@ -2384,6 +2441,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 953863066}
   m_CullTransparentMesh: 0
+--- !u!114 &953863070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953863066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 370201628}
+          m_MethodName: PointerInButton
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 370201628}
+          m_MethodName: PointerInputMap
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 370201628}
+          m_MethodName: PointerInButton
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &965503445
 GameObject:
   m_ObjectHideFlags: 0
@@ -2518,18 +2629,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2431c7444fd90446bb5b2aced9a343ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activeSequenceNumber: 0
+  evidenceCollectedNumber: 0
   activeSequence: {fileID: 0}
   sequencesInCase:
   - {fileID: 11400000, guid: 4e125ee8b14a24680a1dd3e90ed0a7a1, type: 2}
   - {fileID: 11400000, guid: eab6d6cc93afb4b598817943859195f0, type: 2}
   - {fileID: 11400000, guid: c01e811f699084af7afe4a974b3bf2ac, type: 2}
   - {fileID: 11400000, guid: 4e125ee8b14a24680a1dd3e90ed0a7a1, type: 2}
+  EvidenceGatheringSequences:
+  - activeLocation: {fileID: 11400000, guid: 0431deb7aaaee485ebce02e454b7dc8b, type: 2}
+    sequencesAtLocation:
+    - {fileID: 11400000, guid: f1dc0767e609246349ef27fdf9fc02aa, type: 2}
+    - {fileID: 11400000, guid: d6a27e60bb3174c9cbaa8a113482e7ee, type: 2}
+    - {fileID: 11400000, guid: 5f814955fe1be436db647528508453e4, type: 2}
+  - activeLocation: {fileID: 11400000, guid: d0f4ba96d44de4d5f93245fc3f8d38ef, type: 2}
+    sequencesAtLocation:
+    - {fileID: 11400000, guid: c7c3c14af7b0942e8a854ff5332ee471, type: 2}
+    - {fileID: 11400000, guid: 602c6c9a478d54d7babe51a74d04a5b6, type: 2}
+    - {fileID: 11400000, guid: f300d59ca713c44f8b74b3f4d47e4678, type: 2}
+  - activeLocation: {fileID: 11400000, guid: 41e0094a981644906bf89ebcfa40b460, type: 2}
+    sequencesAtLocation:
+    - {fileID: 11400000, guid: 4e125ee8b14a24680a1dd3e90ed0a7a1, type: 2}
+    - {fileID: 11400000, guid: 277a0818e32c645a9b96ab9f0a4a8ecb, type: 2}
+    - {fileID: 11400000, guid: 4aae133ec295c4827a7733df9ae424f7, type: 2}
   talkID: 0
   tempTalkID: 0
-  activeSequenceNumber: 0
-  evidenceCollectedNumber: 0
-  evidenceProgressionReq: 0
-  testimonyProgressionReq: 0
 --- !u!1 &1130423567
 GameObject:
   m_ObjectHideFlags: 0
@@ -2654,6 +2779,7 @@ GameObject:
   - component: {fileID: 1193431519}
   - component: {fileID: 1193431521}
   - component: {fileID: 1193431520}
+  - component: {fileID: 1193431522}
   m_Layer: 5
   m_Name: Image - LocationOnMap1
   m_TagString: Untagged
@@ -2673,7 +2799,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 157102154}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2717,6 +2843,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193431518}
   m_CullTransparentMesh: 0
+--- !u!114 &1193431522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193431518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 370201628}
+          m_MethodName: PointerInButton
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 370201628}
+          m_MethodName: PointerInputMap
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 370201628}
+          m_MethodName: PointerInButton
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1279650185
 GameObject:
   m_ObjectHideFlags: 0

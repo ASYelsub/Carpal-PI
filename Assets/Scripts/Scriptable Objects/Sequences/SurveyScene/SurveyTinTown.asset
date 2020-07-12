@@ -10,12 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f479bb4278c784cf186b05f0a6e57970, type: 3}
-  m_Name: InvestigateTinTown
+  m_Name: SurveyTinTown
   m_EditorClassIdentifier: 
-  sequenceDescription: Looking at Tin Town for evidence
-  mySequenceType: 3
-  sequenceLocation: {fileID: 11400000, guid: 41e0094a981644906bf89ebcfa40b460, type: 2}
-  evidenceInSequence:
-  - {fileID: 11400000, guid: e1d3782c35d1d42508b105f68d21b044, type: 2}
-  - {fileID: 11400000, guid: f1e58cab6eb7e4257911aa4303d674eb, type: 2}
+  sequenceDescription: 
+  mySequenceType: 7
+  minigameEvidenceBaseInSequence: {fileID: 0}
+  sequenceLocation: {fileID: 0}
+  evidenceInSequence1: []
+  evidenceInSequence2: []
+  evidenceInSequence3: []
   dialogueBitsInSequence: []
+  mapInSequence:
+    mapImage: {fileID: 0}
+    locationsInMap: []
+    locationCoordinats: []

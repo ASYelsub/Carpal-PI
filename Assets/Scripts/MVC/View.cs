@@ -140,7 +140,7 @@ public class View : MonoBehaviour
         //gotta set the images of the clickables on the map dependent on activesequence.activebase.location.mapsprite
         //and do the same thing with the locations of those clickables dependent on activesequence.activebase.mapsprite.locationcoordinates
     }
-    public void DisplayBanter(bool componentsAreSet)
+    public void DisplayBanter(bool componentsAreSet, int loadLocationNumber)
     { if (!componentsAreSet) {
             for (int i = 0; i < mapLocations.Length; i++)
             {
@@ -161,17 +161,26 @@ public class View : MonoBehaviour
             healthHolder.SetActive(false);
             print("components set");
         }
-        nameTextDisplay.text = 
-            model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].activeChar.charName;
-        dialogueTextDisplay.text =
-            model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].dialouge;
-        nameTextDisplay.color = 
-            model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].activeChar.charNameColor;
-        activeCharDisplay.sprite = 
-            model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].activeChar.charImage;
-        heartbeatManager.ChangeHeartbeat(model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID]
-            .heartbeatFreq);
-        textTyper.UpdateText(model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].dialouge);
+
+        if (model.sequenceProgressionStyle == 0)
+        {
+            nameTextDisplay.text = 
+                model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].activeChar.charName;
+            dialogueTextDisplay.text =
+                model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].dialouge;
+            nameTextDisplay.color = 
+                model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].activeChar.charNameColor;
+            activeCharDisplay.sprite = 
+                model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].activeChar.charImage;
+            heartbeatManager.ChangeHeartbeat(model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID]
+                .heartbeatFreq);
+            textTyper.UpdateText(model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].dialouge);
+        }else if (model.sequenceProgressionStyle == 1)
+        {
+            nameTextDisplay.text = model.activeCase.EvidenceGatheringSequences[loadLocationNumber]
+                .sequencesAtLocation[0].dialogueBitsInSequence[model.activeCase.talkID].activeChar.charName;
+        }
+        
     }
     public void DisplayExplainEvidence(bool componentsAreSet)
     {
@@ -300,6 +309,11 @@ public class View : MonoBehaviour
             .heartbeatFreq);
         textTyper.UpdateText(model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].dialouge);
 
+    }
+
+    public void DisplaySurveyCrimeScene(bool componentsAreSet, int displayWhichScene)
+    {
+        
     }
     public void DisplayReturn(bool componentsAreSet)
     {
