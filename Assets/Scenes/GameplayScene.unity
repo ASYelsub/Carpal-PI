@@ -835,6 +835,7 @@ MonoBehaviour:
   activeCase: {fileID: 0}
   evidenceBeingShown: 0
   textProgressValid: 0
+  sequenceProgressionStyle: 0
   displayedEvidence:
   - {fileID: 0}
   - {fileID: 0}
@@ -2631,6 +2632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeSequenceNumber: 0
   evidenceCollectedNumber: 0
+  ultimateEvidenceCollected: 3
   activeSequence: {fileID: 0}
   sequencesInCase:
   - {fileID: 11400000, guid: 4e125ee8b14a24680a1dd3e90ed0a7a1, type: 2}

@@ -65,10 +65,11 @@ public class Controller : MonoBehaviour
                     }   
                 }
 
-                if (model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.Banter)
+                else if (model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.Map)
                 {
                     if (pointerInImageExamineEvidence)
                     {
+                        print("this happened");
                         model.MapLoadLocation(pointerInLocationValue);
                     }
                 }

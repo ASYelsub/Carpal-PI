@@ -151,7 +151,6 @@ public class View : MonoBehaviour
             dialogueTextDisplay.gameObject.SetActive(true);
             backgroundImage.gameObject.SetActive(true);
             courtRecordDisplay.SetActive(false);
-            backgroundImage.sprite = model.activeCase.activeSequence.sequenceLocation.locationBackgroundSprite[0];
             stopButton.SetActive(false);
             heartbeatDisplay.SetActive(true);
             textboxBack.gameObject.SetActive(true);
@@ -166,6 +165,7 @@ public class View : MonoBehaviour
         {
             nameTextDisplay.text = 
                 model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].activeChar.charName;
+            backgroundImage.sprite = model.activeCase.activeSequence.sequenceLocation.locationBackgroundSprite[0];
             dialogueTextDisplay.text =
                 model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].dialouge;
             nameTextDisplay.color = 

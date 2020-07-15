@@ -117,9 +117,53 @@ public class Model : MonoBehaviour
     public void MapLoadLocation(int mapBeingClickedOn)
     {
         sequenceProgressionStyle = 1;
-        view.DisplayBanter(true, mapBeingClickedOn);
-        
+        AdvanceToSpecialSequence();
     }
+    
+    
+    
+    public void TextProgressExplainEvidence()
+    {
+        if (TextTyper.IsTyping())
+        {
+            TextTyper.QuickSkip();
+        }
+        else
+        {
+            if (activeCase.talkID >= activeCase.activeSequence.dialogueBitsInSequence.Length - 1)
+            {
+                if (textProgressValid)
+                {
+                    AdvanceToNextSequence();
+                }
+            }
+            else
+            {
+                view.DisplayExplainEvidence(true);
+            }
+        }
+    }
+
+    public void AdvanceToSpecialSequence()
+    {
+        activeCase.talkID = 0;
+        activeCase.revolvingSequenceNumber = 0;
+        activeCase.activeSequence = activeCase.EvidenceGatheringSequences[controller.pointerInLocationValue]
+            .sequencesAtLocation[activeCase.revolvingSequenceNumber];
+        CheckSequenceType(false);
+    }
+    public void AdvanceToNextSequence()
+    {
+        activeCase.talkID = 0;
+        activeCase.activeSequenceNumber++;
+        activeCase.activeSequence = activeCase.sequencesInCase[activeCase.activeSequenceNumber];
+        CheckSequenceType(false);
+    }
+    
+    
+
+    //unfinished
+    
     
     //This code is currently copying banter, it needs to be able to loop around on itself,
     //switch out dialoguebits when stop and the correct evidence are used, and then progress
@@ -144,11 +188,6 @@ public class Model : MonoBehaviour
             }
         }
     }
-    
-    
-    
-
-    //unfinished
     public void TextBackCrossExamine()
     {
         if (TextTyper.IsTyping())
@@ -171,35 +210,7 @@ public class Model : MonoBehaviour
     }
 
     
-    public void TextProgressExplainEvidence()
-    {
-        if (TextTyper.IsTyping())
-        {
-            TextTyper.QuickSkip();
-        }
-        else
-        {
-            if (activeCase.talkID >= activeCase.activeSequence.dialogueBitsInSequence.Length - 1)
-            {
-                if (textProgressValid)
-                {
-                    AdvanceToNextSequence();
-                }
-            }
-            else
-            {
-                view.DisplayExplainEvidence(true);
-            }
-        }
-    }
-
-    public void AdvanceToNextSequence()
-    {
-        activeCase.talkID = 0;
-        activeCase.activeSequenceNumber++;
-        activeCase.activeSequence = activeCase.sequencesInCase[activeCase.activeSequenceNumber];
-        CheckSequenceType(false);
-    }
+    
 
     public void DisplayEvidenceCourtRecord()
     {

@@ -6,6 +6,7 @@ using UnityEngine;
 public class BaseCaseLogic : MonoBehaviour
 {
     public int activeSequenceNumber;
+    public int revolvingSequenceNumber;
     public int evidenceCollectedNumber; //check hasBeenPickedUp in all evidence...
                                          //amount of evidence that has been collected,
                                          //to progress the sequence it must match the
