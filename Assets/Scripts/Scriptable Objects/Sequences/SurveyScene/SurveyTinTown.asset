@@ -15,7 +15,7 @@ MonoBehaviour:
   sequenceDescription: 
   mySequenceType: 7
   minigameEvidenceBaseInSequence: {fileID: 0}
-  sequenceLocation: {fileID: 0}
+  sequenceLocation: {fileID: 11400000, guid: 41e0094a981644906bf89ebcfa40b460, type: 2}
   evidenceInSequence1: []
   evidenceInSequence2: []
   evidenceInSequence3: []

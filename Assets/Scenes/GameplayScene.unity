@@ -2631,6 +2631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeSequenceNumber: 0
+  revolvingSequenceNumber: 0
   evidenceCollectedNumber: 0
   ultimateEvidenceCollected: 3
   activeSequence: {fileID: 0}

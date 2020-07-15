@@ -160,9 +160,6 @@ public class View : MonoBehaviour
             healthHolder.SetActive(false);
             print("components set");
         }
-
-        if (model.sequenceProgressionStyle == 0)
-        {
             nameTextDisplay.text = 
                 model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].activeChar.charName;
             backgroundImage.sprite = model.activeCase.activeSequence.sequenceLocation.locationBackgroundSprite[0];
@@ -175,12 +172,7 @@ public class View : MonoBehaviour
             heartbeatManager.ChangeHeartbeat(model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID]
                 .heartbeatFreq);
             textTyper.UpdateText(model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].dialouge);
-        }else if (model.sequenceProgressionStyle == 1)
-        {
-            nameTextDisplay.text = model.activeCase.EvidenceGatheringSequences[loadLocationNumber]
-                .sequencesAtLocation[0].dialogueBitsInSequence[model.activeCase.talkID].activeChar.charName;
-        }
-        
+
     }
     public void DisplayExplainEvidence(bool componentsAreSet)
     {
@@ -313,7 +305,38 @@ public class View : MonoBehaviour
 
     public void DisplaySurveyCrimeScene(bool componentsAreSet, int displayWhichScene)
     {
-        
+        if (!componentsAreSet) {
+           // for (int i = 0; i < mapLocations.Length; i++)
+            //{
+            //    mapLocations[i].gameObject.SetActive(false);
+           // }
+            nameTextDisplay.gameObject.SetActive(false);
+            activeCharDisplay.gameObject.SetActive(false);
+            dialogueTextDisplay.gameObject.SetActive(false);
+            backgroundImage.gameObject.SetActive(true);
+            courtRecordDisplay.SetActive(false);
+            stopButton.SetActive(false);
+            heartbeatDisplay.SetActive(true);
+            textboxBack.gameObject.SetActive(false);
+            showSomethingOnEvidenceImage.gameObject.SetActive(false);
+            showSomethingOnEvidenceClickable.gameObject.SetActive(false);
+            courtRecordButton.SetActive(true);
+            healthHolder.SetActive(false);
+            print("components set");
+        }
+        nameTextDisplay.text = 
+            model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].activeChar.charName;
+        backgroundImage.sprite = model.activeCase.activeSequence.sequenceLocation.locationBackgroundSprite[0];
+        dialogueTextDisplay.text =
+            model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].dialouge;
+        nameTextDisplay.color = 
+            model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].activeChar.charNameColor;
+        activeCharDisplay.sprite = 
+            model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].activeChar.charImage;
+        heartbeatManager.ChangeHeartbeat(model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID]
+            .heartbeatFreq);
+        textTyper.UpdateText(model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].dialouge);
+
     }
     public void DisplayReturn(bool componentsAreSet)
     {

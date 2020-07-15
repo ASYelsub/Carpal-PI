@@ -37,7 +37,7 @@ public class Model : MonoBehaviour
         activeCase = cases[caseNumber];
         CheckSequenceType(false);
         textProgressValid = false;
-
+        sequenceProgressionStyle = 0;
     }
     
     //This function looks at the sequence type of the
@@ -75,7 +75,7 @@ public class Model : MonoBehaviour
                 view.DisplayMap(isAlreadyLoaded);
                 break;
             case SequenceBase.SequenceType.SurveyCrimeScene :
-                //view.DisplaySurveyCrimeScene(isAlreadyLoaded, null);
+                view.DisplaySurveyCrimeScene(isAlreadyLoaded, 0);
                 break;
         }
         print(activeCase.activeSequence.mySequenceType);
@@ -117,7 +117,7 @@ public class Model : MonoBehaviour
     public void MapLoadLocation(int mapBeingClickedOn)
     {
         sequenceProgressionStyle = 1;
-        AdvanceToSpecialSequence();
+        StartSpecialSequence();
     }
     
     
@@ -144,20 +144,34 @@ public class Model : MonoBehaviour
         }
     }
 
-    public void AdvanceToSpecialSequence()
+    public void StartSpecialSequence()
     {
+        sequenceProgressionStyle = 1;
         activeCase.talkID = 0;
         activeCase.revolvingSequenceNumber = 0;
         activeCase.activeSequence = activeCase.EvidenceGatheringSequences[controller.pointerInLocationValue]
             .sequencesAtLocation[activeCase.revolvingSequenceNumber];
         CheckSequenceType(false);
     }
+    
     public void AdvanceToNextSequence()
     {
-        activeCase.talkID = 0;
-        activeCase.activeSequenceNumber++;
-        activeCase.activeSequence = activeCase.sequencesInCase[activeCase.activeSequenceNumber];
-        CheckSequenceType(false);
+        if (sequenceProgressionStyle == 0)
+        {
+            activeCase.talkID = 0;
+            activeCase.activeSequenceNumber++;
+            activeCase.activeSequence = activeCase.sequencesInCase[activeCase.activeSequenceNumber];
+            CheckSequenceType(false);
+        }
+        else if (sequenceProgressionStyle == 1)
+        {
+            activeCase.talkID = 0;
+            activeCase.revolvingSequenceNumber++;
+            activeCase.activeSequence = activeCase.EvidenceGatheringSequences[controller.pointerInLocationValue]
+                .sequencesAtLocation[activeCase.revolvingSequenceNumber];
+            CheckSequenceType(false);
+        }
+        
     }
     
     

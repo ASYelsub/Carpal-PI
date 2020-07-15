@@ -19,7 +19,14 @@ MonoBehaviour:
   evidenceInSequence1: []
   evidenceInSequence2: []
   evidenceInSequence3: []
-  dialogueBitsInSequence: []
+  dialogueBitsInSequence:
+  - lastBitInSequence: 0
+    heartbeatFreq: 0.5
+    activeChar: {fileID: 11400000, guid: ab1b50ad4c7c9401e9c744f6f0bdf3fb, type: 2}
+    dialouge: We are in the jailhouse and will now talk to this man.
+    stopIsCorrect: 0
+    investigateItemPic: {fileID: 0}
+    evidenceFromBit: {fileID: 0}
   mapInSequence:
     mapImage: {fileID: 0}
     locationsInMap: []

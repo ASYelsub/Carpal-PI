@@ -39,6 +39,9 @@ public class Controller : MonoBehaviour
                 else if(model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.CrossExamine)
                 {
                     model.TextProgressCrossExamine();
+                }else if (model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.ExplainEvidence)
+                {
+                    model.TextProgressExplainEvidence();
                 }
             }
 
