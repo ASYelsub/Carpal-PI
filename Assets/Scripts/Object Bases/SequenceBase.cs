@@ -20,12 +20,23 @@ public class SequenceBase : ScriptableObject
       SurveyCrimeScene //honestly probably just gonna use all the Map shit plus some added logic to load more specific stuff
    };
 
+   
+   //these two classes are super similar and used in similar ways
+   //except SurveyObjects interact with the court record more intricately
    [System.Serializable]
    public class Map
    {
       public Sprite mapImage;
       public LocationBase[] locationsInMap;
       public Vector2[] locationCoordinats;
+   }
+   
+   [System.Serializable]
+   public class SurveyObjects
+   {
+      public Sprite surveyImgae;
+      public Evidence[] evidenceInSurveySequence;
+      public Vector2[] surveyCoordinates;
    }
    
    
@@ -83,7 +94,10 @@ public class SequenceBase : ScriptableObject
    [Header("Dialogue Bit Time")]
    public DialogueBit[] dialogueBitsInSequence;
 
-   [Header("Map Time")] 
+   [Header("Map Time")]
    public Map mapInSequence;
+
+   [Header("Survey Time")] 
+   public SurveyObjects surveyObjectsInSequence;
 
 }

@@ -15,11 +15,25 @@ MonoBehaviour:
   sequenceDescription: 
   mySequenceType: 4
   minigameEvidenceBaseInSequence: {fileID: 0}
-  sequenceLocation: {fileID: 0}
+  sequenceLocation: {fileID: 11400000, guid: d0f4ba96d44de4d5f93245fc3f8d38ef, type: 2}
   evidenceInSequence1: []
   evidenceInSequence2: []
   evidenceInSequence3: []
-  dialogueBitsInSequence: []
+  dialogueBitsInSequence:
+  - lastBitInSequence: 0
+    heartbeatFreq: 0
+    activeChar: {fileID: 11400000, guid: 27ff2450743d44b6ab60760c7269ff75, type: 2}
+    dialouge: Don't steal my clue!
+    stopIsCorrect: 0
+    investigateItemPic: {fileID: 0}
+    evidenceFromBit: {fileID: 0}
+  - lastBitInSequence: 0
+    heartbeatFreq: 0
+    activeChar: {fileID: 11400000, guid: ffbc8c4e97574415cab78e5db6115d27, type: 2}
+    dialouge: Clue, snatched!
+    stopIsCorrect: 0
+    investigateItemPic: {fileID: 0}
+    evidenceFromBit: {fileID: 0}
   mapInSequence:
     mapImage: {fileID: 0}
     locationsInMap: []

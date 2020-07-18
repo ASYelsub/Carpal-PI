@@ -2656,6 +2656,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 4e125ee8b14a24680a1dd3e90ed0a7a1, type: 2}
     - {fileID: 11400000, guid: 277a0818e32c645a9b96ab9f0a4a8ecb, type: 2}
     - {fileID: 11400000, guid: 4aae133ec295c4827a7733df9ae424f7, type: 2}
+    - {fileID: 11400000, guid: 4aae133ec295c4827a7733df9ae424f7, type: 2}
   talkID: 0
   tempTalkID: 0
 --- !u!1 &1130423567

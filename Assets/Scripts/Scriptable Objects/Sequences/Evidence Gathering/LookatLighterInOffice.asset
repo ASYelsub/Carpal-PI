@@ -15,11 +15,18 @@ MonoBehaviour:
   sequenceDescription: 
   mySequenceType: 3
   minigameEvidenceBaseInSequence: {fileID: 0}
-  sequenceLocation: {fileID: 0}
+  sequenceLocation: {fileID: 11400000, guid: 0431deb7aaaee485ebce02e454b7dc8b, type: 2}
   evidenceInSequence1: []
   evidenceInSequence2: []
   evidenceInSequence3: []
-  dialogueBitsInSequence: []
+  dialogueBitsInSequence:
+  - lastBitInSequence: 1
+    heartbeatFreq: 0.5
+    activeChar: {fileID: 11400000, guid: ffbc8c4e97574415cab78e5db6115d27, type: 2}
+    dialouge: Bianca I thought you stopped smoking? CLUE.
+    stopIsCorrect: 0
+    investigateItemPic: {fileID: 0}
+    evidenceFromBit: {fileID: 0}
   mapInSequence:
     mapImage: {fileID: 0}
     locationsInMap: []
