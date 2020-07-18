@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class LocationBase : ScriptableObject
 {
     public string locationName;
-     
+    public Vector2 headerPos;
     [HideInInspector]
     public int visitValue; //0 = can't go to this case, 1 = locked, 2 = visitable
 

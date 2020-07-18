@@ -19,6 +19,8 @@ public class BaseCaseLogic : MonoBehaviour
     //public SceneTextBase currentScene;
     public SequenceBase[] sequencesInCase; //linear, the spine of the game, may take a break from these when you get to one of them and load the other types of sequence lists
 
+    public LocationBase[] locationsInCase; //utilized by CourtRecordDisplay
+    
     //these ones need to be fanoodled or whatever with special code voodoo, insert themselves
 //during the map but don't change activesequenceNumber so the game can continue being linear
 //after the expectations of these are fulfilled

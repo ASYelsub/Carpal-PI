@@ -15,11 +15,30 @@ public class View : MonoBehaviour
     public GameObject stopButton;
     public Image textboxBack;
     public GameObject heartbeatDisplay;
-    public Image[] evidenceDisplay;
-    public Outline[] evidenceBackOutline;
     public GameObject healthHolder;
     public GameObject courtRecordButton;
 
+    [System.Serializable]
+    public class EvidenceUnderHeader
+    {
+        public Image evidneceThumbnail;
+        public Outline evidenceBackOutline;
+    }
+    
+    [System.Serializable]
+    public class RecordHeaderClass //all of this is dependent on LocationBase
+    {
+        public Text headerText;
+        public EvidenceUnderHeader[] evidenceUnderThisHeader;
+    }
+    
+    [Header("Court Record UI")]
+    public Text[] evidenceAreaName;
+    public Image activeEvidenceVisual;
+    public Text activeEvidenceDescription;
+    public RecordHeaderClass[] headersOnScreen;
+
+   
     [Header("UI Specifically for ExplainEvidence")]
     public Image showSomethingOnEvidenceImage;
     public Image showSomethingOnEvidenceClickable;
@@ -50,38 +69,11 @@ public class View : MonoBehaviour
     {
         courtRecordIsActive = !courtRecordIsActive;
         courtRecordDisplay.SetActive(courtRecordIsActive);
-        model.DisplayEvidenceCourtRecord();
     }
 
-    public void ShowEvidenceCourtRecord(int evidenceID)
-    {
-        switch (evidenceID)
-        {
-            case 0:
-                for (int i = 0; i < evidenceDisplay.Length; i++)
-                {
-                    evidenceDisplay[i].sprite = model.activeCase.activeSequence.evidenceInSequence1[i].imageInCourtRecord;
-                }   
-                break;
-            case 1:
-                for (int i = 0; i < evidenceDisplay.Length; i++)
-                {
-                    evidenceDisplay[i].sprite = model.activeCase.activeSequence.evidenceInSequence2[i].imageInCourtRecord;
-                }   
-                break;
-            case 2:
-                for (int i = 0; i < evidenceDisplay.Length; i++)
-                {
-                    evidenceDisplay[i].sprite = model.activeCase.activeSequence.evidenceInSequence3[i].imageInCourtRecord;
-                }   
-                break;
-        }
-        
-    }
-    
-    
+
     ///////////    //Court record Functions//    ////////////
-    public void InCourtRecordDisplayEvidenceOutline(int evidenceNumber)
+   /* public void InCourtRecordDisplayEvidenceOutline(int evidenceNumber)
     {
         for (int i = 0; i <= evidenceBackOutline.Length - 1; i++)
         {
@@ -94,14 +86,15 @@ public class View : MonoBehaviour
                 evidenceBackOutline[i].enabled = false;
             }
         }
-    }
-    public void DisplayEvidenceInCourtRecord()
+    }*/
+
+    public void DisplayHeadersCourtRecord()
     {
         
     }
 
-    
-    
+
+
     //////// //   //SEQUENCE DISPLAY FUNCTIONS//  //  ///////
     public void DisplayMap(bool componentsAreSet)
     {

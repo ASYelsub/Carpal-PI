@@ -24,3 +24,7 @@ MonoBehaviour:
     mapImage: {fileID: 0}
     locationsInMap: []
     locationCoordinats: []
+  surveyObjectsInSequence:
+    surveyImgae: {fileID: 0}
+    evidenceInSurveySequence: []
+    surveyCoordinates: []

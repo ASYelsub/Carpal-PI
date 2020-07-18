@@ -27,7 +27,7 @@ MonoBehaviour:
     stopIsCorrect: 0
     investigateItemPic: {fileID: 0}
     evidenceFromBit: {fileID: 0}
-  - lastBitInSequence: 0
+  - lastBitInSequence: 1
     heartbeatFreq: 0
     activeChar: {fileID: 11400000, guid: ffbc8c4e97574415cab78e5db6115d27, type: 2}
     dialouge: Clue, snatched!
@@ -38,3 +38,7 @@ MonoBehaviour:
     mapImage: {fileID: 0}
     locationsInMap: []
     locationCoordinats: []
+  surveyObjectsInSequence:
+    surveyImgae: {fileID: 0}
+    evidenceInSurveySequence: []
+    surveyCoordinates: []

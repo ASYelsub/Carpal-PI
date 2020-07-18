@@ -18,9 +18,6 @@ public class Model : MonoBehaviour
     [HideInInspector]
     public BaseCaseLogic activeCase;
 
-    [HideInInspector]
-    public int evidenceBeingShown;
-
     [HideInInspector] public bool textProgressValid;
     [HideInInspector] public int sequenceProgressionStyle; //0 is linear,
                                                             //1 is crime scenes,
@@ -28,6 +25,8 @@ public class Model : MonoBehaviour
     
     public Evidence[] 
         displayedEvidence = new Evidence[5];
+
+    public List<LocationBase> evidenceHeaders;
 
     public void SetActiveCase(int caseNumber)
     {
@@ -38,6 +37,11 @@ public class Model : MonoBehaviour
         CheckSequenceType(false);
         textProgressValid = false;
         sequenceProgressionStyle = 0;
+        SetEvidenceHeaders();
+    }
+
+    public void SetEvidenceHeaders()
+    {
     }
     
     //This function looks at the sequence type of the
@@ -225,11 +229,6 @@ public class Model : MonoBehaviour
 
     
     
-
-    public void DisplayEvidenceCourtRecord()
-    {
-        view.ShowEvidenceCourtRecord(evidenceBeingShown);
-    }
     
     
 }

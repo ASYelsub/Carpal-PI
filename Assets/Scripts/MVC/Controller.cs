@@ -108,29 +108,5 @@ public class Controller : MonoBehaviour
              }
          }
      }
-    public void CycleCourtRecordDisplay(int leftRight) //left is 0 right is 1
- {
-     switch (leftRight)
-     { 
-         case 0 :
-             if (model.evidenceBeingShown <= 0)
-             {
-                 model.evidenceBeingShown = 3;
-             }
-             model.evidenceBeingShown--;
-             model.DisplayEvidenceCourtRecord();
-             break;
-         case 1 :
-             if (model.evidenceBeingShown >= 2)
-             {
-                 model.evidenceBeingShown = 0;
-             }
-             else
-             {
-                 model.evidenceBeingShown++;   
-             }
-             model.DisplayEvidenceCourtRecord();
-             break;
-     }
- }
+  
 }

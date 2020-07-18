@@ -6,8 +6,7 @@ public class Evidence : ScriptableObject
 {
     private string evidenceName;
 
-    public bool isEmptyEvidence;
-    public bool hasBeenPickedUp; //set false if not in the court record
+    public LocationBase evidenceLocation; // helps organize in CourtRecord
    // public int evidenceType; //potentially useless //0 = testimony from witness, 1 = found item
     public Sprite imageInCourtRecord;
     public Sprite imageInCrimeScene;

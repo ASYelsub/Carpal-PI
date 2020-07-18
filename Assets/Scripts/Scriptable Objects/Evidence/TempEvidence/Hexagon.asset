@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 198b7850bc4e1421d8f7049f8dcda2cb, type: 3}
-  m_Name: Squiggle
+  m_Name: Hexagon
   m_EditorClassIdentifier: 
-  hasBeenPickedUp: 0
-  imageInCourtRecord: {fileID: 21300000, guid: b013796b43f0e423ab75fa8160fdfd9b, type: 3}
-  imageInCrimeScene: {fileID: 21300000, guid: b013796b43f0e423ab75fa8160fdfd9b, type: 3}
+  evidenceLocation: {fileID: 0}
+  imageInCourtRecord: {fileID: 21300000, guid: adbc0533589d549d8bf34d7a5692f0d5, type: 3}
+  imageInCrimeScene: {fileID: 21300000, guid: adbc0533589d549d8bf34d7a5692f0d5, type: 3}
