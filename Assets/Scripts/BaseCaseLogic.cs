@@ -7,31 +7,34 @@ public class BaseCaseLogic : MonoBehaviour
 {
     public int activeSequenceNumber;
     public int revolvingSequenceNumber;
-    public int evidenceCollectedNumber; //check hasBeenPickedUp in all evidence...
-                                         //amount of evidence that has been collected,
-                                         //to progress the sequence it must match the
-                                         //activeSequence.evidenceProgressionReq
-    public int ultimateEvidenceCollected;
-    
+
     [HideInInspector]
     public SequenceBase activeSequence;
 
     //public SceneTextBase currentScene;
     public SequenceBase[] sequencesInCase; //linear, the spine of the game, may take a break from these when you get to one of them and load the other types of sequence lists
 
-    public LocationBase[] locationsInCase; //utilized by CourtRecordDisplay
+    public LocationBase[] locationsInCase; //utilized by CourtRecordDisplay headers
+    
+    public int evidenceCollectedNumber; //check hasBeenPickedUp in all evidence...
+    //amount of evidence that has been collected,
+    //to progress the sequence it must match the
+    //activeSequence.evidenceProgressionReq
+    
     
     //these ones need to be fanoodled or whatever with special code voodoo, insert themselves
-//during the map but don't change activesequenceNumber so the game can continue being linear
-//after the expectations of these are fulfilled
+    //during the map but don't change activesequenceNumber so the game can continue being linear
+    //after the expectations of these are fulfilled
     [System.Serializable]
     public class sequencesWhileGatheringEvidenceUsingMap
     {
+        public bool canProgressFromEvidenceGathering; //bool that is flicked when all of the bools on evidence in this class have been flicked
+        public Evidence[] evidenceCollectedInThisArea; //
         public LocationBase activeLocation;
         public SequenceBase[] sequencesAtLocation;
     }
 
-
+    
     public sequencesWhileGatheringEvidenceUsingMap[] EvidenceGatheringSequences;
                                                                     
                                                                     

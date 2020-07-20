@@ -10,4 +10,5 @@ public class Evidence : ScriptableObject
    // public int evidenceType; //potentially useless //0 = testimony from witness, 1 = found item
     public Sprite imageInCourtRecord;
     public Sprite imageInCrimeScene;
+    public bool evidenceCollected;
 }

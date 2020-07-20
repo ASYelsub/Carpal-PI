@@ -23,10 +23,6 @@ public class Model : MonoBehaviour
                                                             //1 is crime scenes,
                                                             //2 is cross examine
     
-    public Evidence[] 
-        displayedEvidence = new Evidence[5];
-
-    public List<LocationBase> evidenceHeaders;
 
     public void SetActiveCase(int caseNumber)
     {
@@ -37,12 +33,12 @@ public class Model : MonoBehaviour
         CheckSequenceType(false);
         textProgressValid = false;
         sequenceProgressionStyle = 0;
-        SetEvidenceHeaders();
+       // SetEvidenceHeaders();
     }
 
-    public void SetEvidenceHeaders()
+   /* public void SetEvidenceHeaders()
     {
-    }
+    }*/
     
     //This function looks at the sequence type of the
     //first sequence in the active case and then

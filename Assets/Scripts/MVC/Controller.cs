@@ -9,6 +9,7 @@ public class Controller : MonoBehaviour
     [Header("Other Scripts")] 
     public Model model;
     public View view;
+    public CourtRecordManager courtRecordManager;
     
     
     public bool pointerInImageExamineEvidence;
@@ -24,6 +25,7 @@ public class Controller : MonoBehaviour
     public void InputToggleCourtRecord()
     {
         view.ToggleCourtRecord();
+        courtRecordManager.ActivateCourtRecord();
     }
     private void Update()
     {

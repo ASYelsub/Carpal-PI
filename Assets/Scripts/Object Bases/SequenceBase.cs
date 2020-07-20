@@ -64,11 +64,7 @@ public class SequenceBase : ScriptableObject
    //you will see the map, you are expected to go to one of the locations displayed. in the evidence window is the list of all the evidence. evidence will have "gotten" or "not gotten," if they are
    //"not gotten" they will show up as ??? ??????? in the evidence window with no image displayed when the player hovers over it. The player cannot leave the location until all the evidence from that
    //area has been "gotten."
-  
-   [Header("Cursed Index For Court Record")]
-   public Evidence[] evidenceInSequence1;
-   public Evidence[] evidenceInSequence2;
-   public Evidence[] evidenceInSequence3;
+   
    [System.Serializable]
    public class DialogueBit
    {

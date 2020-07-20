@@ -59,7 +59,7 @@ public class View : MonoBehaviour
     {
         duringCase.SetActive(false);
         preCase.SetActive(true);
-        InCourtRecordDisplayEvidenceOutline(6);
+        //InCourtRecordDisplayEvidenceOutline(6);
         showSomethingOnEvidenceClickable.gameObject.SetActive(false);
         showSomethingOnEvidenceImage.gameObject.SetActive(false);
     }
