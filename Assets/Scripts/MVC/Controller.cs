@@ -25,7 +25,14 @@ public class Controller : MonoBehaviour
     public void InputToggleCourtRecord()
     {
         view.ToggleCourtRecord();
-        courtRecordManager.ActivateCourtRecord();
+        if (courtRecordManager.courtRecordActive)
+        {
+            courtRecordManager.DeactivateCourtRecord();
+        }
+        else
+        {
+            courtRecordManager.ActivateCourtRecord();   
+        }
     }
     private void Update()
     {
