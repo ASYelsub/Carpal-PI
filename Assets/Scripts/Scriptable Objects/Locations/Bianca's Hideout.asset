@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Bianca's Hideout
   m_EditorClassIdentifier: 
   locationName: Bianca's House
+  headerPos: {x: 0, y: 0}
   visitValue: 0
   mapSprite: {fileID: 21300000, guid: 0ad1ec0ee8e374d1cb03d88e8d8ae156, type: 3}
-  evidenceAtLocation: []
+  evidenceAtLocation:
+  - {fileID: 11400000, guid: db7b9f10c1a9d4f52a283ae6652a81bc, type: 2}
   locationBackgroundSprite:
   - {fileID: 21300000, guid: 36f6b2e94110d40978d0e5cfe70143b7, type: 3}

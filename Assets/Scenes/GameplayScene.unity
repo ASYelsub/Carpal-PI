@@ -1288,6 +1288,8 @@ MonoBehaviour:
   locationsBeingDisplayed: []
   headerPrefab: {fileID: 6014617499838129021, guid: c59266b91dedd47ecb1c2ed05d112ae9,
     type: 3}
+  evidenceIconPrefab: {fileID: 5128417916670329290, guid: e76297f5c1bef4d23b1914911c5352fc,
+    type: 3}
   headers: []
   courtRecordActive: 0
 --- !u!1 &732602665

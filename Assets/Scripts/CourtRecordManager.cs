@@ -11,9 +11,12 @@ public class CourtRecordManager : MonoBehaviour
     private BaseCaseLogic activeCaseLogic;
     [HideInInspector]
     public List<LocationBase> locationsBeingDisplayed = new List<LocationBase>();
-
+    
     [SerializeField]
     private GameObject headerPrefab;
+
+    [SerializeField] 
+    private GameObject evidenceIconPrefab;
     
     [HideInInspector]
     public List<GameObject> headers = new List<GameObject>();
@@ -58,13 +61,39 @@ public class CourtRecordManager : MonoBehaviour
                 k = 0;
                 l = i;
             }
-            Vector2 headerPos = new Vector2(-220 + k, 115 - l*60);
+            Vector2 headerPos = new Vector2(-220 + k, 115 - l*70);
             GameObject activeHeaderPrefab = Instantiate(headerPrefab,gameObject.transform,false);
             activeHeaderPrefab.GetComponent<RectTransform>().anchoredPosition = headerPos;
             activeHeaderPrefab.GetComponentInChildren<Text>().text = locationsBeingDisplayed[i].locationName;
             headers.Add(activeHeaderPrefab);
+            DisplayEvidenceUnderHeader(i);
         }
         print("headers:" + headers[0].GetComponentInChildren<Text>().text + headers[1].GetComponentInChildren<Text>().text + headers[2].GetComponentInChildren<Text>().text);
+    }
+
+    void DisplayEvidenceUnderHeader(int headerNumber)
+    {
+        for (int i = 0; i < locationsBeingDisplayed[headerNumber].evidenceAtLocation.Length; i++)
+        {
+            int k = 0;
+            int l = 0;
+            if (i >= 2 && locationsBeingDisplayed[headerNumber].evidenceAtLocation.Length > 2)
+            {
+                k = 30;
+                l = i - 2;
+            }
+            else
+            {
+                k = 0;
+                l = i;
+            }
+            Vector2 evidencePos = new Vector2(-30 + k,-20 - l * 30);
+            GameObject activeEvidenceIconPrefab =
+                Instantiate(evidenceIconPrefab, headers[headerNumber].transform, false);
+            activeEvidenceIconPrefab.GetComponent<RectTransform>().anchoredPosition = evidencePos;
+            activeEvidenceIconPrefab.GetComponent<Image>().sprite =
+                locationsBeingDisplayed[headerNumber].evidenceAtLocation[i].imageInCourtRecord;
+        }
     }
     
     
