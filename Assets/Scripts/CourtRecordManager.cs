@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
@@ -45,7 +46,19 @@ public class CourtRecordManager : MonoBehaviour
     {
         for (int i = 0; i < locationsBeingDisplayed.Count; i++)
         {
-            Vector2 headerPos = new Vector2(-210, 115 - i*50);
+            int k = 0;
+            int l = 0;
+            if (i >= 4 && locationsBeingDisplayed.Count > 4)
+            {
+                k = 100;
+                l = i - 4;
+            }
+            else
+            {
+                k = 0;
+                l = i;
+            }
+            Vector2 headerPos = new Vector2(-220 + k, 115 - l*60);
             GameObject activeHeaderPrefab = Instantiate(headerPrefab,gameObject.transform,false);
             activeHeaderPrefab.GetComponent<RectTransform>().anchoredPosition = headerPos;
             activeHeaderPrefab.GetComponentInChildren<Text>().text = locationsBeingDisplayed[i].locationName;
@@ -53,10 +66,6 @@ public class CourtRecordManager : MonoBehaviour
         }
         print("headers:" + headers[0].GetComponentInChildren<Text>().text + headers[1].GetComponentInChildren<Text>().text + headers[2].GetComponentInChildren<Text>().text);
     }
-
-    void ExpandHeader()
-    {
-        
-    }
+    
     
 }
