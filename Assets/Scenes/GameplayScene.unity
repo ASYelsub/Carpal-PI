@@ -1248,7 +1248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
+  m_Color: {r: 0.14150941, g: 0.14150941, b: 0.14150941, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1285,12 +1285,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeCaseLogic: {fileID: 1035282009}
-  locationsBeingDisplayed: []
   headerPrefab: {fileID: 6014617499838129021, guid: c59266b91dedd47ecb1c2ed05d112ae9,
     type: 3}
-  evidenceIconPrefab: {fileID: 5128417916670329290, guid: e76297f5c1bef4d23b1914911c5352fc,
+  evidenceIconPrefab: {fileID: 418395902359968789, guid: e5ace0586455747f4835c87c921039fe,
     type: 3}
+  evidenceBackgroundPrefab: {fileID: 5340857825280266902, guid: adc14499a7b1d45758bfbd9438e38041,
+    type: 3}
+  inactiveEvidence: {fileID: 11400000, guid: 978e9e0182665435ab46eaf2f00be6c9, type: 2}
+  locationsBeingDisplayed: []
   headers: []
+  bigListOfEvidenceIcons: []
+  bigListOfEvidenceBackgrounds: []
   courtRecordActive: 0
 --- !u!1 &732602665
 GameObject:
