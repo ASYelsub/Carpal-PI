@@ -121,4 +121,10 @@ public class CourtRecordManager : MonoBehaviour
             }
         }
     }
+
+    public void DisplayClickedOnEvidence()
+    {
+        
+    }
+    
 }
