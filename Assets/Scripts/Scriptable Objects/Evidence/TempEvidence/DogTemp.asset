@@ -16,3 +16,4 @@ MonoBehaviour:
   imageInCourtRecord: {fileID: 21300000, guid: b3cef4af0a7ea43c0a4f01982569e9cc, type: 3}
   imageInCrimeScene: {fileID: 21300000, guid: b3cef4af0a7ea43c0a4f01982569e9cc, type: 3}
   evidenceCollected: 1
+  evidenceDescription: THIS IS A DOG WOOF

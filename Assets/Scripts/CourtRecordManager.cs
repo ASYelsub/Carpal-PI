@@ -29,13 +29,15 @@ public class CourtRecordManager : MonoBehaviour
     public List<GameObject> headers = new List<GameObject>();
 
     [HideInInspector]
-    public List<GameObject> bigListOfEvidenceIcons = new List<GameObject>();
-    
-    [HideInInspector]
-    public List<GameObject> bigListOfEvidenceBackgrounds = new List<GameObject>();
-    
+    public List<Evidence> bigListOfEvidence = new List<Evidence>();
+
     [HideInInspector]
     public bool courtRecordActive = false;
+
+    [SerializeField]
+    private Image activeImageForEvidenceDisplay;
+    [SerializeField]
+    private Text activeTextForEvidenceDisplay;
     
     public void ActivateCourtRecord()
     {
@@ -82,7 +84,7 @@ public class CourtRecordManager : MonoBehaviour
             DisplayEvidenceUnderHeader(i);
         }
         print("headers:" + headers[0].GetComponentInChildren<Text>().text + headers[1].GetComponentInChildren<Text>().text + headers[2].GetComponentInChildren<Text>().text);
-        //print("bigListOfEvidenceIcons has " + bigListOfEvidenceIcons.Count + " amount of shit in it.");
+        print("bigListOfEvidence has " + bigListOfEvidence.Count + " amount of shit in it.");
     }
 
     void DisplayEvidenceUnderHeader(int headerNumber)
@@ -103,11 +105,11 @@ public class CourtRecordManager : MonoBehaviour
             }
             Vector2 evidencePos = new Vector2(-25 + h,-25 - k * 25);
             GameObject activeEvidenceBackground = Instantiate(evidenceBackgroundPrefab, headers[headerNumber].transform, false);
-            //bigListOfEvidenceBackgrounds.Add(activeEvidenceBackground);
             GameObject activeEvidenceIconPrefab = Instantiate(evidenceIconPrefab, headers[headerNumber].transform, false);
-            //bigListOfEvidenceIcons.Add(activeEvidenceIconPrefab);
             activeEvidenceBackground.GetComponent<RectTransform>().anchoredPosition = evidencePos;
             activeEvidenceIconPrefab.GetComponent<RectTransform>().anchoredPosition = evidencePos;
+            activeEvidenceIconPrefab.GetComponent<SpecialButton>().evidenceID = i + headerNumber;
+            bigListOfEvidence.Add(locationsBeingDisplayed[headerNumber].evidenceAtLocation[i]);
             
             //* This is currently set in the scriptableObjcets of evidences, *//
             //* ideally it would be on the BaseCaseLogic. *//
@@ -122,9 +124,11 @@ public class CourtRecordManager : MonoBehaviour
         }
     }
 
-    public void DisplayClickedOnEvidence()
+    public void DisplayClickedOnEvidence(int evidenceNum)
     {
-        
+        //this works as long as you only have one version of each object
+        activeImageForEvidenceDisplay.sprite = bigListOfEvidence[evidenceNum].imageInCourtRecord;
+        activeTextForEvidenceDisplay.text = bigListOfEvidence[evidenceNum].evidenceDescription;
     }
     
 }

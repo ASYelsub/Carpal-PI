@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName ="Objects",menuName ="Objects/Evidence",order = 0)]
@@ -11,4 +12,6 @@ public class Evidence : ScriptableObject
     public Sprite imageInCourtRecord;
     public Sprite imageInCrimeScene;
     public bool evidenceCollected;
+
+    public String evidenceDescription;
 }

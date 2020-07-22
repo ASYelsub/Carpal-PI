@@ -1297,6 +1297,8 @@ MonoBehaviour:
   bigListOfEvidenceIcons: []
   bigListOfEvidenceBackgrounds: []
   courtRecordActive: 0
+  activeImageForEvidenceDisplay: {fileID: 1805311500}
+  activeTextForEvidenceDisplay: {fileID: 1504136664}
 --- !u!1 &732602665
 GameObject:
   m_ObjectHideFlags: 0

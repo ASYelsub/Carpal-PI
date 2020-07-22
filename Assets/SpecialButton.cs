@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class SpecialButton : Button
 {
     public CourtRecordManager courtRecordManager;
+    public int evidenceID;
     public override void OnPointerClick(PointerEventData eventData)
     {
         base.OnPointerClick(eventData);
@@ -19,9 +20,10 @@ public class SpecialButton : Button
         }
         else
         {
-            courtRecordManager.DisplayClickedOnEvidence();
+            courtRecordManager.DisplayClickedOnEvidence(evidenceID);
         }
         
     }
+    
 }
 
