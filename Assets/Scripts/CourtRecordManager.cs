@@ -126,9 +126,12 @@ public class CourtRecordManager : MonoBehaviour
 
     public void DisplayClickedOnEvidence(int evidenceNum)
     {
-        //this works as long as you only have one version of each object
-        activeImageForEvidenceDisplay.sprite = bigListOfEvidence[evidenceNum].imageInCourtRecord;
-        activeTextForEvidenceDisplay.text = bigListOfEvidence[evidenceNum].evidenceDescription;
+        if (bigListOfEvidence[evidenceNum].evidenceCollected)
+        {
+            activeImageForEvidenceDisplay.sprite = bigListOfEvidence[evidenceNum].imageInCourtRecord;
+            activeTextForEvidenceDisplay.text = bigListOfEvidence[evidenceNum].evidenceDescription;
+        }
+        return;
     }
     
 }

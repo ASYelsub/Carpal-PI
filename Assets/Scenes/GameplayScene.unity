@@ -1294,8 +1294,7 @@ MonoBehaviour:
   inactiveEvidence: {fileID: 11400000, guid: 978e9e0182665435ab46eaf2f00be6c9, type: 2}
   locationsBeingDisplayed: []
   headers: []
-  bigListOfEvidenceIcons: []
-  bigListOfEvidenceBackgrounds: []
+  bigListOfEvidence: []
   courtRecordActive: 0
   activeImageForEvidenceDisplay: {fileID: 1805311500}
   activeTextForEvidenceDisplay: {fileID: 1504136664}
@@ -3568,7 +3567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:

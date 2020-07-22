@@ -15,5 +15,5 @@ MonoBehaviour:
   evidenceLocation: {fileID: 11400000, guid: 0431deb7aaaee485ebce02e454b7dc8b, type: 2}
   imageInCourtRecord: {fileID: 21300000, guid: 69d828f8553d74582b9060fa54e6b9e4, type: 3}
   imageInCrimeScene: {fileID: 21300000, guid: 69d828f8553d74582b9060fa54e6b9e4, type: 3}
-  evidenceCollected: 1
+  evidenceCollected: 0
   evidenceDescription: Set me on fire, baby!

@@ -11,6 +11,7 @@ public class Model : MonoBehaviour
     public Controller controller;
     public TextTyper TextTyper;
     public LivesManager livesManager;
+    public CourtRecordManager courtRecordManager;
 
     [SerializeField]
     private BaseCaseLogic[] cases;
@@ -142,6 +143,8 @@ public class Model : MonoBehaviour
                 view.DisplayExplainEvidence(true);
             }
         }
+
+        courtRecordManager.bigListOfEvidence[1].evidenceCollected = true;
     }
 
     public void StartSpecialSequence()
