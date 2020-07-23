@@ -15,5 +15,5 @@ MonoBehaviour:
   evidenceLocation: {fileID: 11400000, guid: 41e0094a981644906bf89ebcfa40b460, type: 2}
   imageInCourtRecord: {fileID: 21300000, guid: a39c3c643323c4a2e8077bf5375ae4f4, type: 3}
   imageInCrimeScene: {fileID: 21300000, guid: a39c3c643323c4a2e8077bf5375ae4f4, type: 3}
-  evidenceCollected: 1
+  evidenceCollected: 0
   evidenceDescription: A gravedigger's work is never done.

@@ -98,6 +98,7 @@ public class View : MonoBehaviour
     //////// //   //SEQUENCE DISPLAY FUNCTIONS//  //  ///////
     public void DisplayMap(bool componentsAreSet)
     {
+        
         if (!componentsAreSet)
         {
             for (int i = 0; i < mapLocations.Length; i++)

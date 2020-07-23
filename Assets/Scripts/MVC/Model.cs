@@ -121,8 +121,6 @@ public class Model : MonoBehaviour
         StartSpecialSequence();
     }
     
-    
-    
     public void TextProgressExplainEvidence()
     {
         if (TextTyper.IsTyping())
@@ -133,6 +131,10 @@ public class Model : MonoBehaviour
         {
             if (activeCase.talkID >= activeCase.activeSequence.dialogueBitsInSequence.Length - 1)
             {
+                //a test to see if i could change stuff to be displayed while a sequence progresses
+                //activeCase.locationsInCase[0].evidenceAtLocation[0].evidenceCollected = !activeCase.locationsInCase[0].evidenceAtLocation[0].evidenceCollected;
+                //courtRecordManager.ResetEvidenceState(); //this can only be done when courtRecordManager is active
+                print("apparently this code happened");
                 if (textProgressValid)
                 {
                     AdvanceToNextSequence();
@@ -143,8 +145,7 @@ public class Model : MonoBehaviour
                 view.DisplayExplainEvidence(true);
             }
         }
-
-        courtRecordManager.bigListOfEvidence[1].evidenceCollected = true;
+        // courtRecordManager.bigListOfEvidence[1].evidenceCollected = true;
     }
 
     public void StartSpecialSequence()

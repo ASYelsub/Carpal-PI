@@ -15,6 +15,7 @@ public class Controller : MonoBehaviour
     public bool pointerInImageExamineEvidence;
     public int pointerInLocationValue;
 
+    
     //This function gets an integer from one of the two start buttons to set the activeCase.
     //1 is the first case. 2 is the second case.
     public void GetActiveCase(int caseNumber)
@@ -27,15 +28,25 @@ public class Controller : MonoBehaviour
         view.ToggleCourtRecord();
         if (courtRecordManager.courtRecordActive)
         {
+            courtRecordManager.ResetEvidenceState();
             courtRecordManager.DeactivateCourtRecord();
+            
         }
         else
         {
+            courtRecordManager.ResetEvidenceState();
             courtRecordManager.ActivateCourtRecord();   
         }
     }
     private void Update()
     {
+        //YESSSS
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            model.activeCase.locationsInCase[0].evidenceAtLocation[0].evidenceCollected = !model.activeCase.locationsInCase[0].evidenceAtLocation[0].evidenceCollected;
+            print(model.activeCase.locationsInCase[0].evidenceAtLocation[0].evidenceCollected);
+        }
+
         if (!view.courtRecordIsActive)
         {
             if(Input.GetKeyDown(KeyCode.F))

@@ -31,6 +31,8 @@ public class CourtRecordManager : MonoBehaviour
     [HideInInspector]
     public List<Evidence> bigListOfEvidence = new List<Evidence>();
 
+    [HideInInspector] public List<GameObject> evidencesInCase = new List<GameObject>();
+
     [HideInInspector]
     public bool courtRecordActive = false;
 
@@ -38,7 +40,13 @@ public class CourtRecordManager : MonoBehaviour
     private Image activeImageForEvidenceDisplay;
     [SerializeField]
     private Text activeTextForEvidenceDisplay;
-    
+
+    private void Awake()
+    {
+        activeImageForEvidenceDisplay.sprite = inactiveEvidence.imageInCourtRecord;
+    }
+
+
     public void ActivateCourtRecord()
     {
         courtRecordActive = !courtRecordActive;
@@ -110,6 +118,7 @@ public class CourtRecordManager : MonoBehaviour
             activeEvidenceIconPrefab.GetComponent<RectTransform>().anchoredPosition = evidencePos;
             activeEvidenceIconPrefab.GetComponent<SpecialButton>().evidenceID = i + headerNumber;
             bigListOfEvidence.Add(locationsBeingDisplayed[headerNumber].evidenceAtLocation[i]);
+            evidencesInCase.Add(activeEvidenceIconPrefab);
             
             //* This is currently set in the scriptableObjcets of evidences, *//
             //* ideally it would be on the BaseCaseLogic. *//
@@ -131,7 +140,30 @@ public class CourtRecordManager : MonoBehaviour
             activeImageForEvidenceDisplay.sprite = bigListOfEvidence[evidenceNum].imageInCourtRecord;
             activeTextForEvidenceDisplay.text = bigListOfEvidence[evidenceNum].evidenceDescription;
         }
+        else
+        {
+            activeImageForEvidenceDisplay.sprite = inactiveEvidence.imageInCourtRecord;
+            activeTextForEvidenceDisplay.text = inactiveEvidence.evidenceDescription;
+        }
         return;
+    }
+
+    
+    //call this whenever evidence is gained
+    public void ResetEvidenceState()
+    {
+        for (int i = 0; i < headers.Count; i++)
+        {
+            if (bigListOfEvidence[i].evidenceCollected) 
+            { 
+                evidencesInCase[i].GetComponent<Image>().sprite = bigListOfEvidence[i].imageInCourtRecord; 
+            }
+            else 
+            { 
+                evidencesInCase[i].GetComponent<Image>().sprite = inactiveEvidence.imageInCourtRecord; 
+            }
+        }
+        
     }
     
 }
