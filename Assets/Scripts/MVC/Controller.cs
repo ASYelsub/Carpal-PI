@@ -40,7 +40,7 @@ public class Controller : MonoBehaviour
     }
     private void Update()
     {
-        //YESSSS
+        //tester function
         if (Input.GetKeyDown(KeyCode.L))
         {
             model.activeCase.locationsInCase[0].evidenceAtLocation[0].evidenceCollected = !model.activeCase.locationsInCase[0].evidenceAtLocation[0].evidenceCollected;
@@ -95,6 +95,14 @@ public class Controller : MonoBehaviour
                         print("this happened");
                         model.MapLoadLocation(pointerInLocationValue);
                     }
+                }
+                else if (model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.SurveyCrimeScene)
+                {
+                    //need to set this to correspond with non-map icons that are instantiated
+                   // if (pointerInImageExamineEvidence)
+                   // {
+                    //    model.GoIntoCollectEvidence(pointerInLocationValue);
+                    //}
                 }
             }
         }

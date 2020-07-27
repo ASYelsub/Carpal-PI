@@ -7,6 +7,7 @@
         <e p="Scripts" t="Include">
           <e p="BaseCaseLogic.cs" t="Include" />
           <e p="CourtRecordManager.cs" t="Include" />
+          <e p="CrimeSceneManager.cs" t="Include" />
           <e p="Managers" t="Include">
             <e p="HeartbeatManager.cs" t="Include" />
             <e p="LivesManager.cs" t="Include" />

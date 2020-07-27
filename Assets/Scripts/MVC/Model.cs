@@ -23,8 +23,6 @@ public class Model : MonoBehaviour
     [HideInInspector] public int sequenceProgressionStyle; //0 is linear,
                                                             //1 is crime scenes,
                                                             //2 is cross examine
-    
-
     public void SetActiveCase(int caseNumber)
     {
         view.duringCase.SetActive(true);
@@ -34,13 +32,8 @@ public class Model : MonoBehaviour
         CheckSequenceType(false);
         textProgressValid = false;
         sequenceProgressionStyle = 0;
-       // SetEvidenceHeaders();
     }
 
-   /* public void SetEvidenceHeaders()
-    {
-    }*/
-    
     //This function looks at the sequence type of the
     //first sequence in the active case and then
     //w the view displays
@@ -154,7 +147,7 @@ public class Model : MonoBehaviour
         activeCase.talkID = 0;
         activeCase.revolvingSequenceNumber = 0;
         activeCase.activeSequence = activeCase.EvidenceGatheringSequences[controller.pointerInLocationValue]
-            .sequencesAtLocation[activeCase.revolvingSequenceNumber];
+            .entranceSeqencesAtLocation[activeCase.revolvingSequenceNumber];
         CheckSequenceType(false);
     }
     
@@ -170,19 +163,18 @@ public class Model : MonoBehaviour
         else if (sequenceProgressionStyle == 1)
         {
             activeCase.talkID = 0;
-            activeCase.revolvingSequenceNumber++;
+            activeCase.revolvingSequenceNumber++; //this needs to correspond to acitvemapnumber or something
             activeCase.activeSequence = activeCase.EvidenceGatheringSequences[controller.pointerInLocationValue]
-                .sequencesAtLocation[activeCase.revolvingSequenceNumber];
+                .entranceSeqencesAtLocation[activeCase.revolvingSequenceNumber];
             CheckSequenceType(false);
         }
-        
     }
-    
-    
 
+
+    
+    
     //unfinished
-    
-    
+
     //This code is currently copying banter, it needs to be able to loop around on itself,
     //switch out dialoguebits when stop and the correct evidence are used, and then progress
     //to the next sequence when all the dialogueBits are in their ultimate "discovered" state.

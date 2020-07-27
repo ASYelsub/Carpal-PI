@@ -31,7 +31,8 @@ public class BaseCaseLogic : MonoBehaviour
         public bool canProgressFromEvidenceGathering; //bool that is flicked when all of the bools on evidence in this class have been flicked
         public Evidence[] evidenceCollectedInThisArea; //
         public LocationBase activeLocation;
-        public SequenceBase[] sequencesAtLocation;
+        public SequenceBase[] entranceSeqencesAtLocation;
+        public SequenceBase[] evidenceSequencesAtLocation;
     }
 
     

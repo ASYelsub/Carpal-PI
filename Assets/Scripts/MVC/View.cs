@@ -17,7 +17,7 @@ public class View : MonoBehaviour
     public GameObject heartbeatDisplay;
     public GameObject healthHolder;
     public GameObject courtRecordButton;
-
+    
     [System.Serializable]
     public class EvidenceUnderHeader
     {
@@ -25,20 +25,6 @@ public class View : MonoBehaviour
         public Outline evidenceBackOutline;
     }
     
-    [System.Serializable]
-    public class RecordHeaderClass //all of this is dependent on LocationBase
-    {
-        public Text headerText;
-        public EvidenceUnderHeader[] evidenceUnderThisHeader;
-    }
-    
-    [Header("Court Record UI")]
-    public Text[] evidenceAreaName;
-    public Image activeEvidenceVisual;
-    public Text activeEvidenceDescription;
-    public RecordHeaderClass[] headersOnScreen;
-
-   
     [Header("UI Specifically for ExplainEvidence")]
     public Image showSomethingOnEvidenceImage;
     public Image showSomethingOnEvidenceClickable;
@@ -53,13 +39,13 @@ public class View : MonoBehaviour
     public Controller controller;
     public HeartbeatManager heartbeatManager;
     public TextTyper textTyper;
+    public CrimeSceneManager crimeSceneManager;
 
     public bool courtRecordIsActive;
     private void Awake()
     {
         duringCase.SetActive(false);
         preCase.SetActive(true);
-        //InCourtRecordDisplayEvidenceOutline(6);
         showSomethingOnEvidenceClickable.gameObject.SetActive(false);
         showSomethingOnEvidenceImage.gameObject.SetActive(false);
     }
@@ -71,30 +57,7 @@ public class View : MonoBehaviour
         courtRecordDisplay.SetActive(courtRecordIsActive);
     }
 
-
-    ///////////    //Court record Functions//    ////////////
-   /* public void InCourtRecordDisplayEvidenceOutline(int evidenceNumber)
-    {
-        for (int i = 0; i <= evidenceBackOutline.Length - 1; i++)
-        {
-            if (i == evidenceNumber)
-            {
-                evidenceBackOutline[i].enabled = true;
-            }
-            else
-            {
-                evidenceBackOutline[i].enabled = false;
-            }
-        }
-    }*/
-
-    public void DisplayHeadersCourtRecord()
-    {
-        
-    }
-
-
-
+    
     //////// //   //SEQUENCE DISPLAY FUNCTIONS//  //  ///////
     public void DisplayMap(bool componentsAreSet)
     {
