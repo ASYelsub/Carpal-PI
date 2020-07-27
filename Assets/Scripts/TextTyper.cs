@@ -13,6 +13,10 @@ public class TextTyper : MonoBehaviour
 	[Header("Components")]
 	[SerializeField] private AudioSource mainAudioSource;
 	[SerializeField] private AudioClip theAudioClip;
+
+	[Header("Other Scripts")] 
+	[SerializeField]
+	private Model model;
 		
 	private bool typing;
 	private int counter;
@@ -87,7 +91,8 @@ public class TextTyper : MonoBehaviour
 		counter++;
 
 		if(mainAudioSource)
-		{	
+		{
+			theAudioClip = model.activeCase.activeSequence.dialogueBitsInSequence[model.activeCase.talkID].activeChar.charVoice;
 			mainAudioSource.PlayOneShot(theAudioClip);
 			RandomiseVolume();
 		}

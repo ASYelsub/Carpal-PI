@@ -15,3 +15,4 @@ MonoBehaviour:
   charNameColor: {r: 0.2030994, g: 0.3584906, b: 0.032128863, a: 1}
   charName: Klygore
   charImage: {fileID: 21300000, guid: eb7a7a37edf4b4c3b8df3689965f40f4, type: 3}
+  charVoice: {fileID: 8300000, guid: 35a49adb20f1a47aea331d80f216abe5, type: 3}

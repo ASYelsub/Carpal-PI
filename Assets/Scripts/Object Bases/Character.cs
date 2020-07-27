@@ -8,4 +8,5 @@ public class Character : ScriptableObject
     public Color charNameColor; 
     public string charName;
     public Sprite charImage;
+    public AudioClip charVoice;
 }

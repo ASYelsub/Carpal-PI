@@ -23,9 +23,9 @@
             <e p="MinigameEvidenceBase.cs" t="Include" />
             <e p="SequenceBase.cs" t="Include" />
           </e>
+          <e p="SpecialButton.cs" t="Include" />
           <e p="TextTyper.cs" t="Include" />
         </e>
-        <e p="SpecialButton.cs" t="Include" />
       </e>
       <e p="Carpal PI.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
