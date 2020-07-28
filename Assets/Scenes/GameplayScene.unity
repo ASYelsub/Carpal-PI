@@ -349,7 +349,7 @@ MonoBehaviour:
   controller: {fileID: 370201628}
   heartbeatManager: {fileID: 370201624}
   textTyper: {fileID: 1631415545}
-  crimeSceneManager: {fileID: 0}
+  crimeSceneManager: {fileID: 370201630}
   courtRecordIsActive: 0
 --- !u!114 &370201627
 MonoBehaviour:
@@ -403,6 +403,7 @@ MonoBehaviour:
   TextTyper: {fileID: 1631415545}
   livesManager: {fileID: 370201627}
   courtRecordManager: {fileID: 693773548}
+  crimeSceneManager: {fileID: 370201630}
   cases:
   - {fileID: 1035282009}
   - {fileID: 1035282009}
@@ -423,6 +424,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickableEvidencePrefab: {fileID: 3740713452736120481, guid: 5dabacb2ace3047bc84a204c4a1e7002,
     type: 3}
+  background: {fileID: 157102153}
+  tempInt: 0
+  model: {fileID: 370201629}
+  view: {fileID: 370201626}
+  controller: {fileID: 370201628}
+  courtRecordManager: {fileID: 693773548}
 --- !u!1 &379541470
 GameObject:
   m_ObjectHideFlags: 0
@@ -2039,26 +2046,27 @@ MonoBehaviour:
   evidenceCollectedNumber: 0
   EvidenceGatheringSequences:
   - canProgressFromEvidenceGathering: 0
-    evidenceCollectedInThisArea: []
     activeLocation: {fileID: 11400000, guid: 0431deb7aaaee485ebce02e454b7dc8b, type: 2}
     entranceSeqencesAtLocation:
     - {fileID: 11400000, guid: f1dc0767e609246349ef27fdf9fc02aa, type: 2}
     - {fileID: 11400000, guid: d6a27e60bb3174c9cbaa8a113482e7ee, type: 2}
-    evidenceSequencesAtLocation: []
+    evidenceSequencesAtLocation:
+    - {fileID: 11400000, guid: 5f814955fe1be436db647528508453e4, type: 2}
   - canProgressFromEvidenceGathering: 0
-    evidenceCollectedInThisArea: []
     activeLocation: {fileID: 11400000, guid: d0f4ba96d44de4d5f93245fc3f8d38ef, type: 2}
     entranceSeqencesAtLocation:
     - {fileID: 11400000, guid: c7c3c14af7b0942e8a854ff5332ee471, type: 2}
     - {fileID: 11400000, guid: 602c6c9a478d54d7babe51a74d04a5b6, type: 2}
-    evidenceSequencesAtLocation: []
+    evidenceSequencesAtLocation:
+    - {fileID: 11400000, guid: f300d59ca713c44f8b74b3f4d47e4678, type: 2}
   - canProgressFromEvidenceGathering: 0
-    evidenceCollectedInThisArea: []
     activeLocation: {fileID: 11400000, guid: 41e0094a981644906bf89ebcfa40b460, type: 2}
     entranceSeqencesAtLocation:
     - {fileID: 11400000, guid: 4e125ee8b14a24680a1dd3e90ed0a7a1, type: 2}
     - {fileID: 11400000, guid: 277a0818e32c645a9b96ab9f0a4a8ecb, type: 2}
-    evidenceSequencesAtLocation: []
+    evidenceSequencesAtLocation:
+    - {fileID: 11400000, guid: 4aae133ec295c4827a7733df9ae424f7, type: 2}
+    - {fileID: 11400000, guid: 0fe0cdff712e84f14ad1d287d1a4c398, type: 2}
   talkID: 0
   tempTalkID: 0
 --- !u!1 &1130423567

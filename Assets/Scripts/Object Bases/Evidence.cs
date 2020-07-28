@@ -13,5 +13,6 @@ public class Evidence : ScriptableObject
     public Sprite imageInCrimeScene;
     public bool evidenceCollected;
 
+    public Vector2 evidencePositionAtCrimeScene;
     public String evidenceDescription;
 }

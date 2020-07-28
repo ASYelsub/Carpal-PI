@@ -12,6 +12,7 @@ public class Model : MonoBehaviour
     public TextTyper TextTyper;
     public LivesManager livesManager;
     public CourtRecordManager courtRecordManager;
+    public CrimeSceneManager crimeSceneManager;
 
     [SerializeField]
     private BaseCaseLogic[] cases;
@@ -21,8 +22,8 @@ public class Model : MonoBehaviour
 
     [HideInInspector] public bool textProgressValid;
     [HideInInspector] public int sequenceProgressionStyle; //0 is linear,
-                                                            //1 is crime scenes,
-                                                            //2 is cross examine
+                                                            //1 is map,
+                                                            //2 is crime scene
     public void SetActiveCase(int caseNumber)
     {
         view.duringCase.SetActive(true);
@@ -108,6 +109,46 @@ public class Model : MonoBehaviour
         }
     }
 
+    public void TextProgressInterrogateWitness()
+    {
+        if (TextTyper.IsTyping())
+        {
+            TextTyper.QuickSkip();
+        }
+        else
+        {
+            if (activeCase.talkID >= activeCase.activeSequence.dialogueBitsInSequence.Length - 1)
+            {
+                AdvanceToNextSequence();
+            }
+            else
+            {
+                activeCase.talkID++;
+                view.DisplayInterrogateWitness(true);  
+            }
+        }
+    }
+
+    public void TextProgressInvestigateItem()
+    {
+        if (TextTyper.IsTyping())
+        {
+            TextTyper.QuickSkip();
+        }
+        else
+        {
+            if (activeCase.talkID >= activeCase.activeSequence.dialogueBitsInSequence.Length - 1)
+            {
+                AdvanceToNextSequence();
+            }
+            else
+            {
+                activeCase.talkID++;
+                view.DisplayInvestigateItem(true);   
+            }
+        }
+    }
+
     public void MapLoadLocation(int mapBeingClickedOn)
     {
         sequenceProgressionStyle = 1;
@@ -138,7 +179,6 @@ public class Model : MonoBehaviour
                 view.DisplayExplainEvidence(true);
             }
         }
-        // courtRecordManager.bigListOfEvidence[1].evidenceCollected = true;
     }
 
     public void StartSpecialSequence()
@@ -163,9 +203,16 @@ public class Model : MonoBehaviour
         else if (sequenceProgressionStyle == 1)
         {
             activeCase.talkID = 0;
-            activeCase.revolvingSequenceNumber++; //this needs to correspond to acitvemapnumber or something
+            activeCase.revolvingSequenceNumber++;
             activeCase.activeSequence = activeCase.EvidenceGatheringSequences[controller.pointerInLocationValue]
                 .entranceSeqencesAtLocation[activeCase.revolvingSequenceNumber];
+            CheckSequenceType(false);
+        }
+        else if (sequenceProgressionStyle == 2)
+        {
+            activeCase.talkID = 0;
+            activeCase.activeSequence = activeCase.EvidenceGatheringSequences[controller.pointerInLocationValue]
+                .evidenceSequencesAtLocation[crimeSceneManager.tempInt];
             CheckSequenceType(false);
         }
     }

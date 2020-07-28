@@ -44,6 +44,13 @@ public class CourtRecordManager : MonoBehaviour
     private void Awake()
     {
         activeImageForEvidenceDisplay.sprite = inactiveEvidence.imageInCourtRecord;
+        ActivateCourtRecord();
+
+        //this might not work???
+        for (int i = 0; i < bigListOfEvidence.Count; i++)
+        {
+            bigListOfEvidence[i].evidenceCollected = false;
+        }
     }
 
 

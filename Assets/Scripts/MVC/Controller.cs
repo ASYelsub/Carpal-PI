@@ -14,7 +14,6 @@ public class Controller : MonoBehaviour
     
     public bool pointerInImageExamineEvidence;
     public int pointerInLocationValue;
-
     
     //This function gets an integer from one of the two start buttons to set the activeCase.
     //1 is the first case. 2 is the second case.
@@ -62,6 +61,12 @@ public class Controller : MonoBehaviour
                 }else if (model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.ExplainEvidence)
                 {
                     model.TextProgressExplainEvidence();
+                }else if (model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.InvestigateItem)
+                {
+                    model.TextProgressInvestigateItem();
+                }else if (model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.InterrogateWitness)
+                {
+                    model.TextProgressInterrogateWitness();
                 }
             }
 
@@ -95,14 +100,6 @@ public class Controller : MonoBehaviour
                         print("this happened");
                         model.MapLoadLocation(pointerInLocationValue);
                     }
-                }
-                else if (model.activeCase.activeSequence.mySequenceType == SequenceBase.SequenceType.SurveyCrimeScene)
-                {
-                    //need to set this to correspond with non-map icons that are instantiated
-                   // if (pointerInImageExamineEvidence)
-                   // {
-                    //    model.GoIntoCollectEvidence(pointerInLocationValue);
-                    //}
                 }
             }
         }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3264464981596313701}
   - component: {fileID: 2859712517801696952}
   - component: {fileID: 8029741862471692566}
-  - component: {fileID: 7830526165269427772}
+  - component: {fileID: 7308380556374741141}
   m_Layer: 5
   m_Name: Image - ClickableEvidenceInCrimeScene
   m_TagString: Untagged
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7830526165269427772
+--- !u!114 &7308380556374741141
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,7 +84,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3740713452736120481}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a95ef1a18b0d4560901e8f239bbe14f, type: 3}
+  m_Script: {fileID: 11500000, guid: bfcda8fc39c04454086404239c0c5b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -118,5 +118,5 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
-  courtRecordManager: {fileID: 0}
-  evidenceID: 0
+  crimeSceneManager: {fileID: 0}
+  evidenceDiscussionID: 0

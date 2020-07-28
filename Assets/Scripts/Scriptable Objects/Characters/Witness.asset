@@ -15,3 +15,4 @@ MonoBehaviour:
   charNameColor: {r: 0.6444619, g: 0.6509434, b: 0.12588999, a: 1}
   charName: Witness
   charImage: {fileID: 21300000, guid: eb7a7a37edf4b4c3b8df3689965f40f4, type: 3}
+  charVoice: {fileID: 8300000, guid: 8a6913f10bc3248ffb931d4a29d962ef, type: 3}

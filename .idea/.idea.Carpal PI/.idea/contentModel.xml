@@ -6,9 +6,9 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="BaseCaseLogic.cs" t="Include" />
-          <e p="CourtRecordManager.cs" t="Include" />
-          <e p="CrimeSceneManager.cs" t="Include" />
           <e p="Managers" t="Include">
+            <e p="CourtRecordManager.cs" t="Include" />
+            <e p="CrimeSceneManager.cs" t="Include" />
             <e p="HeartbeatManager.cs" t="Include" />
             <e p="LivesManager.cs" t="Include" />
           </e>
@@ -17,6 +17,10 @@
             <e p="Model.cs" t="Include" />
             <e p="View.cs" t="Include" />
           </e>
+          <e p="NewButtons" t="Include">
+            <e p="EvidenceButton.cs" t="Include" />
+            <e p="SpecialButton.cs" t="Include" />
+          </e>
           <e p="Object Bases" t="Include">
             <e p="Character.cs" t="Include" />
             <e p="Evidence.cs" t="Include" />
@@ -24,7 +28,6 @@
             <e p="MinigameEvidenceBase.cs" t="Include" />
             <e p="SequenceBase.cs" t="Include" />
           </e>
-          <e p="SpecialButton.cs" t="Include" />
           <e p="TextTyper.cs" t="Include" />
         </e>
       </e>
