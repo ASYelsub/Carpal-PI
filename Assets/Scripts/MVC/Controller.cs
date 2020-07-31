@@ -40,11 +40,11 @@ public class Controller : MonoBehaviour
     private void Update()
     {
         //tester function
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            model.activeCase.locationsInCase[0].evidenceAtLocation[0].evidenceCollected = !model.activeCase.locationsInCase[0].evidenceAtLocation[0].evidenceCollected;
-            print(model.activeCase.locationsInCase[0].evidenceAtLocation[0].evidenceCollected);
-        }
+        //if (Input.GetKeyDown(KeyCode.L))
+        //{
+         //   model.activeCase.locationsInCase[0].evidenceAtLocation[0].evidenceCollected = !model.activeCase.locationsInCase[0].evidenceAtLocation[0].evidenceCollected;
+          //  print(model.activeCase.locationsInCase[0].evidenceAtLocation[0].evidenceCollected);
+        //}
 
         if (!view.courtRecordIsActive)
         {
@@ -101,6 +101,10 @@ public class Controller : MonoBehaviour
                         model.MapLoadLocation(pointerInLocationValue);
                     }
                 }
+                //else if (model.activeCase.activeSequence == null)
+                //{
+                 //  print("sequence type is null when mouse clicked"); 
+                //}
             }
         }
     }

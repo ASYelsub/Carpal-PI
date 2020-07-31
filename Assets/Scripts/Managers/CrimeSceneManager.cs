@@ -37,13 +37,27 @@ public class CrimeSceneManager : MonoBehaviour
 
     public void LoadSequenceDependingOnClickedEvidence(int loadSequenceNumber)
     {
-        model.sequenceProgressionStyle = 2;
         tempInt = loadSequenceNumber;
-        model.AdvanceToNextSequence();
+        if (model.activeCase.locationsInCase[controller.pointerInLocationValue]
+            .evidenceAtLocation[tempInt].evidenceCollected == false)
+        {
+            model.sequenceProgressionStyle = 2;
+            model.AdvanceToNextSequence();
+        }
+        else
+        {
+            print("This evidence has already been collected!");
+        }
+        
     }
-    void AddEvidenceToCourtRecord(int evidenceID)
+   // public void AddEvidenceToCourtRecord(int evidenceID)
+    //{
+    //    courtRecordManager.ResetEvidenceState();
+   // }
+
+    public void DesaturateCollectedEvidence()
     {
-        courtRecordManager.ResetEvidenceState();
+        
     }
 
     

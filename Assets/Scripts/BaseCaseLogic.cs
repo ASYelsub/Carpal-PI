@@ -33,6 +33,7 @@ public class BaseCaseLogic : MonoBehaviour
         public LocationBase activeLocation;
         public SequenceBase[] entranceSeqencesAtLocation;
         public SequenceBase[] evidenceSequencesAtLocation;
+        public SequenceBase[] exitSequencesAtLocation;
     }
 
     

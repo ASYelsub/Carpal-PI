@@ -159,7 +159,7 @@ public class CourtRecordManager : MonoBehaviour
     //call this whenever evidence is gained
     public void ResetEvidenceState()
     {
-        for (int i = 0; i < headers.Count; i++)
+        for (int i = 0; i < bigListOfEvidence.Count; i++)
         {
             if (bigListOfEvidence[i].evidenceCollected) 
             { 

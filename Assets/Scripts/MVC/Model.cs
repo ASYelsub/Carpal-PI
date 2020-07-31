@@ -24,6 +24,7 @@ public class Model : MonoBehaviour
     [HideInInspector] public int sequenceProgressionStyle; //0 is linear,
                                                             //1 is map,
                                                             //2 is crime scene
+                                              
     public void SetActiveCase(int caseNumber)
     {
         view.duringCase.SetActive(true);
@@ -33,6 +34,17 @@ public class Model : MonoBehaviour
         CheckSequenceType(false);
         textProgressValid = false;
         sequenceProgressionStyle = 0;
+        
+        
+        for (int i = 0; i < activeCase.locationsInCase.Length; i++)
+        {
+            for (int j = 0; j < activeCase.locationsInCase[i].evidenceAtLocation.Length; j++)
+            {
+                activeCase.locationsInCase[i].evidenceAtLocation[j].evidenceCollected = false;
+                print(activeCase.locationsInCase[i].evidenceAtLocation[j].name + " is " + activeCase.locationsInCase[i].evidenceAtLocation[j].evidenceCollected);
+            }
+        }
+        courtRecordManager.ResetEvidenceState();
     }
 
     //This function looks at the sequence type of the
@@ -119,7 +131,12 @@ public class Model : MonoBehaviour
         {
             if (activeCase.talkID >= activeCase.activeSequence.dialogueBitsInSequence.Length - 1)
             {
-                AdvanceToNextSequence();
+                print(activeCase.locationsInCase[controller.pointerInLocationValue].evidenceAtLocation[crimeSceneManager.tempInt].evidenceCollected);
+                activeCase.locationsInCase[controller.pointerInLocationValue]
+                    .evidenceAtLocation[crimeSceneManager.tempInt].evidenceCollected = true;
+                courtRecordManager.ResetEvidenceState();
+                print(activeCase.locationsInCase[controller.pointerInLocationValue].evidenceAtLocation[crimeSceneManager.tempInt].evidenceCollected);
+                GoToSurveySequence();
             }
             else
             {
@@ -139,7 +156,13 @@ public class Model : MonoBehaviour
         {
             if (activeCase.talkID >= activeCase.activeSequence.dialogueBitsInSequence.Length - 1)
             {
-                AdvanceToNextSequence();
+                print(activeCase.locationsInCase[controller.pointerInLocationValue].evidenceAtLocation[crimeSceneManager.tempInt].evidenceCollected);
+                activeCase.locationsInCase[controller.pointerInLocationValue]
+                    .evidenceAtLocation[crimeSceneManager.tempInt].evidenceCollected = true;
+                courtRecordManager.ResetEvidenceState();
+                print(activeCase.locationsInCase[controller.pointerInLocationValue].evidenceAtLocation[crimeSceneManager.tempInt].evidenceCollected);
+                crimeSceneManager.DesaturateCollectedEvidence();
+                GoToSurveySequence();
             }
             else
             {
@@ -190,7 +213,14 @@ public class Model : MonoBehaviour
             .entranceSeqencesAtLocation[activeCase.revolvingSequenceNumber];
         CheckSequenceType(false);
     }
-    
+
+    public void GoToSurveySequence()
+    {
+        activeCase.talkID = 0;
+        activeCase.activeSequence = activeCase.EvidenceGatheringSequences[controller.pointerInLocationValue]
+            .entranceSeqencesAtLocation[activeCase.revolvingSequenceNumber];
+        CheckSequenceType(false);
+    }
     public void AdvanceToNextSequence()
     {
         if (sequenceProgressionStyle == 0)
