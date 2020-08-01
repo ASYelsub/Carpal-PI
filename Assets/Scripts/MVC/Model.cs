@@ -131,11 +131,9 @@ public class Model : MonoBehaviour
         {
             if (activeCase.talkID >= activeCase.activeSequence.dialogueBitsInSequence.Length - 1)
             {
-                print(activeCase.locationsInCase[controller.pointerInLocationValue].evidenceAtLocation[crimeSceneManager.tempInt].evidenceCollected);
-                activeCase.locationsInCase[controller.pointerInLocationValue]
-                    .evidenceAtLocation[crimeSceneManager.tempInt].evidenceCollected = true;
+                print("pointer in location value = " + controller.pointerInLocationValue);
+                activeCase.locationsInCase[controller.pointerInLocationValue].evidenceAtLocation[crimeSceneManager.tempInt].evidenceCollected = true;
                 courtRecordManager.ResetEvidenceState();
-                print(activeCase.locationsInCase[controller.pointerInLocationValue].evidenceAtLocation[crimeSceneManager.tempInt].evidenceCollected);
                 GoToSurveySequence();
             }
             else
@@ -156,11 +154,9 @@ public class Model : MonoBehaviour
         {
             if (activeCase.talkID >= activeCase.activeSequence.dialogueBitsInSequence.Length - 1)
             {
-                print(activeCase.locationsInCase[controller.pointerInLocationValue].evidenceAtLocation[crimeSceneManager.tempInt].evidenceCollected);
-                activeCase.locationsInCase[controller.pointerInLocationValue]
-                    .evidenceAtLocation[crimeSceneManager.tempInt].evidenceCollected = true;
+                print("pointer in location value = " + controller.pointerInLocationValue);
+                activeCase.locationsInCase[controller.pointerInLocationValue].evidenceAtLocation[crimeSceneManager.tempInt].evidenceCollected = true;
                 courtRecordManager.ResetEvidenceState();
-                print(activeCase.locationsInCase[controller.pointerInLocationValue].evidenceAtLocation[crimeSceneManager.tempInt].evidenceCollected);
                 crimeSceneManager.DesaturateCollectedEvidence();
                 GoToSurveySequence();
             }

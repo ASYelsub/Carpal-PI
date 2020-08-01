@@ -18,6 +18,7 @@ public class EvidenceButton : Button
         else
         {
             crimeSceneManager.LoadSequenceDependingOnClickedEvidence(evidenceDiscussionID);
+            print(evidenceDiscussionID);
         }
     }
 }

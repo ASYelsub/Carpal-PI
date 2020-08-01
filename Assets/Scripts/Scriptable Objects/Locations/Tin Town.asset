@@ -15,9 +15,9 @@ MonoBehaviour:
   locationName: Tin Town
   headerPos: {x: 0, y: 0}
   visitValue: 0
-  mapSprite: {fileID: 0}
+  mapSprite: {fileID: 21300000, guid: 44676f446e6e54d9e9a8433d59a1e12b, type: 3}
   evidenceAtLocation:
   - {fileID: 11400000, guid: a9259350d69cd4980ada2f607f4436c8, type: 2}
   - {fileID: 11400000, guid: 30a18fe3046964ece9d71ec2ded8e7ec, type: 2}
   locationBackgroundSprite:
-  - {fileID: 21300000, guid: f341b8217c4fa4bc7b972116f855317e, type: 3}
+  - {fileID: 21300000, guid: 44676f446e6e54d9e9a8433d59a1e12b, type: 3}

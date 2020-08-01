@@ -39,6 +39,10 @@ public class Controller : MonoBehaviour
     }
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            print("pointerInLocationValue = " + pointerInLocationValue);
+        }
         //tester function
         //if (Input.GetKeyDown(KeyCode.L))
         //{
