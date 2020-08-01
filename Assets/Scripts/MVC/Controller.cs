@@ -39,17 +39,6 @@ public class Controller : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            print("pointerInLocationValue = " + pointerInLocationValue);
-        }
-        //tester function
-        //if (Input.GetKeyDown(KeyCode.L))
-        //{
-         //   model.activeCase.locationsInCase[0].evidenceAtLocation[0].evidenceCollected = !model.activeCase.locationsInCase[0].evidenceAtLocation[0].evidenceCollected;
-          //  print(model.activeCase.locationsInCase[0].evidenceAtLocation[0].evidenceCollected);
-        //}
-
         if (!view.courtRecordIsActive)
         {
             if(Input.GetKeyDown(KeyCode.F))

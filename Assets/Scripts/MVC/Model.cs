@@ -131,7 +131,7 @@ public class Model : MonoBehaviour
         {
             if (activeCase.talkID >= activeCase.activeSequence.dialogueBitsInSequence.Length - 1)
             {
-                print("pointer in location value = " + controller.pointerInLocationValue);
+                //print("pointer in location value = " + controller.pointerInLocationValue);
                 activeCase.locationsInCase[controller.pointerInLocationValue].evidenceAtLocation[crimeSceneManager.tempInt].evidenceCollected = true;
                 courtRecordManager.ResetEvidenceState();
                 GoToSurveySequence();
@@ -154,7 +154,7 @@ public class Model : MonoBehaviour
         {
             if (activeCase.talkID >= activeCase.activeSequence.dialogueBitsInSequence.Length - 1)
             {
-                print("pointer in location value = " + controller.pointerInLocationValue);
+                //print("pointer in location value = " + controller.pointerInLocationValue);
                 activeCase.locationsInCase[controller.pointerInLocationValue].evidenceAtLocation[crimeSceneManager.tempInt].evidenceCollected = true;
                 courtRecordManager.ResetEvidenceState();
                 crimeSceneManager.DesaturateCollectedEvidence();
