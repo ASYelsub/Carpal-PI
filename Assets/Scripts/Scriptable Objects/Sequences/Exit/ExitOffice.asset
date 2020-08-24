@@ -20,7 +20,8 @@ MonoBehaviour:
   - lastBitInSequence: 1
     heartbeatFreq: 0
     activeChar: {fileID: 11400000, guid: ffbc8c4e97574415cab78e5db6115d27, type: 2}
-    dialouge: We are leaving the office to go back to the map.
+    dialouge: We have all the evidence so we are leaving the office to go back to
+      the map.
     stopIsCorrect: 0
     investigateItemPic: {fileID: 0}
     evidenceFromBit: {fileID: 0}

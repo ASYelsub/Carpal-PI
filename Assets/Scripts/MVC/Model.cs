@@ -24,7 +24,8 @@ public class Model : MonoBehaviour
     [HideInInspector] public int sequenceProgressionStyle; //0 is linear,
                                                             //1 is map,
                                                             //2 is crime scene
-                                              
+
+    private int tempID; //used for when switching back to the map
     public void SetActiveCase(int caseNumber)
     {
         view.duringCase.SetActive(true);
@@ -213,8 +214,30 @@ public class Model : MonoBehaviour
     public void GoToSurveySequence()
     {
         activeCase.talkID = 0;
-        activeCase.activeSequence = activeCase.EvidenceGatheringSequences[controller.pointerInLocationValue]
-            .entranceSeqencesAtLocation[activeCase.revolvingSequenceNumber];
+        print("WE ARE AT THIS PART");
+        int temporaryListInt = 0;
+        //to add: check all the bools of the objects in CourtRecordManager
+        for (int i = 0; i < activeCase.activeSequence.sequenceLocation.evidenceAtLocation.Length; i++)
+        {
+            if (activeCase.activeSequence.sequenceLocation.evidenceAtLocation[i].evidenceCollected == true)
+            {
+                temporaryListInt++;
+            }
+        }
+        if (temporaryListInt == activeCase.activeSequence.sequenceLocation.evidenceAtLocation.Length)
+        {
+            activeCase.activeSequence = activeCase.EvidenceGatheringSequences[controller.pointerInLocationValue]
+                .exitSequencesAtLocation[0];
+            sequenceProgressionStyle = 0;
+            activeCase.activeSequenceNumber = tempID;
+
+            //this is good but it's not hooked up to tempID //there are also weird bugs with evidence spawning where it shouldnt and not despawning.
+        }
+        else
+        {
+            activeCase.activeSequence = activeCase.EvidenceGatheringSequences[controller.pointerInLocationValue]
+                .entranceSeqencesAtLocation[activeCase.revolvingSequenceNumber];
+        }
         CheckSequenceType(false);
     }
     public void AdvanceToNextSequence()
@@ -228,6 +251,8 @@ public class Model : MonoBehaviour
         }
         else if (sequenceProgressionStyle == 1)
         {
+            tempID = activeCase.activeSequenceNumber;
+            print("tempID = " + tempID);
             activeCase.talkID = 0;
             activeCase.revolvingSequenceNumber++;
             activeCase.activeSequence = activeCase.EvidenceGatheringSequences[controller.pointerInLocationValue]

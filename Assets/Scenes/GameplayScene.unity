@@ -2039,6 +2039,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: eab6d6cc93afb4b598817943859195f0, type: 2}
   - {fileID: 11400000, guid: c01e811f699084af7afe4a974b3bf2ac, type: 2}
   - {fileID: 11400000, guid: 4e125ee8b14a24680a1dd3e90ed0a7a1, type: 2}
+  - {fileID: 11400000, guid: c01e811f699084af7afe4a974b3bf2ac, type: 2}
   locationsInCase:
   - {fileID: 11400000, guid: 0431deb7aaaee485ebce02e454b7dc8b, type: 2}
   - {fileID: 11400000, guid: d0f4ba96d44de4d5f93245fc3f8d38ef, type: 2}
